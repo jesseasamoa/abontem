@@ -12,3 +12,6 @@ class Home(TemplateView):
 class DashboardHome(TemplateView):
     template_name = 'dashboard.html'
 
+
+class Seeds(TemplateView):
+    template_name = 'seeds.html'

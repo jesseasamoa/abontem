@@ -15,3 +15,6 @@ class FrontForm(models.Model):
 
     def get_absolute_url(self):
         return reverse('dashbaord', kwargs={'pk': self.pk})
+
+
+

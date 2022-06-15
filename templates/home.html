@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Meta Data -->
+    <meta name="google-site-verification" content="MqId2WWhyTffTwbHUxAwRxIVQ6pjJQnyhkOFugDY37I" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>{% block title %}abontem - Farm Automation{% endblock %}</title>
+
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">-->
+    <link rel="mask-icon" href="assets/img/fav/safari-pinned-tab.svg" color="#fa7070">
+
+    <meta name="msapplication-TileColor" content="#fa7070">
+    <meta name="theme-color" content="#fa7070">
+
+    <!-- Dependency Styles -->
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/bootstrap/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/fontawesome/css/all.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/swiper/css/swiper.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/wow/css/animate.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/magnific-popup/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/components-elegant-icons/css/elegant-icons.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'frontend/dependencies/simple-line-icons/css/simple-line-icons.css' %}" type="text/css">
+
+
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/app.css' %}" type="text/css">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body id="home-version-6" class="home-version-6" data-style="default">
+
+    <a href="#main_content" data-type="section-switch" class="return-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <div class="page-loader">
+        <div class="loader">
+            <!-- Loader -->
+            <div class="blobs">
+                <div class="blob-center"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    </div><!-- /.page-loader -->
+
+    <div id="main_content">
+
+
+        <!--=========================-->
+        <!--=        Navbar         =-->
+        <!--=========================-->
+        <header class="site-header header-eight header_trans-fixed" data-top="992">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="toggle-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <!-- /.toggle-menu -->
+
+                    <div class="site-mobile-logo">
+                        <a href="home" class="logo">
+                            <!--<img src="assets/img/logo-three.png" alt="site logo" class="main-logo">-->
+                           <!-- <img src="assets/img/logo-three.png" alt="site logo" class="sticky-logo">-->
+                        </a>
+                    </div>
+
+                    <nav class="site-nav">
+                        <div class="close-menu">
+                            <span>Close</span>
+                            <i class="ei ei-icon_close"></i>
+                        </div>
+
+                        <div class="site-logo">
+                            <a href="home" class="logo">
+                                <!--<img src="assets/img/logo-three.png" alt="site logo" class="main-logo">-->
+                                <!--<img src="assets/img/logo-three.png" alt="site logo" class="sticky-logo">-->
+                            </a>
+                        </div>
+                        <!-- /.site-logo -->
+
+                        <div class="menu-wrapper" data-top="992">
+                            <ul class="site-main-menu">
+                                <li><a href="#get-started" class="popup-with-form">Get Started</a></li>
+                                <!--<li><a href="#get-started" class="popup-with-form">How it Works</a></li>-->
+                                <li><a href="#get-started" class="popup-with-form">Seeds</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Farm Automation</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Farm Logistics</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Data & Tech</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+                                <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.menu-wrapper -->
+
+                        <!--<div class="nav-right">
+                            <a href="singin.html" class="nav-btn">Log In</a>
+                        </div>-->
+
+
+                    </nav><!-- /.site-nav -->
+                </div><!-- /.header-inner -->
+            </div><!-- /.container -->
+        </header><!-- /.site-header -->
+
+        <!--==========================-->
+        <!--=         Banner         =-->
+        <!--==========================-->
+        <!-- <section class="banner banner-eight">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banne-content-wrapper-eight">
+                            <h3 class="subtitle wow fadeInUp"><span>New</span>Best Mobile Exoland Apps</h3>
+                            <h1 class="banner-title wow fadeInUp" data-wow-delay="0.3s">
+                                <span>Best Mobile</span><br>
+                                App Showcase
+                            </h1>
+
+                            <p class="description wow fadeInUp" data-wow-delay="0.5s">
+                                Lost the plot chancer James Bond spiffing good time brolly excuse my French victoria sponge
+                                jolly good.!
+                            </p>
+                            <div class="banner-button-container">
+
+                                <a href="#" class="banner-btn pix-btn btn-four btn-round wow fadeInUp" data-wow-delay="0.7s">Get
+                                    Started</a>
+                                <a href="https://www.youtube.com/watch?v=9No-FiEInLA" class="play-btn play-btn-outline popup-video wow pixFadeUp" data-wow-delay="0.6s">
+                                    <i class="ei ei-arrow_triangle-right"></i> Watch Video</a>
+                            </div>
+
+
+                        </div>
+                        <!-- /.banne-content-wrapper-six -->
+                   <!-- </div>
+                    <!-- /.col-lg-6 -->
+
+                   <!-- <div class="col-lg-6">
+                        <div class="banner-six-promo-image text-right">
+                            <img src="media/banner/app/mockup.png" class="wow pixZoomIn" alt="saaspik">
+
+                            <div class="banner-leaf">
+                                <div class="leaf-left">
+                                    <img src="media/banner/app/leaf1.png" alt="saaspik leaf">
+                                </div>
+
+                                <div class="leaf-right">
+                                    <img src="media/banner/app/leaf2.png" alt="saaspik leaf">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.banner-six-promo-image -->
+                    <!--</div>
+                    <!-- /.col-lg-6 -->
+                <!--</div>
+                <!-- /.row -->
+            <!--</div>
+            <!-- /.container -->
+
+            <!--<div class="banner-background-element">
+                <div class="ball">
+                    <img src="media/banner/app/ball.png" data-parallax="" alt="saaspik ball">
+                </div>
+                <div class="triangle">
+                    <img src="media/banner/app/triangle.png" alt="saaspik ball">
+                </div>
+
+                <div class="dot-shape">
+                    <img src="media/banner/app/dot.png" alt="saaspik">
+                </div>
+                <div class="circle-bg"></div>
+            </div>
+        </section>
+        <!-- /.banner banner-six -->
+
+        <!--============================-->
+        <!--=         Feature         =-->
+        <!--============================-->
+        <!--<section class="featured-nine">
+            <div class="container">
+                <div class="section-title style-five text-center">
+                    <h3 class="sub-title wow pixFadeUp">What We Do</h3>
+                    <h2 class="title wow pixFadeUp" data-wow-delay="0.2s">
+                        How can we Help You
+                    </h2>
+                </div><!-- /.section-title -->
+
+                <!--<div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="saaspik-icon-box-wrapper style-ten wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="saaspik-icon-box-icon">
+                                <img src="media/feature/61.png" alt="">
+                            </div>
+                            <div class="pixsass-icon-box-content">
+                                <h3 class="pixsass-icon-box-title"><a href="#">Fully Secured</a></h3>
+                                <p>
+                                    Compile organize,validate &submit claimsto be processed for fuel tax recovery
+                                </p>
+
+                                <a href="#" class="pix-btn btn-grey color-three">Learn More</a>
+                            </div>
+                        </div><!-- /.pixsass-box style-ten wow fadeInRight -->
+                    <!--</div><!-- /.col-lg-4 col-md-6 -->
+
+                    <!--<div class="col-lg-4 col-md-6">
+                        <div class="saaspik-icon-box-wrapper style-ten wow fadeInRight" data-wow-delay="0.5s">
+                            <div class="saaspik-icon-box-icon">
+                                <img src="media/feature/62.png" alt="">
+                            </div>
+                            <div class="pixsass-icon-box-content">
+                                <h3 class="pixsass-icon-box-title"><a href="#">Easy to Edit</a></h3>
+
+                                <p>
+                                    Compile organize,validate &submit claimsto be processed for fuel tax recovery
+                                </p>
+
+                                <a href="#" class="pix-btn  color-three btn-grey">Learn More</a>
+                            </div>
+                        </div><!-- /.pixsass-box style-ten wow fadeInRight -->
+                    <!--</div><!-- /.col-lg-4 col-md-6 -->
+
+                   <!-- <div class="col-lg-4 col-md-6">
+                        <div class="saaspik-icon-box-wrapper style-ten wow fadeInRight" data-wow-delay="0.7s">
+                            <div class="saaspik-icon-box-icon">
+                                <img src="media/feature/63.png" alt="">
+                            </div>
+                            <div class="pixsass-icon-box-content">
+                                <h3 class="pixsass-icon-box-title"><a href="#">Design & Branding</a></h3>
+                                <p>
+                                    Compile organize,validate &submit claimsto be processed for fuel tax recovery
+                                </p>
+
+                                <a href="#" class="pix-btn btn-grey color-three">Learn More</a>
+                            </div>
+                        </div><!-- /.pixsass-box style-ten wow fadeInRight -->
+                    <!--</div><!-- /.col-lg-4 col-md-6 -->
+                <!--</div><!-- /.row -->
+           <!-- </div><!-- /.container -->
+       <!-- </section><!-- /.featured -->
+
+        <!--============================-->
+        <!--=         Tabs         =-->
+        <!--============================-->
+       <!-- <section class="app-tabs">
+
+            <div class="container-wrap bg-color-one">
+                <div class="container">
+                    <div id="pix-tabs" class="tabs-three">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="download-tab-content">
+                                    <div class="section-title style-five">
+                                        <h3 class="sub-title wow fadeInUp">Selected Works</h3>
+                                        <h2 class="title wow fadeInUp" data-wow-delay="0.3s">Get to the<br> best outcome.</h2>
+                                        <p class="wow fadeInUp" data-wow-delay="0.5s">
+                                            Some dodgy chav bugger all mate pukka bonnet jolly good codswallop that bog.!
+                                        </p>
+                                    </div>
+                                    <ul id="pix-tabs-nav" class="wow fadeInUp" data-wow-delay="0.7s">
+                                        <li><a href="#feature_tab1"><i class="ei ei-icon_pencil-edit"></i> Website/App
+                                                Design</a>
+                                        </li>
+                                        <li><a href="#feature_tab2"><i class="ei ei-icon_piechart"></i> Demographics</a></li>
+                                    </ul> <!-- tabs-nav -->
+                                <!--</div>
+                                <!-- /.download-tab-content -->
+                           <!-- </div>
+                            <!-- /.col-lg-5 -->
+                           <!-- <div class="col-lg-7">
+                                <div class="tabs-content-wrapper">
+                                    <div id="pix-tabs-content" class="job-board-tabs-content wow fadeIn">
+                                        <div id="feature_tab1" class="content">
+                                            <div class="tab-image">
+                                                <img src="media/tabs/8.jpg" alt="sasspik tab">
+                                            </div>
+                                            <!-- /.tab-image -->
+                                       <!-- </div>
+                                        <!--<div id="feature_tab2" class="content">
+                                            <div class="tab-image">
+                                                <img src="media/tabs/9.jpg" alt="sasspik tab">
+                                            </div>
+                                            <!-- /.tab-image -->
+                                       <!-- </div>
+                                   <!-- </div> <!-- tabs-content -->
+
+                                   <!-- <div class="tab-bg-shape-wrapper">
+                                        <div class="dot">
+                                            <img src="media/tabs/dot.png" class="dot-shape" alt="saaspik">
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="545px" height="641px" style="opacity: 0.1">
+                                            <defs>
+                                                <linearGradient id="PSgrad_0" x1="86.603%" x2="0%" y1="0%" y2="50%">
+                                                    <stop offset="0%" stop-color="rgb(252,72,140)" stop-opacity="0.96" />
+                                                    <stop offset="100%" stop-color="rgb(26,191,104)" stop-opacity="0.96" />
+                                                    <stop offset="100%" stop-color="rgb(126,63,244)" stop-opacity="0.96" />
+                                                </linearGradient>
+
+                                            </defs>
+                                            <path fill-rule="evenodd" opacity="0.102" fill="rgb(126, 63, 244)" d="M1.000,160.999 C23.035,-96.001 800.875,-81.679 457.464,487.628 C425.619,540.421 352.186,601.676 289.000,627.999 C217.967,657.591 134.004,632.446 143.000,563.999 C171.000,350.964 -4.898,229.782 1.000,160.999 Z" />
+                                            <path fill="url(#PSgrad_0)" d="M1.000,160.999 C23.035,-96.001 800.875,-81.679 457.464,487.628 C425.619,540.421 352.186,601.676 289.000,627.999 C217.967,657.591 134.004,632.446 143.000,563.999 C171.000,350.964 -4.898,229.782 1.000,160.999 Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- /.tabs-content-wrapper -->
+
+                            <!--</div>
+                            <!-- /.col-lg-7 -->
+                       <!-- </div>
+                        <!-- /.row -->
+                   <!-- </div>
+               <!-- </div>
+                <!-- /.container -->
+          <!--  </div>
+            <!-- /.container-wrap -->
+
+        <!--</section>
+        <!-- /.job-bord-tabs -->
+
+        <!--=================================-->
+        <!--=         Image Content         =-->
+        <!--=================================-->
+       <!-- <section id="app_image_content">
+            <div class="container">
+                <div class="app-image-content-wrapper-one">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="app-download-image">
+                                <img src="media/feature/app1.png" class="wow fadeInDown" alt="saaspik">
+                            </div>
+                            <!-- /.animaated-elements-three -->
+                       <!-- </div>
+                        <!-- /.col-lg-5 -->
+
+                        <!--<div class="col-lg-7">
+                            <div class="image-content-three app-content-wrap pl-85">
+                                <div class="section-title">
+                                    <h2 class="title wow fadeInUp">
+                                        Quickly query <br>
+                                        and receive credit
+                                    </h2>
+
+                                    <p class="wow fadeInUp" data-wow-delay="0.3s">
+                                        Mufty chimney pot a blinding shot posh A bit of how's your father barney don't get
+                                        shirty with me, nice one it's all gone.
+                                    </p>
+                                    <ul class="list-items list-icon-arrow wow fadeInUp" data-wow-delay="0.4s">
+                                        <li>Quick Access</li>
+                                        <li>Easy setup process</li>
+                                        <li>Live call support</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="app-btn-two btn-light wow flipInX" data-wow-delay="0.5s">
+                                    <i class="fi flaticon-google-play"></i>
+                                    <span class="btn-text">
+                                        <span class="text-top">Get on the</span>
+                                        <span>Google play</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.image-content-three -->
+                       <!-- </div>
+                        <!-- /.col-lg-7 -->
+                   <!-- </div>
+                    <!-- /.row -->
+               <!-- </div>
+                <!-- /.job-image-content-wrapper-one -->
+
+               <!-- <div class="app-image-content-wrapper-two">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 pix-order-two">
+                            <div class="image-content-three app-content-wrap pr-85">
+                                <div class="section-title">
+                                    <h2 class="title wow fadeInUp">
+                                        Set your<br>
+                                        own targets.
+                                    </h2>
+
+                                    <p class="wow fadeInUp" data-wow-delay="0.3s">
+                                        Mufty chimney pot a blinding shot posh A bit of how's your father barney don't get
+                                        shirty with me, nice one it's all gone.
+                                    </p>
+                                    <ul class="list-items list-icon-arrow wow fadeInUp" data-wow-delay="0.4s">
+                                        <li>Quick Access</li>
+                                        <li>Easy setup process</li>
+                                        <li>Live call support</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="app-btn-two btn-light wow flipInX" data-wow-delay="0.5s">
+                                    <i class="fi flaticon-google-play"></i>
+                                    <span class="btn-text">
+                                        <span class="text-top">Get on the</span>
+                                        <span>Google play</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.image-content-three -->
+                       <!-- </div>
+                        <!-- /.col-lg-7 -->
+
+                        <!--<div class="col-lg-5">
+                            <div class="app-download-image">
+                                <img src="media/feature/app2.png" class="wow fadeInDown" alt="saaspik">
+                            </div>
+                        </div>
+                        <!-- /.col-lg-5 -->
+
+                   <!-- </div>
+                    <!-- /.row -->
+                <!--</div>
+                <!-- /.job-image-content-wrapper-two -->
+          <!--  </div>
+            <!-- /.container -->
+       <!-- </section>
+        <!-- /#job_image_content -->
+
+        <!--============================-->
+        <!--=         Download         =-->
+        <!--============================-->
+        <section class="download-two">
+            <div class="container-wrap bg-color-two">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-5 pix-order-one">
+                            <div class="download-wrapper-two">
+                                <h2 class="title wow pixFadeUp">From seeds<br> to farm automation</h2>
+
+                                <p class="wow pixFadeUp" data-wow-delay="0.3s">
+                                    Signup to buy seeds and more...
+                                </p>
+
+                                <div class="app-btn-wrapper">
+                                    <a href="#get-started" class="app-btn-two wow flipInX popup-with-form" data-wow-delay="0.5s">
+                                        
+                                        <span class="btn-text">
+                                            
+                                            <span>Get Started</span>
+                                        </span>
+                                    </a>
+
+                                </div>
+                                <!-- /.app-btn-wrapper -->
+                            </div>
+                            <!-- /.download-wrapper -->
+                        </div>
+                        <!-- /.col-lg-5 -->
+
+                        <div class="col-lg-7 d-none d-lg-block">
+                        
+                        <form action="#" class="sign-up-form white-popup-block" id="get-started">
+                        <h3>Get Started</h3>
+                        
+                        <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>Contact</label>
+                        <input type="text">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>Email</label>
+                        <input type="text">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>Password</label>
+                        <input type="password">
+                        </div>
+                        
+                        <input type="submit">
+                        <p></p>
+                        
+                        <a href="#login-form" class="popup-with-login login-btn">Log In</a>
+                    </form>
+                            <!-- /.download-feature-image -->
+                        </div>
+                        <!-- /.col-lg-7 -->
+
+                        
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+
+                <div class="section-animate-element">
+                    <div class="leaf-top">
+                        <img src="{% static 'frontend/download/leaf1.png' %}" alt="saaspik leaf">
+                    </div>
+                    <div class="leaf-bottom">
+                        <img src="{% static 'frontend/download/leaf2.png' %}" alt="saaspik leaf">
+                    </div>
+
+        <!--============================-->
+        <!--=         SIGNUP FORM         =-->
+        <!--============================-->
+                    
+                    <!--    <form action="#" id="get-started" class="white-popup-block mfp-hide" _lpchecked="1">-->
+                    <!--    <p>First Name</p>-->
+                    <!--    <input type="text">-->
+                    <!--    <p>Contact</p>-->
+                    <!--    <input type="text">-->
+                    <!--    <p>Email</p>-->
+                    <!--    <input type="text">-->
+                    <!--    <p>Password</p>-->
+                    <!--    <input type="password">-->
+                    <!--    <input type="submit">-->
+                    <!--</form>-->
+                    
+
+                    <div class="triangle">
+                        <img src="{% static 'frontend/download/triangle.png' %}" alt="saaspik">
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-wrap -->
+        </section>
+        <!-- /.download -->
+
+        <!--=========================-->
+        <!--=         Team          =-->
+        <!--=========================-->
+        <!--<section class="teams-four">
+            <div class="container">
+                <div class="section-title style-five">
+                    <h3 class="sub-title wow pixFadeUp">Meet Our Team</h3>
+                    <h2 class="title wow pixFadeUp" data-wow-delay="0.2s">
+                        Meet The Team
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-member-three wow fadeInUp" data-wow-delay="0.04s">
+                            <div class="member-avater">
+                                <img src="media/team/18.jpg" alt="avater">
+
+                                <ul class="member-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-info">
+                                <h3 class="name">Dylan Meringue</h3>
+                                <h4 class="job">Project Manager</h4>
+                            </div>
+                        </div>
+                        <!-- /.team-member-three wow fadeInUp -->
+                    <!--</div>
+                    <!-- /.col-lg-4 col-md-6 col-sm-6 -->
+
+                    <!--<div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-member-three wow fadeInUp" data-wow-delay="0.04s">
+                            <div class="member-avater">
+                                <img src="media/team/19.jpg" alt="avater">
+                                <ul class="member-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                                </ul>
+
+                            </div>
+
+                           <!-- <div class="team-info">
+                                <h3 class="name">Jim Séchen</h3>
+                                <h4 class="job">App Designer</h4>
+                            </div>
+                        </div>
+                        <!-- /.team-member-three wow fadeInUp -->
+                   <!-- </div>
+                    <!-- /.col-lg-4 col-md-6 col-sm-6 -->
+
+                    <!--<div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-member-three wow fadeInUp" data-wow-delay="0.04s">
+                            <div class="member-avater">
+                                <img src="media/team/20.jpg" alt="avater">
+
+                                <ul class="member-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="name">Dylan Meringue</h3>
+                                <h4 class="job">UI/UX designer</h4>
+                            </div>
+                        </div>
+                        <!-- /.team-member-three wow fadeInUp -->
+                    <!--</div>
+                    <!-- /.col-lg-4 col-md-6 col-sm-6 -->
+               <!-- </div>
+                <!-- /.row -->
+            <!--</div>
+            <!-- /.container -->
+
+       <!-- </section>
+        <!-- /.teams -->
+
+        <!--==============================-->
+        <!--=         Client Logo        =-->
+        <!--==============================-->
+        <!--<section class="client-logo-list">
+            <div class="container">
+                <div class="section-title style-five">
+                    <h3 class="sub-title wow pixFadeUp">Our Clients</h3>
+                    <h2 class="title wow pixFadeUp" data-wow-delay="0.2s">
+                        Our Partners
+                    </h2>
+                </div>
+
+                <ul class="logo-list">
+                    <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#"><img src="media/brand/16.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#"><img src="media/brand/17.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#"><img src="media/brand/18.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#"><img src="media/brand/19.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#"><img src="media/brand/20.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="#"><img src="media/brand/21.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="#"><img src="media/brand/22.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="#"><img src="media/brand/23.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="#"><img src="media/brand/25.png" alt="saaspik client"></a></li>
+                    <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="#"><img src="media/brand/24.png" alt="saaspik client"></a></li>
+                </ul>-->
+            </div>
+            <!-- /.container -->
+       </section>
+        <!-- /.client-logo-list -->
+
+        <!--=========================-->
+        <!--=        Footer         =-->
+        <!--=========================-->
+        <footer id="footer" class="footer-app">
+            <div class="container-wrap bg-footer-color">
+                <div class="container">
+                    <div class="footer-inner">
+                        <div class="row wow fadeInUp">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="widget footer-widget widget-about">
+                                    <!--<a href="#" class="footer-logo"><img src="assets/img/main-logo.png" alt="saaspik"></a>-->
+                                    <p>
+                                        Abontem Maize seeds | Farmlands | Farm Automation and more...
+                                    </p>
+
+                                    <h4 class="footer-title">Social</h4>
+                                    <ul class="social-share-link">
+                                        <li><a href="#" class="share_youtube"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="#" class="share_twitter"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#" class="share_linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                        
+                                    </ul>
+
+
+                                </div>
+                                <!-- /.widget footer-widget -->
+                            </div>
+                            <!-- /.col-lg-3 col-md-6 col-sm-6 -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="widget footer-widget widget-contact">
+                                    <h3 class="widget-title">Main Office</h3>
+
+                                    <ul class="widget-contact-info">
+                                        <li><i class="ei ei-icon_pin_alt"></i>176 Yasmine's Place - East-Legon, Accra - Ghana</li>
+                                        <li><i class="ei ei-icon_phone"></i>+(233) 024 500 32 34</li>
+                                    </ul>
+
+
+                                </div>
+                                <!-- /.widget footer-widget -->
+                            </div>
+                            <!-- /.col-lg-3 col-md-6 col-sm-6 -->
+
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="widget footer-widget">
+                                    <h3 class="widget-title">Company</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="#get-started" class="popup-with-form">About Us</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Careers</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">abontem seeds</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Terms of Service</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Privacy Policy</a></li>
+
+                                    </ul>
+                                </div>
+                                <!-- /.widget footer-widget -->
+                            </div>
+                            <!-- /.col-lg-3 col-md-6 col-sm-6 -->
+
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="widget footer-widget">
+                                    <h3 class="widget-title">Platform</h3>
+
+                                    <ul class="footer-menu">
+                                        <li><a href="#get-started" class="popup-with-form">Seeds</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Farm Tech</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Consultations</a></li>
+                                        <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+                                        <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.widget footer-widget -->
+                            </div>
+                            <!-- /.col-lg-3 col-md-6 col-sm-6 -->
+                        </div>
+                        <!-- /.row -->
+
+                    </div><!-- /.footer-inner -->
+
+                    <div class="site-info">
+                        <div class="copyright text-center">
+                            <p>&copy; <script>document.write(new Date().getFullYear());</script> abontem.com</p>
+                        </p>
+                        <p>Designed by <a href='https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services' target='_blank'>Jesse Asamoa</a></p>
+                        </div>
+                    </div>
+                </div><!-- /.container -->
+
+
+            </div>
+            <!-- /.container-wrap -->
+        </footer><!-- /#footer -->
+
+
+    </div><!-- /#site -->
+
+    <form id="login-form" action="#" class="login-form mfp-hide">
+      
+      
+      <div class="form-group">
+      <label>Email</label>
+      <input type="text">
+      </div>
+      
+      <div class="form-group">
+      <label>Password</label>
+      <input type="password">
+      </div>
+      
+      <input type="submit">
+
+    </form>
+
+    <!-- Dependency Scripts -->
+    <script src="{% static 'frontend/dependencies/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dependencies/swiper/js/swiper.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/jquery.appear/jquery.appear.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/wow/js/wow.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/countUp.js/countUp.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/jquery.parallax-scroll/js/jquery.parallax-scroll.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/magnific-popup/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'frontend/dependencies/gmap3/js/gmap3.min.js' %}"></script>
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&#038;ver=2.1.6'></script>
+
+
+    <!-- Site Scripts -->
+    <script src="{% static 'frontend/assets/js/header.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/app.js' %}"></script>
+    
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/611b8e70649e0a0a5cd186c3/1fd9q8qmo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+
+</html>

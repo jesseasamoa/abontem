@@ -1,0 +1,23 @@
+/* -- COLORS -- */
+/* ---------------------------------------------- */
+
+// Gray colors
+// ----------------------------------------------
+@each $name, $bg in $grays {
+    .bg-gray-#{ $name } {
+        background-color: #{ $bg };
+    }
+}
+
+
+// Colors Variant
+// ----------------------------------------------
+@each $name, $bg in $colors {
+    .bg-#{ $name } {
+        background-color: #{ $bg };
+    }
+
+    .text-#{ $name } {
+        color: #{ $bg };
+    }
+}

@@ -1,0 +1,137 @@
+// COLORS
+// ----------------------------------------------
+
+$white                                  : #fff;
+$black                                  : #000;
+$primary                                : #a14260;
+$gray                                   : mix( #e3e5e7, $primary, 85%);
+
+
+
+
+
+// BODY
+// ----------------------------------------------
+$body-bg                                : desaturate( tint-color( $primary, 95% ), 30%);
+$body-color                             : #7a878e;
+
+
+// Components active state
+// ----------------------------------------------
+$component-active-color                 : $white;
+$component-active-bg                    : $primary;
+
+
+// Border-variables
+// ----------------------------------------------
+$border-width                           : 1px;
+$border-color                           : shade-color( $body-bg, 5% );
+
+
+// links and Headings
+// ----------------------------------------------
+$link-color                             : shade-color( $component-active-bg, 5% );
+$link-shade-percentage                  : 35%;
+$link-hover-color                       : shade-color( $link-color, $link-shade-percentage );
+$headings-color                         : shade-color( $component-active-bg, 50% );
+
+
+
+// Boxed layout
+// ----------------------------------------------
+$boxed-layout-bg-color                  : mix( #bbb, shade-color( $primary, 50% ), 70%);
+
+
+
+
+
+// COMPONENTS
+// ----------------------------------------------
+
+// Searchbox
+// ----------------------------------------------
+$searchbox-focus-bg                     : shade-color( $body-bg, 3% );
+
+
+
+
+
+// CONTENTS
+// ----------------------------------------------
+$content-bg                             : $body-bg;
+$content-color                          : $body-color;
+$content-title-color                    : $primary;
+
+
+
+
+// MAIN NAVIGATION
+// ----------------------------------------------
+$mainnav-bg                             : $component-active-bg;
+$mainnav-color                          : shade-color( $component-active-color, 5% );
+$mainnav-border-color                   : shade-color($mainnav-bg, 10%);
+$mainnav-text-muted                     : tint-color( $mainnav-bg, 40% );
+$mainnav-menu-caption-color             : tint-color( $component-active-bg, 35%);
+$mainnav-submenu-dashed-color           : tint-color( $mainnav-bg, 45% );
+
+
+// Menu
+// ----------------------------------------------
+$mainnav-menu-hover-color               : tint-color( $mainnav-bg, 57% );
+$mainnav-menu-active-color              : $component-active-color;
+$mainnav-menu-icon-color                : tint-color( $mainnav-bg, 45% );
+$mainnav-menu-active-icon-color         : $component-active-color;
+
+
+// Max Mode
+// ----------------------------------------------
+$mainnav-max-menu-active-bg             : tint-color( $mainnav-bg, 17% );
+$mainnav-max-menu-active-color          : $component-active-color;
+
+
+// Mini mode
+// ----------------------------------------------
+$mainnav-min-menu-active-bg            : $mainnav-max-menu-active-bg;
+$mainnav-mini-menu-active-color         : $mainnav-max-menu-active-color;
+
+
+
+
+
+// HEADERS
+// ----------------------------------------------
+$header-bg                              : $body-bg;
+$header-color                           : $body-color;
+$header-btn-hover-bg                    : $searchbox-focus-bg;
+$header-btn-hover-color                 : tint-color( $header-color, 20% );
+
+
+// Expanded Header
+// ----------------------------------------------
+$header-expand-bg                       : $header-bg;
+$header-expand-color                    : $header-color;
+$header-expand-headings-color           : tint-color($gray, 30%);
+$header-expand-title-color              : $content-title-color;
+$header-expand-use-start-ouside-radius  : true;
+
+
+// Brand
+// ----------------------------------------------
+$brand-color                            : $component-active-bg;
+
+
+
+
+
+// SIDEBAR
+// ----------------------------------------------
+$sidebar-bg                             : $content-bg;
+$sidebar-color                          : $content-color;
+
+
+// Unite sidebar
+// ----------------------------------------------
+$sidebar-unite-bg                       : $component-active-bg;
+$sidebar-unite-color                    : shade-color( $component-active-color, 15%);
+$sidebar-unite-active-color             : $component-active-color;
+$sidebar-unite-border-color             : shade-color($component-active-bg, 8%);

@@ -1,0 +1,8 @@
+/* -- SCROLLBARS -- */
+/* ---------------------------------------------- */
+
+
+.scrollable-content {
+	@include scrollbar();
+	@include webkit-scrollbar();
+}

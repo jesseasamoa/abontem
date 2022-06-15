@@ -1,0 +1,57 @@
+/* -- ROOT -- */
+/* ---------------------------------------------- */
+
+
+.root {
+	display: grid;
+	gap: 0 0;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content 1fr;
+	min-height: 100vh;
+	width: 100%;
+}
+
+:root {
+    --ton-body-bg               : #{ $card-bg };
+    --ton-body-color            : #{ $body-color };
+    --ton-content-bg            : #{ $content-bg };
+    --ton-content-color         : #{ $content-color };
+    --ton-headings-color        : #{ $headings-color };
+    --ton-muted-color           : #{ $text-muted };
+    --ton-link-color            : #{ $link-color };
+    --ton-comp-active-bg        : #{ $component-active-bg };
+    --ton-comp-active-color     : #{ $component-active-color };
+    --ton-border-color          : #{ $border-color };
+
+
+    --ton-body-bg-rgb           : #{ to-rgb($body-bg) };
+    --ton-body-color-rgb        : #{ to-rgb($body-color) };
+    --ton-content-bg-rgb        : #{ to-rgb($content-bg) };
+    --ton-content-color-rgb     : #{ to-rgb($content-color) };
+    --ton-headings-color-rgb    : #{ to-rgb($headings-color) };
+    --ton-muted-color-rgb       : #{ to-rgb($text-muted) };
+    --ton-link-color-rgb        : #{ to-rgb($link-color) };
+    --ton-comp-active-bg-rgb    : #{ to-rgb($component-active-bg) };
+    --ton-comp-active-color-rgb : #{ to-rgb($component-active-color) };
+    --ton-border-color-rgb      : #{ to-rgb($border-color) };
+
+    --ton-border-radius         : #{ $border-radius };
+}
+
+
+
+// Override the default browser scrollbars
+// ----------------------------------------------
+html, body {
+	@include scrollbar();
+	@include webkit-scrollbar();
+}
+
+
+
+body {
+	overflow-x: hidden;
+	position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,0 +1,43 @@
+@import "node_modules/tagin/dist/css/tagin.min";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins/box-shadow";
+
+@import "../../nifty-admin/variables";
+@import "node_modules/bootstrap/scss/variables";
+
+.tagin-input {
+    color: $input-placeholder-color;
+}
+
+.tagin-tag {
+    border-radius: $border-radius;
+    padding: $badge-padding-y $badge-padding-x;
+    background-color: var( --ton-comp-active-bg );
+    color: var( --ton-comp-active-color );
+    font-weight: normal;
+    line-height: 1;
+    height: auto;
+}
+
+.tagin-wrapper {
+    padding: calc( #{$input-padding-y} - #{$badge-padding-y}) calc( #{ $input-padding-x } - #{ $badge-padding-x });
+    &.focus {
+        color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0;
+        @if $enable-shadows {
+            @include box-shadow($input-box-shadow, $input-focus-box-shadow);
+        } @else {
+            // Avoid using mixin so we can pass custom focus shadow properly
+            box-shadow: $input-focus-box-shadow;
+        }
+    }
+}
+
+.tagin-tag-remove {
+    margin-left: .25rem;
+    height: 1.15rem;
+    width: 1.15rem;
+    background-repeat: no-repeat;
+}

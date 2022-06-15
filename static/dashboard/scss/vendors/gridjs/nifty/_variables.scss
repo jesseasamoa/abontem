@@ -1,0 +1,25 @@
+// GridJS - Variables
+// ----------------------------------------------
+
+$pagination-bg                    : transparent;
+$pagination-color                 : var( --ton-body-color  );
+$pagination-border-width          : 1px;
+$pagination-border-color          : #eee;
+$pagination-border-radius         : var( --ton-border-radius );
+$pagination-margin-start          : -$pagination-border-width;
+$pagination-padding-y             : .375rem;
+$pagination-padding-x             : .75rem;
+$pagination-transition-duration   : .25s;
+$pagination-transition            : color $pagination-transition-duration ease,	background-color $pagination-transition-duration ease, border-color $pagination-transition-duration ease, box-shadow $pagination-transition-duration ease;
+
+$pagination-hover-color           : var( --ton-comp-active-color );
+$pagination-hover-bg              : var( --ton-comp-active-bg );
+
+$pagination-focus-color           : var( --ton-comp-active-color );
+$pagination-focus-bg              : var( --ton-comp-active-bg );
+
+$pagination-active-color          : var( --ton-comp-active-color );
+$pagination-active-bg             : var( --ton-comp-active-bg );
+
+$pagination-disabled-color        : rgba( var( --ton-body-color-rgb ), .5 ) !default;
+$pagination-disabled-bg           : transparent !default;

@@ -1,0 +1,826 @@
+// COLOR SYSTEM
+// ----------------------------------------------
+
+// Gray-color-variables
+// ----------------------------------------------
+$gray									: #d9dcdf !default;
+$gray-100								: tint-color($gray, 80%) !default;
+$gray-200								: tint-color($gray, 60%) !default;
+$gray-300								: tint-color($gray, 40%) !default;
+$gray-400								: tint-color($gray, 20%) !default;
+$gray-500								: $gray !default;
+$gray-600								: shade-color($gray, 20%) !default;
+$gray-700								: shade-color($gray, 40%) !default;
+$gray-800								: shade-color($gray, 60%) !default;
+$gray-900								: shade-color($gray, 80%) !default;
+
+
+
+// Color-variables
+// ----------------------------------------------
+$white									: #fff !default;
+$black									: #000 !default;
+$blue									: #03a9f4 !default;
+$indigo									: #25476a !default;
+$purple									: #ab47bc !default;
+$pink									: #f06292 !default;
+$red									: #df5645 !default;
+$orange									: #ffb300 !default;
+$yellow									: #ffe405 !default;
+$green									: #8bc34a !default;
+$teal									: #26a69a !default; // #05a2b3
+$cyan									: #0dcaf0 !default;
+
+
+
+// Theme-color-variables
+// ----------------------------------------------
+$primary								: $indigo !default;
+$secondary								: $teal !default;
+$success								: $green !default;
+$info									: $blue !default;
+$warning								: $orange !default;
+$danger									: $red !default;
+$light									: $gray-200 !default;
+$dark									: $gray-900 !default;
+
+
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio						: 1.75 !default;
+
+
+
+// Options
+// ----------------------------------------------
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-caret:                true !default;
+$enable-rounded:              true !default;
+$enable-shadows:              true !default;
+$enable-gradients:            false !default;
+$enable-transitions:          true !default;
+$enable-reduced-motion:       true !default;
+$enable-smooth-scroll:        true !default;
+$enable-grid-classes:         true !default;
+$enable-button-pointers:      true !default;
+$enable-rfs:                  true !default;
+$enable-validation-icons:     true !default;
+$enable-negative-margins:     false !default;
+$enable-deprecation-messages: true !default;
+$enable-important-utilities:  true !default;
+
+
+
+// Prefix for :root CSS variables
+// ----------------------------------------------
+$variable-prefix:             bs- !default;
+
+
+
+// Spacing
+// ----------------------------------------------
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing. You can add more entries to the $spacers map.
+$spacer									: 1rem !default;
+$spacers: (
+	0: 0,
+	1: $spacer * .25,
+	2: $spacer * .5,
+	3: $spacer,
+	4: $spacer * 1.5,
+	5: $spacer * 3
+) !default;
+
+
+
+
+
+// BODY
+// ----------------------------------------------
+// Settings for the `<body>` element.
+// ----------------------------------------------
+$body-bg								: #fff !default;//#ecf0f5;
+$body-color								: #7a878e !default;
+$body-text-align						: null !default;
+
+
+
+// LINKS
+// ----------------------------------------------
+// Style anchor elements.
+// ----------------------------------------------
+$link-color                             : $blue !default;
+$link-decoration                        : underline !default;
+$link-shade-percentage                  : 20% !default;
+$link-hover-color                       : shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration                  : underline !default;
+
+
+
+// COMPONENTS
+// ----------------------------------------------
+// Define common padding and border radius sizes and more.
+$component-active-color					: $white !default;
+$component-active-bg					: $primary !default;
+
+
+
+// Border-variables
+// ----------------------------------------------
+$border-width							: 1px !default;
+$border-color							: $gray-200 !default;
+
+
+
+// Border-radius-variables
+// ----------------------------------------------
+$border-radius							: .4375rem !default;
+$border-radius-sm						: .3125rem !default;
+$border-radius-lg						: .5625rem !default;
+$border-radius-pill						: 50rem !default;
+
+
+
+// Callout
+// ----------------------------------------------
+$callout-width							: .1875rem !default;
+$callout-active-state					: $component-active-bg !default;
+
+
+
+// TYPOGRAPHY
+// ----------------------------------------------
+// Font-variables
+// ----------------------------------------------
+$font-family-sans-serif					: "Poppins", "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace					: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$font-size-base							: 0.8125rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm							: $font-size-base * .875 !default;
+$font-size-lg							: $font-size-base * 1.25 !default;
+
+$small-font-size						: $font-size-base * .875 !default;
+$sub-sup-font-size						: $font-size-base * .75em !default;
+
+
+
+// Headings-variables
+// ----------------------------------------------
+$headings-color							: $gray-900 !default;
+$headings-font-family                   : "Ubuntu" !default;
+$headings-font-weigh                    : 500 !default;
+$text-muted								: $gray-600 !default;
+
+
+
+// Links
+// ----------------------------------------------
+$lead-font-size                         : $font-size-base * 1.25 !default;
+$lead-font-weight                       : 400 !default;
+
+
+
+// IMAGES
+// ----------------------------------------------
+$thumbnail-border-width					: $border-width !default;
+$thumbnail-border-radius				: $border-radius !default;
+$thumbnail-sizes : (
+	xs: 1.75rem,
+	sm: 2.25rem,
+	md: 4rem,
+	lg: 6rem,
+	xl: 8rem,
+	xxl: 16rem
+) !default;
+
+
+
+// TABLES
+// ----------------------------------------------
+$table-color 							: $gray-800 !default;
+$table-border-color 					: $gray-200 !default;
+$table-border-radius 					: $border-radius !default;
+$table-cell-padding-y 					: .75rem !default;
+
+$table-striped-color					: $table-color !default;
+$table-striped-bg-factor				: .03 !default;
+$table-striped-bg						: rgba($black, $table-striped-bg-factor) !default;
+
+$table-hover-color						: $table-color !default;
+$table-hover-bg-factor					: .05 !default;
+$table-hover-bg							: rgba($black, $table-hover-bg-factor) !default;
+
+$table-active-color						: $table-color !default;
+$table-active-bg-factor					: .075 !default;
+$table-active-bg						: rgba($primary, $table-active-bg-factor) !default;
+
+$table-separate-spacing					: .5rem !default;
+$table-separate-color					: $table-color !default;
+$table-separate-bg-factor				: .035 !default;
+$table-separate-bg						: rgba($black, $table-separate-bg-factor) !default;
+
+
+
+// FORMS
+// ----------------------------------------------
+// Input_variables
+// ----------------------------------------------
+$input-bg								: $white !default;
+$input-disabled-bg						: $gray-200 !default;
+$input-disabled-border-color			: $gray-300 !default;
+
+$input-border-color						: $gray-300 !default;
+$input-focus-border-color               : $component-active-bg !default;
+$input-focus-box-shadow					: 0 0 .5rem 0 rgba(0,0,0,.125) !default;
+$input-transition						: border-color .35s ease-in-out, box-shadow .35s ease-in-out !default;
+
+$input-btn-padding-y					: .55rem !default;
+$input-btn-padding-x					: 1rem !default;
+
+$input-btn-padding-y-sm					: .45rem !default;
+$input-btn-padding-x-sm					: .95rem !default;
+
+$input-btn-font-size					: $font-size-base !default;
+$input-btn-focus-color-opacity			: .1 !default;
+$input-btn-focus-blur					: 0.5rem !default;
+$input-btn-focus-width					: .15rem !default;
+$input-btn-focus-box-shadow				: 0 0 .5rem 0 rgba(0,0,0,.125) !default;
+
+$input-placeholder-color				: $gray-600 !default;
+$input-plaintext-color					: $body-color !default;
+
+
+
+// Form_control_variable
+// ----------------------------------------------
+$form-text-color						: $gray-600 !default;
+
+
+
+// Form_select_variables
+// ----------------------------------------------
+$form-select-border-color				: $input-border-color !default;
+$form-select-focus-box-shadow			: $input-focus-box-shadow !default;
+
+
+
+// Form_check_variables
+// ----------------------------------------------
+$form-check-input-border				: 1px solid $gray-300 !default;
+$form-check-input-border-radius			: .35em !default;
+$form-check-input-width					: 1.15em !default;
+$form-check-input-focus-box-shadow		: 0 0 .25rem .25rem shift-color(rgba($component-active-bg, .25), -10%) !default;
+
+
+
+// Form_switch_variables
+$form-switch-color                      : $white !default;
+$form-switch-bg                         : $gray-500 !default;
+$form-switch-width                      : 2.1em !default;
+$form-switch-height                     : 1.35em !default;
+$form-switch-focus-color                : $form-switch-color;
+$form-switch-border-radius              : $form-switch-width !default;
+$form-switch-transition                 : background .35s !default;
+$form-switch-checked-color              : $component-active-color !default;
+$form-switch-checked-bg                 : $component-active-bg !default;
+
+
+
+// Form_range_variables
+// ----------------------------------------------
+$form-range-track-height				: .2rem !default;
+$form-range-track-bg					: $input-disabled-bg !default;
+$form-range-thumb-active-bg				: shade-color($component-active-bg, 10%) !default;
+$form-range-thumb-focus-box-shadow		: 0 0 .25rem .25rem shift-color(rgba($component-active-bg, .25), -10%) !default;
+
+
+
+// Input_addon_variables
+// ----------------------------------------------
+$input-group-addon-color				: $input-plaintext-color !default;
+$input-group-addon-bg					: $input-bg !default;
+$input-group-addon-border-color			: $input-border-color !default;
+
+
+
+
+
+// ACCORDION
+// ----------------------------------------------
+$accordion-border-color					: $input-border-color !default;
+
+
+
+// ALERTS
+// ----------------------------------------------
+$alert-bg-scale							: -80% !default;
+$alert-border-scale						: -75% !default;
+
+
+
+// BUTTONS
+// ----------------------------------------------
+$btn-padding-x							: $input-btn-padding-x !default;
+$btn-font-size							: $input-btn-font-size * .95 !default;
+$btn-transition							: color .25s ease-in-out, background-color .25s ease-in-out, border-color .25s ease-in-out, box-shadow .25s ease-in-out !default;
+$btn-active-bg-shade-amount				: 30% !default;
+
+$btn-padding-y-xs                       : .15rem !default;
+$btn-padding-x-xs                       : .35rem !default;
+$btn-font-size-xs                       : $font-size-sm !default;
+
+
+
+// BREADCRUMBS
+// ----------------------------------------------
+$breadcrumb-divider                     : quote(">") !default;
+$breadcrumb-divider-color               : $body-color !default;
+$breadcrumb-active-color                : $body-color !default;
+$breadcrumb-font-weigh                  : 600 !default;
+$breadcrumb-hover-underline             : true !default;
+
+
+
+// CARDS
+// ----------------------------------------------
+$card-bg                                : $white !default;
+$card-cap-bg							: $card-bg !default;
+$card-title-spacer-y 					: $spacer * .75 !default;
+$card-border-width						: 1px !default;
+$card-border-color						: rgba($black, .04) !default;
+$card-border-radius						: $border-radius !default;
+$card-spacer-y							: $spacer + .25 !default;
+$card-spacer-x							: $spacer + .25 !default;
+$card-cap-padding-y						: $card-spacer-y * .75 !default;
+$card-cap-padding-x						: $card-spacer-x !default;
+
+
+
+// CLOSE BUTTON
+// ----------------------------------------------
+$btn-close-color						: currentColor !default;
+$btn-close-bg							: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='m3.786 2.375-1.411 1.411 4.214 4.214-4.214 4.214 1.411 1.411 4.214-4.214 4.214 4.214 1.411-1.411-4.214-4.214 4.214-4.214-1.411-1.411-4.214 4.214z'/></svg>") !default;
+
+
+
+// DROPDOWN
+// ----------------------------------------------
+$dropdown-animations					: true;
+$dropdown-use-custom-js					: true;
+
+$dropdown-border-width					: 0 !default;
+$dropdown-divider-bg					: $gray-600 !default;
+$dropdown-box-shadow					: 0 .5rem 1rem 0rem rgba( 105, 96, 215, .2 ) !default;
+$dropdown-padding-x						: .5rem !default;
+$dropdown-item-padding-x				: $spacer - $dropdown-padding-x !default;
+$dropdown-link-hover-bg                 : rgba( $black, .05 ) !default;
+
+$dropdown-transition-in 				: .35s !default;
+$dropdown-transition-out 				: .2s !default;
+$dropdown-start-gap						: 2rem !default;
+$dropdown-transition-timing-in 			: ease !default;
+$dropdown-transition-timing-out 		: linear !default;
+
+
+
+// LIST GROUP
+// ----------------------------------------------
+$list-group-color						: $body-color !default;
+$list-group-bg							: transparent !default;
+$list-group-border-color				: $border-color !default;
+
+$list-group-hover-bg					: rgba( $black, .05 ) !default;
+$list-group-action-hover-color			: $list-group-color !default;
+$list-group-action-active-bg			: rgba( $black, .05 ) !default;
+$list-group-action-active-color			: $headings-color !default;
+
+
+
+// MODAL
+// ----------------------------------------------
+$modal-content-bg						: $white !default;
+$modal-content-border-color				: $border-color !default;
+$modal-content-border-radius			: $border-radius !default;
+
+$modal-backdrop-bg						: $black !default;
+$modal-backdrop-opacity					: .65 !default;
+
+
+
+// NAVS TABS
+// ----------------------------------------------
+$nav-tabs-bg							: shade-color($body-bg, 5%) !default;
+$nav-tabs-bg-disabled					: rgba($nav-tabs-bg, .4) !default;
+$nav-icon-color							: $gray-600 !default;
+$nav-link-height						: 2.5rem !default;
+$nav-link-color							: $body-color !default;
+$nav-link-hover-color					: $component-active-bg !default;
+$nav-tabs-border-color					: $border-color !default;
+$nav-tabs-link-hover-border-color		: transparent !default;
+$nav-tabs-link-active-color				: $headings-color !default;
+$nav-tabs-content-padding               : $card-spacer-y $card-spacer-x !default;
+
+
+
+// PAGINATION
+// ----------------------------------------------
+$pagination-bg							: transparent !default;
+$pagination-color						: $body-color !default;
+$pagination-border-color				: $border-color !default;
+
+
+$pagination-hover-color					: $component-active-color !default;
+$pagination-hover-bg					: shade-color( $component-active-bg, 20% ) !default;
+$pagination-hover-border-color			: $pagination-hover-bg !default;
+
+
+$pagination-focus-color					: $component-active-color !default;
+$pagination-focus-bg					: shade-color( $component-active-bg, 40% ) !default;
+$pagination-focus-border-color			: $pagination-focus-bg !default;
+
+
+$pagination-active-color				: $component-active-color !default;
+$pagination-active-bg					: $component-active-bg !default;
+$pagination-active-border-color			: $pagination-active-bg !default;
+
+
+$pagination-disabled-color				: rgba( $pagination-color, .5 ) !default;
+$pagination-disabled-bg					: transparent !default;
+$pagination-disabled-border-color		: $pagination-border-color !default;
+
+
+$pagination-transition-duration			: .25s !default;
+$pagination-transition					: color $pagination-transition-duration ease,	background-color $pagination-transition-duration ease, border-color $pagination-transition-duration ease, box-shadow $pagination-transition-duration ease !default;
+
+
+
+// POPOVERS
+// ----------------------------------------------
+$popover-bg								: $white !default;
+$popover-max-width						: 276px !default;
+$popover-border-width					: $border-width !default;
+$popover-border-color					: $border-color !default;
+$popover-border-radius					: $border-radius !default;
+$popover-box-shadow						: 0 0 .15rem 0 rgba( $black, .1 ), 0 .25rem 1rem 0 rgba( $black, .125 ) !default;
+
+$popover-header-bg						: rgba($black, .03) !default;
+$popover-header-color					: $headings-color !default;
+
+$popover-body-color						: $body-color !default;
+$popover-arrow-outer-color				: $popover-border-color !default;
+
+
+
+// PROGRESS BARS
+// ----------------------------------------------
+$progress-bg							: rgba( $black, .075 ) !default;
+$progress-border-radius					: $border-radius !default;
+$progress-font-size						: $font-size-base * .75 !default;
+$progress-bar-color						: $white !default;
+$progress-bar-bg						: $primary !default;
+$progress-height						: .5rem !default;
+$progress-heights: (
+	"xs" : 0.0625rem,
+	"sm" : 0.125rem,
+	"md" : .25rem,
+	"lg" : 1rem,
+	"xl" : 1.25rem,
+) !default;
+
+
+
+// TOASTS
+// ----------------------------------------------
+$toast-background-color					: $white !default;
+$toast-border-width						: 1px !default;
+$toast-border-color						: transparent !default;
+$toast-border-radius					: $border-radius !default;
+$toast-box-shadow						: $popover-box-shadow !default;
+
+$toast-header-color						: $headings-color !default;
+$toast-header-background-color			: transparent !default;
+$toast-header-border-color				: transparent !default;
+
+
+
+// TOOLTIPS
+// ----------------------------------------------
+$tooltip-color							: $white !default;
+$tooltip-bg								: $dark !default;
+$tooltip-border-radius					: $border-radius !default;
+$tooltip-padding-y						: $spacer * .5 !default;
+$tooltip-padding-x						: $spacer * .75 !default;
+
+
+
+// HELPERS
+// ----------------------------------------------
+$utilities: ();
+
+
+
+
+
+
+// GLOBAL NIFTY VARIABLES
+// ----------------------------------------------
+$transition-duration                    : .35s !default;
+
+
+// COMPONENTS
+// ----------------------------------------------
+// Scroll Page
+// ----------------------------------------------
+$button-scroll-bg                       : $component-active-bg !default;
+$button-scroll-color                    : $component-active-color !default;
+$button-scroll-border                   : 4px solid $body-bg !important;
+$button-scroll-size                     : 4em !default;
+$button-scroll-right-margin             : 1rem !default;
+$button-scroll-bottom-margin            : 1rem !default;
+$button-scroll-show-after-scrolldown    : 15.75rem !default;
+$button-scroll-chevron-icon             : true !default;
+
+
+
+// Searchbox
+// ----------------------------------------------
+$searchbox-focus-bg		                : rgba( $black, .15 ) !default;
+$searchbox-collapsed-width              : 20vw !default;
+$searchbox-expanded-width               : 35vw !default;
+$searchbox-transition                   : $transition-duration !default;
+$searchbox-transition-delay             : ease !default;
+$searchbox-transition-timing            : .25s !default;
+
+
+
+// Backdrop
+// ----------------------------------------------
+$backdrop-bg                            : rgba( $black, .55 ) !default;
+$backdrop-z-index                       : 9998 !default;
+
+
+
+// Timeline
+// ----------------------------------------------
+$timeline-dot                           : var( --bs-primary ) !default;
+$timeline-line                          : var( --bs-primary ) !default;
+$timeline-line-width                    : 2px !default;
+$timeline-point-gap                     : .25rem !default;
+$timeline-point-size                    : .5rem !default;
+
+$timeline-entry-gap                     : 1.5rem !default;
+$timeline-gap                           : .75rem !default;
+$timeline-point-margin-top              : .75ex !default;
+$timeline-media-size                    : 2.25rem !default;
+
+
+
+// Timeline
+// ----------------------------------------------
+$bubble-border-radius                   : 1.5rem !default;
+$bubble-max-width                       : Min( 400px, 80% ) !default;
+$bubble-primary-bg                      : var( --ton-comp-active-bg ) !default;
+$bubble-primary-color                   : var( --ton-comp-active-color ) !default;
+$bubble-secondary-bg                    : var( --ton-body-bg ) !default;
+$bubble-secondary-color                 : var( --ton-body-color ) !default;
+$bubble-arrow-width                     : 7px !default;
+$bubble-arrow-height                    : 5px !default;
+$bubble-padding-y                       : .5rem !default;
+$bubble-padding-x                       : 1rem !default;
+
+
+
+
+
+// CONTENTS
+// ----------------------------------------------
+$content-bg                             : $gray-100 !default;
+$content-color                          : $body-color !default;
+$content-title-color                    : $primary !default;
+$content-overlapping-size               : 6.25rem !default;
+$content-gutter-x                       : 1rem !default;
+$content-gutter-y                       : 2rem !default;
+$content-gutters-x : (
+	"md" : 1.25rem,
+	"lg" : 1.45rem,
+	"xl" : 1.75rem
+) !default;
+
+
+
+
+
+// LAYOUTS
+// ----------------------------------------------
+
+// Boxed Layout
+// ----------------------------------------------
+$boxed-layout-padding-top               : 1rem !default;
+$boxed-layout-max-width                 : 1200px !default;
+$boxed-layout-bg-color                  : $gray-700 !default;
+$boxed-layout-bg-repeat                 : no-repeat !default;
+$boxed-layout-bg-image                  : none !default; // EXAMPLE : url("/assets/img/boxed-bg/polygon/bg/8.jpg");
+$boxed-layout-bg-size                   : cover !default;
+$boxed-layout-bg-attachment             : fixed !default;
+$boxed-layout-border-radius             : .75rem !default;
+
+
+
+// Centered layout
+// ----------------------------------------------
+$centered-layout-max-width              : 980px !default;
+
+
+
+
+
+// MAIN NAVIGATION
+// ----------------------------------------------
+$mainnav-bg                             : $white !default;
+$mainnav-color                          : $body-color !default;
+$mainnav-padding                        : 1rem !default;
+$mainnav-content-gutter                 : true !default;
+$mainnav-transition                     : $transition-duration !default;
+$mainnav-transition-timing              : ease !default;
+$mainnav-border-color                   : $border-color !default;
+$mainnav-text-muted                     : $gray-600 !default;
+
+
+// Menu links
+// ----------------------------------------------
+$mainnav-menu-bg	                    : transparent !default;
+$mainnav-menu-color                     : $mainnav-color !default;
+$mainnav-menu-caption-color             : tint-color( $mainnav-color, 55%) !default;
+
+$mainnav-menu-icon-color                : tint-color( $mainnav-color, 55% ) !default;
+$mainnav-menu-active-icon-color         : $component-active-color !default;
+$mainnav-menu-hover-bg                  : transparent !default;
+$mainnav-menu-hover-color               : $component-active-bg !default;
+$mainnav-menu-active-bg                 : transparent !default;
+$mainnav-menu-active-color              : $component-active-bg !default;
+
+
+
+// Submenus
+// ---------------------------------    -------------
+$mainnav-submenu-bg                     : rgba( $black, .035 ) !default;
+$mainnav-submenu-indent                 : 1.85em !default;
+$mainnav-submenu-indent-lv2             : .75em !default;
+$mainnav-submenu-border-radius          : $border-radius !default;
+$mainnav-submenu-dashed-margin          : 1.75em !default;
+$mainnav-submenu-dashed-color           : rgba( $black, .45 ) !default;
+
+
+
+// Max Mode
+// ----------------------------------------------
+$mainnav-max-width                      : 13.75rem !default; //220px;
+$mainnav-max-available-at               : "lg" !default;
+$mainnav-max-transition                 : $mainnav-transition !default;
+$mainnav-max-transition-timing          : $mainnav-transition-timing !default;
+
+$mainnav-max-menu-active-bg             : $component-active-bg !default;
+$mainnav-max-menu-active-color          : $component-active-color !default;
+$mainnav-max-menu-active-shadow         : none !default; // Example - Add a border to the left : inset 5px 0 0 0px $component-active-bg;
+
+
+
+// Mini mode
+// ----------------------------------------------
+$mainnav-min-width                      : 70px !default;
+$mainnav-min-available-at               : "lg" !default;
+$mainnav-min-shadow                     : .25rem 0 1rem 0 rgba(0, 0, 0, 0.1) !default;
+$mainnav-min-transition                 : $mainnav-transition !default;
+$mainnav-min-transition-timing          : $mainnav-transition-timing !default;
+
+$mainnav-min-menu-icon-color            : $mainnav-color !default;
+$mainnav-min-menu-active-icon-color     : $mainnav-menu-active-icon-color !default;
+$mainnav-min-menu-active-bg             : $mainnav-max-menu-active-bg !default;
+$mainnav-min-menu-active-color          : $mainnav-max-menu-active-color !default;
+$mainnav-min-menu-active-shadow         : none !default;
+
+
+
+// Offcanvas : Push mode
+// ----------------------------------------------
+$mainnav-push-transition                : $mainnav-transition !default;
+$mainnav-push-transition-timing         : $mainnav-transition-timing !default;
+
+
+
+// Offcanvas : Reveal mode
+// ----------------------------------------------
+$mainnav-reveal-transition              : $mainnav-transition !default;
+$mainnav-reveal-transition-timing       : $mainnav-transition-timing !default;
+
+
+
+
+
+// HEADERS
+// ----------------------------------------------
+$header-bg                              : $primary !default;
+$header-color                           : tint-color( $primary, 70% ) !default;
+$header-height                          : 4.375rem !default;
+$header-btn-border-radius               : $border-radius * 2 !default;
+$header-btn-hover-bg                    : $searchbox-focus-bg !default;
+$header-btn-hover-color                 : $gray-400 !default;
+$header-transition                      : $transition-duration !default;
+$header-transition-timing               : ease !default;
+
+
+
+// Expanded Header
+// ----------------------------------------------
+$header-expand-bg                       : $header-bg !default;
+$header-expand-color                    : darken( $header-color, 10% ) !default;
+$header-expand-headings-color           : tint-color( $gray, 30% ) !default;
+$header-expand-title-color              : tint-color( $gray, 50% ) !default;
+$header-expand-use-start-ouside-radius  : true !default;
+
+
+// Brand
+// ----------------------------------------------
+$brand-img-size                         : $mainnav-min-width / 1.75 !default;
+$brand-img-margin                       : .75rem !default;
+$brand-font-size                        : 1.5rem !default;
+$brand-font-weight                      : 500 !default;
+$brand-font-family                      : "Ubuntu", sans-serif !default;
+$brand-bg                               : transparent !default;
+$brand-color                            : $white !default;
+$brand-border-radius                    : $border-radius * 2 !default;
+
+
+
+// SIDEBAR
+// ----------------------------------------------
+$sidebar-padding-y                      : 1.5rem !default;
+$sidebar-padding-x                      : 1rem !default;
+$sidebar-content-gutter                 : true !default;
+$sidebar-width                          : 17.1875rem !default;
+
+$sidebar-bg                             : $white !default;
+$sidebar-color                          : $body-color !default;
+$sidebar-transition                     : $transition-duration !default;
+$sidebar-transition-timing              : ease !default;
+$sidebar-no-backdrop-shadow             : 0 .5rem 1rem rgba( $black, .1 ) !default;
+
+
+
+// Pinned sidebar
+// ----------------------------------------------
+$sidebar-pinned-available-at            : 1024px !default;
+
+
+
+// Unite sidebar
+// ----------------------------------------------
+$sidebar-unite-bg                       : $header-bg !default;
+$sidebar-unite-color                    : shade-color($header-color, 15%) !default;
+$sidebar-unite-active-bg                : rgba( $white, .075 ) !default;
+$sidebar-unite-active-color             : tint-color( $sidebar-unite-color, 90% ) !default;
+$sidebar-unite-border-color             : rgba( $white, .1 ) !default;
+$sidebar-unite-outer-border             : $border-radius * 1.5 !default;
+
+
+
+
+
+// Z-INDEX
+// ----------------------------------------------
+$z-index-header                         : 1001 !default;
+$z-index-mainnav                        : 1000 !default;
+$z-index-sidebar                        : 1002 !default;
+
+
+
+
+
+// TRANSITION TIMINGS
+// ----------------------------------------------
+$transition-timings : (
+	"in-quart"                          : cubic-bezier(0.755, 0.045, 0.915, 0.135),
+	"out-quart"                         : cubic-bezier(0.015, 0.770, 0.040, 0.985),
+	"in-back"                           : cubic-bezier(0.705, -0.155, 0.735, 0.045),
+	"out-back"                          : cubic-bezier(0.280, 1.020, 0.360, 1.145),
+	"in-out-back"                       : cubic-bezier(1.000, -0.280, 0.000, 1.275),
+	"steps"                             : cubic-bezier(0.000, 0.955, 1.000, 0.045),
+	"jumping"                           : cubic-bezier(0.005, 1.045, 0.250, 0.915),
+	"rubber"                            : cubic-bezier(0.135, 1.525, 0.000, 0.900)
+) !default;
+
+
+
+
+
+// SCROLLBARS
+// ----------------------------------------------
+$scrollbar-track-size			        : .625rem !default;
+$scrollbar-track-bg				        : transparent !default;
+$scrollbar-handle-size			        : .4375rem !default;
+$scrollbar-handle-hover-size	        : .625rem !default;
+$scrollbar-handle-min-width		        : 6.25rem !default;
+$scrollbar-handle-bg			        : tint-color( $primary, 50% ) !default;
+$scrollbar-handle-border-radius	        : 2rem !default;
+$scrollbar-transition-duration	        : .35s !default;

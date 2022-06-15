@@ -1,0 +1,198 @@
+/* -- MAINNAV MENU LINK -- */
+/* ---------------------------------------------- */
+
+.mainnav__caption {
+    color: $mainnav-menu-caption-color;
+}
+
+
+
+// Menu Links active and icons
+// ----------------------------------------------
+.mainnav__inner {
+    .mainnav__menu {
+        > .nav-item > .nav-link {
+            display: flex;
+
+
+            &.active {
+                background-color: $mainnav-max-menu-active-bg;
+                border-radius: $mainnav-submenu-border-radius;
+                box-shadow: $mainnav-max-menu-active-shadow;
+                color: $mainnav-max-menu-active-color;
+                font-weight: bold;
+
+            }
+        }
+    }
+
+
+	.nav-link {
+		background-color: $mainnav-menu-bg;
+		color: $mainnav-menu-color;
+
+        &.disabled {
+            opacity: .4;
+        }
+
+		&:hover {
+			background-color: $mainnav-menu-hover-bg;
+			color: $mainnav-menu-hover-color;
+		}
+
+        &.active {
+            &:not(.important) {
+                background-color: $mainnav-menu-active-bg;
+                color: $mainnav-menu-active-color;
+            }
+            i, .nav-icon {
+                color: $mainnav-menu-active-icon-color !important;
+            }
+        }
+
+		i, .nav-icon {
+			color: $mainnav-menu-icon-color !important;
+		}
+	}
+}
+
+
+
+
+
+// Collapsed submenus and hidden contents
+// ----------------------------------------------
+.mainnav__menu {
+	.mininav-content  {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+
+	.mininav-toggle {
+		align-items: center;
+		display: flex;
+
+
+		> .nav-label, .nav-icon, i {
+			pointer-events: none;
+		}
+
+
+		.nav-label {
+			display: inline-block;
+		}
+	}
+
+
+
+
+
+	// Submenu chevron icons
+	// ----------------------------------------------
+	.has-sub > .mininav-toggle {
+		&:not(.has-badge):after {
+			border-style: solid;
+			border-width: 0.15em 0.15em 0 0;
+			content: '';
+			display: inline-block;
+			height: 0.55em;
+			margin-left: auto;
+			transform: rotate(135deg);
+			transition: transform $transition-duration / 2;
+			width: 0.55em;
+		}
+
+
+		&.collapsed:after {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
+
+
+
+// Disables annoying transitions in the open submenu when the page finishes loading.
+// ----------------------------------------------
+.root:not(.mn--min) .mainnav__menu .has-sub.open {
+    > .mininav-content {
+        display: block;
+        height: auto !important;
+    }
+
+
+    > .mininav-toggle:after {
+        transition: none !important;
+        transform: rotate(135deg) !important;
+    }
+}
+
+
+
+
+
+// Submenu Indent
+// ----------------------------------------------
+@include media-breakpoint-down($mainnav-min-available-at) {
+    .root .mininav-content {
+        position: static !important;
+        transform: none !important;
+    }
+
+
+    .root .mainnav__menu > .nav-item {
+        &.has-sub .has-sub > .mininav-content {
+            > .nav-item > .nav-link {
+                padding-inline: .75em;
+            }
+            border-inline-start: 1px dashed $mainnav-submenu-dashed-color;
+            border-radius: $mainnav-submenu-border-radius;
+            margin-inline-start: calc( #{ $mainnav-submenu-indent-lv2 - .5em } + #{ $nav-link-padding-x } ) !important;
+            padding-inline-start: .5rem;
+        }
+
+
+        &.has-sub > .mininav-content {
+            border-inline-start: 1px dashed $mainnav-submenu-dashed-color;
+            margin-inline-start: $mainnav-submenu-dashed-margin !important;
+        }
+
+
+        &.has-sub > .mininav-content > .nav-item > .nav-link {
+            padding-inline-start: calc( #{ $mainnav-submenu-indent - $mainnav-submenu-dashed-margin } + #{ $nav-link-padding-x } );
+        }
+    }
+}
+
+
+@include media-breakpoint-up($mainnav-min-available-at) {
+    .root:not( .mn--min ) .mininav-content {
+        position: static !important;
+        transform: none !important;
+    }
+
+
+    .root:not( .mn--min ) .mainnav__menu > .nav-item {
+        &.has-sub .has-sub > .mininav-content {
+            > .nav-item > .nav-link {
+                padding-inline: .75em;
+            }
+            border-inline-start: 1px dashed $mainnav-submenu-dashed-color;
+            margin-inline-start: calc( #{ $mainnav-submenu-indent-lv2 - .5em } + #{ $nav-link-padding-x } );
+            padding-inline-start: .5rem;
+        }
+
+
+        &.has-sub > .mininav-content {
+            border-inline-start: 1px dashed $mainnav-submenu-dashed-color;
+            margin-inline-start: $mainnav-submenu-dashed-margin;
+        }
+
+
+        &.has-sub > .mininav-content > .nav-item > .nav-link {
+            padding-inline-start: calc( #{ $mainnav-submenu-indent - $mainnav-submenu-dashed-margin } + #{ $nav-link-padding-x } );
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "../../nifty-admin/variables";
+@import "node_modules/bootstrap/scss/variables";
+
+
+.mc-calendar {
+	--mc-theme-color                       : var( --ton-comp-active-bg ) !important;
+	--mc-main-bg                           : var( --ton-body-bg ) !important;
+	--mc-active-text-color                 : rgb(0, 0, 0);
+	--mc-inactive-text-color               : rgba(0, 0, 0, 0.8);
+	//
+	--mc-display-foreground                : rgba(255, 255, 255, 0.8);
+	--mc-display-background                : var( --ton-comp-active-bg ) !important;
+	//
+	--mc-picker-foreground                 : rgb(0, 0, 0);
+	--mc-picker-background                 : var( --ton-body-bg ) !important;
+
+	--mc-picker-header-active              : var( --ton-link-color ) !important;
+	--mc-picker-header-inactive            : rgba(0, 0, 0, 0.2);
+	//
+	--mc-weekday-foreground                : var( --ton-link-color ) !important;
+	//
+	--mc-btn-success-foreground            : var( --ton-link-color ) !important;
+	--mc-btn-danger-foreground             : #e65151;
+	//
+	--mc-date-active-def-foreground        : var( --ton-headings-color ) !important;
+	--mc-date-active-pick-foreground       : #ffffff;
+	--mc-date-active-pick-background       : var( --ton-comp-active-bg ) !important;
+	--mc-date-active-today-foreground      : var( --ton-headings-color ) !important;
+	--mc-date-active-today-background      : rgba(0, 0, 0, 0.2);
+	//
+	--mc-date-inactive-def-foreground      : var( --ton-muted-color ) !important;
+	--mc-date-inactive-pick-foreground     : var( --ton-comp-active-bg ) !important;
+	--mc-date-inactive-pick-background     : var( --ton-comp-active-bg ) !important;
+	--mc-date-inactive-today-foreground    : rgba(0, 0, 0, 0.2);
+	--mc-date-inactive-today-background    : rgba(0, 0, 0, 0.2);
+	--mc-date-marcked-foreground           : var( --ton-comp-active-bg ) !important;
+	//
+	--mc-prev-active-def-foreground        : rgb(0, 0, 0);
+	--mc-prev-active-pick-foreground       : rgb(0, 0, 0);
+	--mc-prev-active-pick-background       : rgba(0, 0, 0, 0.2);
+	//
+	--mc-prev-inactive-def-foreground      : rgba(0, 0, 0, 0.2);
+	--mc-prev-inactive-pick-foreground     : rgba(0, 0, 0, 0.2);
+	--mc-prev-inactive-pick-background     : rgba(0, 0, 0, 0.2);
+}
+
+
+.mc-display {
+    :where(h1, h2, h3, h4, h5, h6) {
+        color: var( --mc-display-foreground );
+    }
+}
+
+
+.mc-select__data--month, .mc-select__data--month span{
+    max-width: 7rem;
+}
+
+
+.mc-date {
+	border-radius: $border-radius;
+	font-weight: normal;
+}
+
+
+.mc-calendar--modal, .mc-calendar--inline .mc-picker {
+    border-radius: $border-radius;
+}
+
+.mc-calendar--inline {
+    box-shadow: $dropdown-box-shadow;
+}

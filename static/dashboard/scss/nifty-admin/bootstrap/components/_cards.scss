@@ -1,0 +1,29 @@
+/* -- CARDS -- */
+/* ---------------------------------------------- */
+
+
+// Card shadows
+// ----------------------------------------------
+.card {
+    &:not([class *="border-"]) {
+        border: 0;
+    }
+    box-shadow: 0 1rem 1rem -.75rem rgba(105, 96, 215, 0.095);
+}
+
+
+
+// Card with background color
+// ----------------------------------------------
+.card[ class *= "bg-" ] {
+    .card-header {
+        background-color: rgba( 0,0,0, .03 );
+        border-bottom: $card-border-width solid rgba( $black, .03 );
+    }
+
+
+    :where( h1, h2, h3, h4, h5, h6 ) {
+        color: inherit;
+    }
+}
+

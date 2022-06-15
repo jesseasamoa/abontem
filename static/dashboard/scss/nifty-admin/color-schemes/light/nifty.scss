@@ -1,0 +1,23 @@
+// Bootstrap functions
+// ----------------------------------------------
+@import "./node_modules/bootstrap/scss/functions";
+
+
+
+// Variables
+// ----------------------------------------------
+@import "variables";
+
+
+
+// Rebuild the Nifty CSS file.
+// ----------------------------------------------
+// HINT : You can also change any color, but you must import Bootstrap SCSS to use the color scheme.
+// @import "../../bootstrap";
+@import "../../nifty";
+
+
+
+// Custom styles for the current theme.
+// ----------------------------------------------
+@import "custom-styles";

@@ -1,0 +1,71 @@
+/* -- SIDEBAR -- */
+/* ---------------------------------------------- */
+.card {
+    border: 1px solid $border-color;
+    box-shadow: 0 .5rem 1.5rem -.75rem rgba(105,96,215,.2);
+}
+
+
+
+
+
+/* -- HEADER -- */
+/* ---------------------------------------------- */
+.header__brand {
+    background-color: $brand-bg !important;
+    border-bottom-right-radius: $brand-border-radius;
+}
+
+
+body:not(.centered-layout) .hd--fair.mn--max .header__brand .brand-title {
+    color: $brand-color !important;
+}
+
+
+
+
+
+ /* -- CENTERED LAYOUT -- */
+ /* ---------------------------------------------- */
+@media ( min-width : #{ $centered-layout-max-width } ) {
+    .centered-layout .header__brand {
+        border-radius: 0 0 $brand-border-radius $brand-border-radius;
+        padding-inline: 1rem;
+    }
+}
+
+
+@media ( min-width : #{ $centered-layout-max-width + ( ( $mainnav-max-width / ($mainnav-max-width * 0 + 1) ) * 16) } ) {
+    .centered-layout .mn--max .header__brand {
+        border-radius: 0 0 $brand-border-radius $brand-border-radius;
+        padding-inline: map-get( $content-gutters-x, $mainnav-max-available-at );
+    }
+}
+
+
+@include media-breakpoint-up( "xl" ) {
+    .centered-layout .mn--max .header__brand {
+        padding-inline: map-get($content-gutters-x, "xl");
+    }
+}
+
+
+
+
+
+/* -- SIDEBAR -- */
+/* ---------------------------------------------- */
+.sb--pinned .sidebar .sidebar__inner {
+    border-radius: 0;
+}
+
+
+
+.sb--unite, .sb--pinned {
+    .sidebar {
+        border-top-left-radius: $sidebar-unite-outer-border;
+        &::after {
+            display: none !important;
+        }
+    }
+}

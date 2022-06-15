@@ -1,0 +1,318 @@
+// BASE COLORS
+// ----------------------------------------------
+
+// Gray-color-variables
+// ----------------------------------------------
+$gray                               : lighten(#313843, 5%);
+$gray-100                           : tint-color($gray, 12%);
+$gray-200                           : tint-color($gray, 9%);
+$gray-300                           : tint-color($gray, 6%);
+$gray-400                           : tint-color($gray, 3%);
+$gray-500                           : $gray;
+$gray-600                           : shade-color($gray, 3%);
+$gray-700                           : shade-color($gray, 6%);
+$gray-800                           : shade-color($gray, 9%);
+$gray-900                           : shade-color($gray, 12%);
+
+
+$white                              : #fff;
+$black                              : #000;
+$primary                            : #1b70ac;
+
+
+
+// Body
+// ----------------------------------------------
+$body-bg                            : #393c47; //#343b47;
+$body-color                         : #afb4bb;
+$body-text-align                    : null;
+
+
+$component-active-color             : $white;
+$component-active-bg                : $primary;
+
+
+$text-muted                         : shade-color( $body-color, 30% );
+$blockquote-footer-color            : $text-muted;
+$mark-bg                            : #fcf8e3;
+
+
+
+// Border-variables
+// ----------------------------------------------
+$border-width                       : 1px;
+$border-color                       : tint-color( $body-bg, 11% );
+
+
+
+// Box shadows
+// ----------------------------------------------
+$box-shadow                         : 0 .5rem 1rem rgba($black, .15);
+$box-shadow-sm                      : 0 .125rem .25rem rgba($black, .075);
+$box-shadow-lg                      : 0 1rem 3rem rgba($black, .175);
+$box-shadow-inset                   : inset 0 1px 2px rgba($black, .075);
+
+
+
+// Headings
+// ----------------------------------------------
+$headings-color                     : $white;
+
+
+
+// Links
+// ----------------------------------------------
+$link-color                         : tint-color( #03a9f4, 20% );
+
+
+
+// Image thumbnails
+// ----------------------------------------------
+$thumbnail-border-color             : $border-color;
+$figure-caption-color               : $text-muted;
+
+
+// Tables
+// ----------------------------------------------
+$table-color                        : $body-color;
+$table-border-color                 : $border-color;
+$table-group-separator-color        : $border-color;
+$table-bg-scale                     : -10%;
+
+
+
+// Forms
+// ----------------------------------------------
+$input-bg                           : tint-color( $body-bg, 7% );
+$input-disabled-bg                  : rgba( $black, .07 );
+$input-disabled-border-color        : rgba( $black, .1 );
+$input-color                        : $body-color;
+$input-border-color                 : tint-color( $body-bg, 15% );
+$input-placeholder-color            : $text-muted;
+$form-text-color                    : $text-muted;
+
+
+
+// Form check
+// ----------------------------------------------
+$form-check-input-bg                : $input-bg;
+$form-check-input-border            : 1px solid $input-border-color;
+$form-check-input-focus-box-shadow  : 0 0 .25rem .25rem rgba( $component-active-bg, .5 );
+
+
+
+// Form Switch
+// ----------------------------------------------
+$form-switch-color                  : $white;
+$form-switch-bg                     : rgba( $white, .15 );
+
+
+
+// Form Range
+// ----------------------------------------------
+$form-range-track-bg                : rgba( $black, .15 );
+$form-range-thumb-active-bg         : $component-active-bg;
+$form-range-thumb-focus-box-shadow  : 0 0 .25rem .25rem shift-color( rgba( $component-active-bg, .15 ), -5% );
+$form-range-thumb-disabled-bg       : $text-muted;
+
+
+// Form Select
+// ----------------------------------------------
+$form-select-disabled-bg            : $input-disabled-bg;
+$form-select-disabled-border-color  : $input-disabled-border-color;
+$form-select-indicator-color        : $body-color;
+
+
+// Accordions
+// ----------------------------------------------
+$accordion-button-active-color      : shade-color( $primary, 40% );
+$accordion-button-active-bg         : tint-color( $component-active-bg, 10% );
+
+
+
+// Alerts
+// ----------------------------------------------
+$alert-bg-scale                     : -35%;
+$alert-border-scale                 : -45%;
+$alert-color-scale                  : 55%;
+
+
+
+// Button close
+// ----------------------------------------------
+$btn-close-focus-shadow             : none;
+$btn-close-color                    : $white;
+
+
+// Button close
+// ----------------------------------------------
+$breadcrumb-divider-color           : $text-muted;
+$breadcrumb-active-color            : $headings-color;
+
+
+
+
+
+// Cards
+// ----------------------------------------------
+$card-bg                            : tint-color( $body-bg, 3% );
+$card-border-color                  : rgba( $black, .175 );
+
+
+
+// Dropdowns
+// ----------------------------------------------
+$dropdown-bg                        : tint-color( $body-bg, 9% );
+$dropdown-border-color              : rgba( $black, .15 );
+$dropdown-divider-bg                : rgba( $white, .15 );
+$dropdown-header-color              : shade-color( $body-color, 30% );
+$dropdown-link-color                : $body-color;
+$dropdown-link-hover-color          : tint-color( $body-color, 70% );
+$dropdown-link-hover-bg             : rgba( $white, .1 );
+$dropdown-box-shadow                : $box-shadow;
+
+
+// List groups
+// ----------------------------------------------
+$list-group-disabled-color          : shade-color($body-color, 35%);
+$list-group-hover-bg                : rgba( $white, .025 );
+
+
+
+// Modals
+// ----------------------------------------------
+$modal-content-bg                   : $card-bg;
+$modal-content-border-color         : rgba( $black, .2 );
+
+
+// Navs
+// ----------------------------------------------
+$nav-link-color                     : $body-color;
+$nav-link-hover-color               : tint( $component-active-bg, 30% );
+$nav-icon-color                     : $text-muted;
+$nav-link-disabled-color            : $text-muted;
+
+
+// Nav Tabs
+// ----------------------------------------------
+$nav-tabs-bg                        : tint-color( $body-bg, 3.75% );
+$nav-tabs-link-active-bg            : $body-bg;
+$nav-tabs-border-color              : tint-color( $border-color, 5% );
+$nav-tabs-link-hover-border-color   : $nav-tabs-bg $nav-tabs-bg $nav-tabs-link-active-bg;
+$nav-tabs-link-active-border-color  : $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
+
+
+
+// Popovers, Progress and Toasts
+// ----------------------------------------------
+$popover-bg								: tint-color( $body-bg, 5.5% );
+$progress-bg							: rgba( $white, .1 );
+$toast-background-color					: tint-color( $body-bg, 5.5% );
+
+
+
+
+
+// NIFTY VARIABLES
+// ----------------------------------------------
+
+// Boxed Layout
+// ----------------------------------------------
+$boxed-layout-bg-color                  : tint-color( $body-bg, 10% );
+
+
+
+
+// COMPONENTS
+// ----------------------------------------------
+
+// Searchbox
+// ----------------------------------------------
+$searchbox-focus-bg                     : rgba( $white, .05 );
+
+
+
+// CONTENTS
+// ----------------------------------------------
+$content-bg                             : $body-bg;
+$content-color                          : $body-color;
+
+
+
+// MAIN NAVIGATION
+// ----------------------------------------------
+$mainnav-bg                             : tint-color( $body-bg, 3% );
+$mainnav-color                          : $content-color;
+$mainnav-text-muted                     : shade-color( $mainnav-color, 30% );
+
+
+// Menu links
+// ----------------------------------------------
+$mainnav-menu-bg                        : transparent;
+$mainnav-menu-color                     : $mainnav-color;
+$mainnav-menu-caption-color             : shade-color( $mainnav-color, 25% );
+$mainnav-menu-hover-bg                  : transparent;
+$mainnav-menu-hover-color               : $white;
+$mainnav-menu-active-bg                 : transparent;
+$mainnav-menu-active-color              : $white;
+$mainnav-menu-icon-color                : shade-color( $mainnav-color, 10% );
+$mainnav-menu-active-icon-color         : $component-active-color;
+
+$mainnav-submenu-dashed-color           : rgba( $white, .3 ) !default;
+
+
+// Max Mode
+// ----------------------------------------------
+$mainnav-max-menu-active-bg             : $component-active-bg;
+$mainnav-max-menu-active-color          : $component-active-color;
+
+
+
+// Mini mode
+// ----------------------------------------------
+$mainnav-min-menu-active-bg            : $mainnav-max-menu-active-bg;
+$mainnav-mini-menu-active-color         : $mainnav-max-menu-active-color;
+
+
+
+
+
+// HEADERS
+// ----------------------------------------------
+$header-bg                              : $primary;
+$header-color                           : tint-color( $primary, 55% );
+$header-btn-hover-bg                    : rgba( $black, .035 );
+$header-btn-hover-color                 : shade-color( $header-color, 20%);
+
+
+
+// Expanded Header
+// ----------------------------------------------
+$header-expand-bg                       : $primary;
+$header-expand-color                    : darken( $header-color, 10% );
+$header-expand-headings-color           : tint-color( $body-color, 30% );
+$header-expand-title-color              : tint-color( $body-color, 50% );
+$header-expand-use-start-ouside-radius  : true;
+
+
+
+// Brand
+// ----------------------------------------------
+$brand-color                            : $white;
+
+
+
+
+
+// SIDEBAR
+// ----------------------------------------------
+$sidebar-bg                             : $content-bg;
+$sidebar-color                          : $content-color;
+
+
+// Unite sidebar
+// ----------------------------------------------
+$sidebar-unite-bg                       : $component-active-bg;
+$sidebar-unite-color                    : rgba( $white, .7 );
+$sidebar-unite-active-color             : $component-active-color;
+$sidebar-unite-border-color             : shade-color( $component-active-bg, 8% );

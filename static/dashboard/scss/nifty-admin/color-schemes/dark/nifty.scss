@@ -1,0 +1,21 @@
+// Bootstrap functions
+// ----------------------------------------------
+@import "./node_modules/bootstrap/scss/functions";
+
+
+
+// Variables
+// ----------------------------------------------
+@import "variables";
+
+
+
+// Rebuild the Nifty CSS file.
+// ----------------------------------------------
+@import "../../nifty";
+
+
+
+// Custom styles for the current theme.
+// ----------------------------------------------
+@import "custom-styles";

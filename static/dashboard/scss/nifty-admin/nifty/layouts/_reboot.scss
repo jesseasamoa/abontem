@@ -1,0 +1,11 @@
+/* -- REBOOT -- */
+/* ---------------------------------------------- */
+
+hr, .vr {
+    background-color: $border-color;
+    @at-root {
+        .card #{&} {
+            background-color: rgba( 0,0,0, .15 );
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// SETTINGS
+@import "settings.typography";
+@import "node_modules/mc-datepicker/src/scss/settings.layout";
+@import "node_modules/mc-datepicker/src/scss/settings.colors";
+@import "node_modules/mc-datepicker/src/scss/settings.breakpoints";
+@import "node_modules/mc-datepicker/src/scss/settings.animations";
+
+
+// TOOLS
+@import "node_modules/mc-datepicker/src/scss/tools.mixins";
+@import "node_modules/mc-datepicker/src/scss/tools.transitions";
+
+
+// GENERIC
+@import "node_modules/mc-datepicker/src/scss/generic.resets";
+
+
+// ELEMENTS
+@import "node_modules/mc-datepicker/src/scss/elements.all";
+
+
+// OBJECTS
+@import "node_modules/mc-datepicker/src/scss/objects.layout";
+
+
+// COMPONENTS
+@import "node_modules/mc-datepicker/src/scss/components.calendar";
+@import "node_modules/mc-datepicker/src/scss/components.display";
+@import "node_modules/mc-datepicker/src/scss/components.picker";
+@import "node_modules/mc-datepicker/src/scss/components.selector";
+@import "node_modules/mc-datepicker/src/scss/components.date";
+@import "node_modules/mc-datepicker/src/scss/components.table";
+@import "node_modules/mc-datepicker/src/scss/components.month_year_preview";
+@import "node_modules/mc-datepicker/src/scss/components.buttons";
+
+
+// UTILITIES
+@import "node_modules/mc-datepicker/src/scss/utilities.display";
+
+
+// OVERIDE VARIABLES
+@import "settings.colors";
+

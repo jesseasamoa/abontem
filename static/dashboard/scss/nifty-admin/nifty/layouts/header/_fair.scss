@@ -1,0 +1,28 @@
+/* -- FAIR HEADER -- */
+/* ---------------------------------------------- */
+
+
+// Split header only available on large screen devices and this option is not available when centered-layout is active.
+// ----------------------------------------------
+@include media-breakpoint-up($mainnav-max-available-at) {
+    body:not(.centered-layout) .hd--fair {
+        &.mn--max, &.mn--min {
+            .header__brand {
+                background-color: $mainnav-bg;
+                .brand-title {
+                    color: lighten( $mainnav-menu-active-color, 20% ) !important;
+                }
+            }
+        }
+
+
+        .content__header {
+            .content__wrap {
+                margin-top: auto;
+            }
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

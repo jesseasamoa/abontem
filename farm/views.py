@@ -1,4 +1,4 @@
-from .models import Crop
+from .models import Crop, Land
 from django.views.generic import ListView, TemplateView
 # import datetime
 
@@ -12,6 +12,7 @@ class Home(TemplateView):
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = Crop.objects.order_by('-published')
+    queryset = Land.objects.order_by('-published')
 
 
 class Seeds(TemplateView):

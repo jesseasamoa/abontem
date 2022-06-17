@@ -20,15 +20,28 @@ class FrontForm(models.Model):
 
 class Crop(models.Model):
     name = models.CharField(max_length=20)
-    cash = models.IntegerField()
+    cash = models.CharField(max_length=60)
     duration = models.IntegerField()
     price = models.IntegerField()
-    soil = models.CharField(max_length=10)
-    temp = models.IntegerField()
+    soil = models.CharField(max_length=20, default='loam')
+    humidity = models.IntegerField(default=0)
+    temp = models.IntegerField(default=0)
     published = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('dashboard', kwargs={'pk': self.pk})
+
+
+class Land(models.Model):
+    region = models.CharField(max_length=20)
+    size = models.IntegerField(default=0)
+    published = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.region
 
     def get_absolute_url(self):
         return reverse('dashboard', kwargs={'pk': self.pk})

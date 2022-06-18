@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FrontForm, Crop, Land
+from .models import FrontForm, DashboardLand, DashboardCrop, Invest
 # Register your models here.
 
 
@@ -7,14 +7,19 @@ class FrontFormAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'contact', 'email', 'password')
 
 
-class CropAdmin(admin.ModelAdmin):
+class DashboardCropAdmin(admin.ModelAdmin):
     list_display = ('name', 'cash')
 
 
-class LandAdmin(admin.ModelAdmin):
+class DashboardLandAdmin(admin.ModelAdmin):
     list_display = ('region', 'size')
 
 
+class InvestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'contact', 'email')
+
+
 admin.site.register(FrontForm, FrontFormAdmin)
-admin.site.register(Crop, CropAdmin)
-admin.site.register(Land, LandAdmin)
+admin.site.register(DashboardCrop, DashboardCropAdmin)
+admin.site.register(DashboardLand, DashboardLandAdmin)
+admin.site.register(Invest, InvestAdmin)

@@ -18,7 +18,7 @@ class FrontForm(models.Model):
         return reverse('dashbaord', kwargs={'pk': self.pk})
 
 
-class Crop(models.Model):
+class DashboardCrop(models.Model):
     name = models.CharField(max_length=20)
     cash = models.CharField(max_length=60)
     duration = models.IntegerField()
@@ -35,7 +35,7 @@ class Crop(models.Model):
         return reverse('dashboard', kwargs={'pk': self.pk})
 
 
-class Land(models.Model):
+class DashboardLand(models.Model):
     region = models.CharField(max_length=20)
     size = models.CharField(max_length=20)
     published = models.DateTimeField(auto_now_add=True)
@@ -47,3 +47,14 @@ class Land(models.Model):
         return reverse('dashboard', kwargs={'pk': self.pk})
 
 
+class Invest(models.Model):
+    name = models.IntegerField(default=10)
+    contact = models.IntegerField(default=10)
+    email = models.IntegerField(default=10)
+#     forest_no = models.IntegerField(default=10)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('invest', kwargs={'pk': self.pk})

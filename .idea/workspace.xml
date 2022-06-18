@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afca80a-9717-4a57-a651-0ddaef8ec3cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/migrations/0002_crops.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/migrations/0003_rename_crops_crop.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/migrations/0004_rename_crop_name_crop_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/migrations/0005_crop_published.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abontem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/abontem/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
@@ -45,6 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/home/jesse/Projects/abontem1",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>

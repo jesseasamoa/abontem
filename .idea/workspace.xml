@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afca80a-9717-4a57-a651-0ddaef8ec3cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abontem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/abontem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abontem/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/abontem/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/business.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/business.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buy_rent_farmland.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy_rent_farmland.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/consultations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/consultations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/farm_management.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farm_management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/farm_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farm_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/farmlands.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/farmlands.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/finance.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/finance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forest_preservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forest_preservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/get_started.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/get_started.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/premium_services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/premium_services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

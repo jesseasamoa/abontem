@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta name="description" content="A list of fields that a user will input data into and submit to a company or individual.">
-    <title>Register | Nifty - Admin Template</title>
+    <title>Register | Dashboard</title>
 
     <!-- STYLESHEETS -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--- -->
@@ -16,16 +16,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS [ REQUIRED ] -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.min.css' %}">
 
     <!-- Nifty CSS [ REQUIRED ] -->
-    <link rel="stylesheet" href="./assets/css/nifty.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/css/nifty.min.css' %}">
 
     <!-- Nifty Demo Icons [ OPTIONAL ] -->
-    <link rel="stylesheet" href="./assets/css/demo-purpose/demo-icons.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/css/demo-purpose/demo-icons.min.css' %}">
 
     <!-- Demo purpose CSS [ DEMO ] -->
-    <link rel="stylesheet" href="./assets/css/demo-purpose/demo-settings.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/css/demo-purpose/demo-settings.min.css' %}">
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---
 
@@ -108,7 +108,7 @@
 
                             <div class="d-flex justify-content-between mt-4">
                                 Already have an account ?
-                                <a href="#" class="btn-link text-decoration-none">Sign In</a>
+                                <a href="{% url 'login' %}" class="btn-link text-decoration-none">Sign In</a>
                             </div>
 
                             <div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">

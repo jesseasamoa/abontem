@@ -33,43 +33,109 @@ class Invest(ListView):
 
 class BuyRentFarmland(TemplateView):
     template_name = 'seeds.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Services(ListView):
     template_name = 'services.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Finance(ListView):
     template_name = 'finance.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Business(ListView):
     template_name = 'business.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class FarmProducts(ListView):
     template_name = 'farm_products.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class DataTech(ListView):
     template_name = 'data_tech.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class FarmLands(ListView):
     template_name = 'farmlands.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class FarmManagement(ListView):
     template_name = 'farm_management.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Forests(ListView):
     template_name = 'forest_preservation.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Consultations(ListView):
     template_name = 'consultations.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 class Premium(ListView):
     template_name = 'premium_services.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context

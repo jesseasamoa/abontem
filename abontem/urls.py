@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
-                        DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium
+                        DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium, Login, Register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +33,7 @@ urlpatterns = [
     path('dashboard/farm_management/', FarmManagement.as_view(), name='farm_management'),
     path('dashboard/forest_preservation/', Forests.as_view(), name='forest_preservation'),
     path('dashboard/consultations/', Consultations.as_view(), name='consultations'),
-    path('dashboard/premium_services/', Premium.as_view(), name='premium_services')
+    path('dashboard/premium_services/', Premium.as_view(), name='premium_services'),
+    path('dashboard/login/', Login.as_view(), name='login'),
+    path('dashboard/register/', Register.as_view(), name='register')
 ]

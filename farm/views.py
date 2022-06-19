@@ -32,7 +32,7 @@ class Invest(ListView):
 
 
 class BuyRentFarmland(TemplateView):
-    template_name = 'seeds.html'
+    template_name = 'buy_rent_farmland.html'
     queryset = DashboardLand.objects.all()
 
     def get_context_data(self, **kwargs):
@@ -139,3 +139,11 @@ class Premium(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         return context
+
+
+class Login(TemplateView):
+    template_name = 'login.html'
+
+
+class Register(TemplateView):
+    template_name = 'register.html'

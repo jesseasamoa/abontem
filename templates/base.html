@@ -91,7 +91,7 @@
                 <div class="brand-wrap">
 
                     <!-- Brand logo -->
-                    <a href="./index.html" class="brand-img stretched-link">
+                    <a href="{% url 'dashboard' %}" class="brand-img stretched-link">
                         <img src="{% static 'dashboard/img/logo.svg' %}" alt="Nifty Logo" class="Nifty logo">
 
                     </a>
@@ -330,7 +330,7 @@
                                     </div>
 
                                     <div class="flex-grow-1 ">
-                                        <a href="#" class="h6 d-block mb-0 stretched-link text-decoration-none">{{ land.region }}</a>
+                                        <a href="{% url 'farmlands' %}" class="h6 d-block mb-0 stretched-link text-decoration-none">{{ land.region }}</a>
                                         <p>{{ land.size }} Acres+</p>
                                     </div>
 
@@ -635,14 +635,14 @@
 
                     <li class="nav-item has-sub">
 
-                        <a href="get_started" class="mininav-toggle nav-link collapsed"><i class="demo-pli-bell fs-5 me-2"></i>
+                        <a href="{% url 'invest' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-bell fs-5 me-2"></i>
                             <span class="nav-label">Get Started</span>
                         </a>
 
                         <!-- Ui Elements submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="invest" class="nav-link">Invest</a>
+                                <a href="{% url 'invest' %}" class="nav-link">Invest</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'farmlands' %}" class="nav-link">Buy / Rent Farmland</a>
@@ -662,7 +662,7 @@
                                 <a href="{% url 'services' %}" class="nav-link">Seeds</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Farmlands</a>
+                                <a href="{% url 'farmlands' %}" class="nav-link">Farmlands</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'services' %}" class="nav-link">Farm Automation</a>
@@ -696,7 +696,7 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'finance' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-pli-bar-chart fs-5 me-2"></i>
                             <span class="nav-label">Finance</span>
                         </a>
@@ -704,16 +704,16 @@
                         <!-- Forms submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./forms-general.html" class="nav-link">Loans</a>
+                                <a href="{% url 'finance' %}" class="nav-link">Loans</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./forms-tags.html" class="nav-link">Invest</a>
+                                <a href="{% url 'invest' %}" class="nav-link">Invest</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./forms-date-time-picker.html" class="nav-link">Partnerships</a>
+                                <a href="{% url 'finance' %}" class="nav-link">Partnerships</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./forms-validation.html" class="nav-link">Farmlands on HirePurchase</a>
+                                <a href="{% url 'finance' %}" class="nav-link">Farmlands on HirePurchase</a>
                             </li>
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./forms-wizard.html" class="nav-link">Wizard</a>-->
@@ -734,7 +734,7 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'business' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-psi-credit-card-2 fs-5 me-2"></i>
                             <span class="nav-label">Business</span>
                         </a>
@@ -742,16 +742,16 @@
                         <!-- Tables submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./tables-static-tables.html" class="nav-link">Sales Plan</a>
+                                <a href="{% url 'business' %}" class="nav-link">Sales Plan</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./tables-gridjs.html" class="nav-link">Marketing Plan</a>
+                                <a href="{% url 'business' %}" class="nav-link">Marketing Plan</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./tables-tabulator.html" class="nav-link">Operational Plan</a>
+                                <a href="{% url 'business' %}" class="nav-link">Operational Plan</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./tables-tabulator.html" class="nav-link">Farm Management</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>
                             </li>
 
                         </ul>
@@ -763,7 +763,7 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'farm_products' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-psi-add-cart fs-5 me-2"></i>
                             <span class="nav-label">Farm Products</span>
                         </a>
@@ -771,22 +771,22 @@
                         <!-- Charts submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./charts-chartjs.html" class="nav-link">Produce Buying</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Buying</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./charts-chartscss.html" class="nav-link">Produce Aggregation</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Aggregation</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./charts-sparklines.html" class="nav-link">Farm Logistics</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Farm Logistics</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./charts-sparklines.html" class="nav-link">Chemicals</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Chemicals</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./charts-sparklines.html" class="nav-link">Irrigation Systems</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Irrigation Systems</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./charts-sparklines.html" class="nav-link">Processing Plants</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Processing Plants</a>
                             </li>
 
                         </ul>
@@ -837,7 +837,7 @@
                         <!--                                class="demo-pli-information fs-5 me-2"></i>-->
                         <!--                            <span class="nav-label">Blog</span>-->
                         <!--                        </a>-->
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'invest' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-pli-basket-coins fs-5 me-2"></i>
                             <span class="nav-label">Invest</span>
                         </a>
@@ -845,7 +845,7 @@
                         <!-- Blog Apps submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./blog-apps-blog.html" class="nav-link">Get Started - Invest</a>
+                                <a href="{% url 'invest' %}" class="nav-link">Get Started - Invest</a>
                             </li>
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./blog-apps-blog-list.html" class="nav-link">Blog List</a>-->
@@ -870,7 +870,7 @@
                     <!-- END : Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'data_tech' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-pli-computer-secure fs-5 me-2"></i>
                             <span class="nav-label">Data & Tech</span>
                         </a>
@@ -878,16 +878,16 @@
                         <!-- App Views submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./app-views-file-manager.html" class="nav-link">Research</a>
+                                <a href="{% url 'data_tech' %}" class="nav-link">Research</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./app-views-users.html" class="nav-link">Field Surveys</a>
+                                <a href="{% url 'data_tech' %}" class="nav-link">Field Surveys</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./app-views-users-2.html" class="nav-link">Data Science</a>
+                                <a href="{% url 'data_tech' %}" class="nav-link">Data Science</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./app-views-profile.html" class="nav-link">Farm Tech</a>
+                                <a href="{% url 'data_tech' %}" class="nav-link">Farm Tech</a>
                             </li>
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./app-views-calendar.html" class="nav-link">Calendar</a>-->
@@ -910,23 +910,23 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i class="demo-psi-boot-2 fs-5 me-2"></i>
+                        <a href="{% url 'farmlands' %}" class="mininav-toggle nav-link collapsed"><i class="demo-psi-boot-2 fs-5 me-2"></i>
                             <span class="nav-label">Farmlands</span>
                         </a>
 
                         <!-- Email submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./email-inbox.html" class="nav-link">Buy</a>
+                                <a href="{% url 'farmlands' %}" class="nav-link">Buy</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./email-view-message.html" class="nav-link">Rent</a>
+                                <a href="{% url 'farmlands' %}" class="nav-link">Rent</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./email-compose-message.html" class="nav-link">Hirepurchase</a>
+                                <a href="{% url 'farmlands' %}" class="nav-link">Hirepurchase</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./email-compose-message.html" class="nav-link">Partnerships <span
+                                <a href="{% url 'farmlands' %}" class="nav-link">Partnerships <span
                                         class="badge bg-danger ms-auto">NEW</span></a>
                             </li>
 
@@ -939,7 +939,7 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'farm_management' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-psi-calendar-4 fs-5 me-2"></i>
                             <span class="nav-label">Farm Management</span>
                         </a>
@@ -947,25 +947,25 @@
                         <!-- Other Pages submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./other-pages-blank-page.html" class="nav-link">Farm Recruitment</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Recruitment</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-invoice.html" class="nav-link">Logistics Management</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Logistics Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-search-results.html" class="nav-link">Sales Management</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Sales Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-faq.html" class="nav-link">Operational Management</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Operational Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-pricing-tables.html" class="nav-link">Water Resources</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Water Resources</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-error-404.html" class="nav-link">Transportation</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Transportation</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-error-500.html" class="nav-link">Warehousing</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Warehousing</a>
                             </li>
 
                         </ul>
@@ -977,27 +977,27 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i class="demo-psi-love fs-5 me-2"></i>
+                        <a href="{% url 'forest_preservation' %}" class="mininav-toggle nav-link collapsed"><i class="demo-psi-love fs-5 me-2"></i>
                             <span class="nav-label">Forests Preservation</span>
                         </a>
 
                         <!-- Other Pages submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./other-pages-blank-page.html" class="nav-link">Donate</a>
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Donate</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-invoice.html" class="nav-link">Buy a Forest</a>
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Buy a Forest</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-invoice.html" class="nav-link">Adopt a Forest</a>
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Adopt a Forest</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-invoice.html" class="nav-link">Preserve a Forest <span
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Preserve a Forest <span
                                         class="badge bg-danger ms-auto">NEW</span></a>
                             </li>
                             <li class="nav-item">
-                                <a href="./other-pages-search-results.html" class="nav-link">Sponsor a
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Sponsor a
                                     conservationist</a>
                             </li>
 
@@ -1020,7 +1020,7 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i
+                        <a href="{% url 'consultations' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-pli-consulting fs-5 me-2"></i>
                             <span class="nav-label">Consultations</span>
                         </a>
@@ -1028,22 +1028,22 @@
                         <!-- Icons Pack submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./icons-pack-ionicons.html" class="nav-link">Research</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Research</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./icons-pack-themify-icons.html" class="nav-link">Market Surveys</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Market Surveys</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./icons-pack-flag-icon-css.html" class="nav-link">Farm Management</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./icons-pack-weather-icons.html" class="nav-link">Processing Plants</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Processing Plants</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./icons-pack-weather-icons.html" class="nav-link">Sales & Marketing</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Sales & Marketing</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./icons-pack-weather-icons.html" class="nav-link">Trade & Export</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Trade & Export</a>
                             </li>
 
                         </ul>
@@ -1055,23 +1055,23 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="#" class="mininav-toggle nav-link collapsed"><i class="demo-pli-medal-2 fs-5 me-2"></i>
+                        <a href="{% url 'premium_services' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-medal-2 fs-5 me-2"></i>
                             <span class="nav-label">Premium Services</span>
                         </a>
 
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="./premium-icons-line-icons-pack.html" class="nav-link">Ready Market</a>
+                                <a href= "{% url 'premium_services' %}" class="nav-link">Ready Market</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./premium-icons-solid-icons-pack.html" class="nav-link">Total Management</a>
+                                <a href="{% url 'premium_services' %}" class="nav-link">Total Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./premium-icons-solid-icons-pack.html" class="nav-link">Capital Injection</a>
+                                <a href="{% url 'premium_services' %}" class="nav-link">Capital Injection</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./premium-icons-solid-icons-pack.html" class="nav-link">Partnerships <span
+                                <a href="{% url 'premium_services' %}" class="nav-link">Partnerships <span
                                         class="badge bg-danger ms-auto">NEW</span></a>
                             </li>
 
@@ -1128,19 +1128,19 @@
             <div class="mainnav__bottom-content border-top pb-2">
                 <ul id="mainnav" class="mainnav__menu nav flex-column">
                     <li class="nav-item has-sub">
-                        <a href="#" class="nav-link mininav-toggle collapsed" aria-expanded="false">
+                        <a href="{% url 'login' %}" class="nav-link mininav-toggle collapsed" aria-expanded="false">
                             <i class="demo-pli-unlock fs-5 me-2"></i>
                             <span class="nav-label">Logout</span>
                         </a>
                         <ul class="mininav-content nav flex-column collapse">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">This device only</a>
+                                <a href="{% url 'login' %}" class="nav-link">This device only</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">All Devices</a>
+                                <a href="{% url 'login' %}" class="nav-link">All Devices</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Lock screen</a>
+                                <a class="nav-link disabled" href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Lock screen</a>
                             </li>
                         </ul>
                     </li>

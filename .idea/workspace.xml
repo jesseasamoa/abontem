@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afca80a-9717-4a57-a651-0ddaef8ec3cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/business.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/data_tech.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/farm_products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/farmlands.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/finance.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abontem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/abontem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeds.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy_rent_farmland.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

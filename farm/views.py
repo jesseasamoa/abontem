@@ -31,6 +31,45 @@ class Invest(ListView):
         return context
 
 
-
-class Seeds(TemplateView):
+class BuyRentFarmland(TemplateView):
     template_name = 'seeds.html'
+
+
+class Services(ListView):
+    template_name = 'services.html'
+
+
+class Finance(ListView):
+    template_name = 'finance.html'
+
+
+class Business(ListView):
+    template_name = 'business.html'
+
+
+class FarmProducts(ListView):
+    template_name = 'farm_products.html'
+
+
+class DataTech(ListView):
+    template_name = 'data_tech.html'
+
+
+class FarmLands(ListView):
+    template_name = 'farmlands.html'
+
+
+class FarmManagement(ListView):
+    template_name = 'farm_management.html'
+
+
+class Forests(ListView):
+    template_name = 'forest_preservation.html'
+
+
+class Consultations(ListView):
+    template_name = 'consultations.html'
+
+
+class Premium(ListView):
+    template_name = 'premium_services.html'

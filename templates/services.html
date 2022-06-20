@@ -1,4 +1,986 @@
 {% extends 'base.html' %}
 {% block title %}Services{% endblock %}
+{% load static %}
 {% block content %}
+<div class="content__boxed">
+    <div class="content__wrap">
+        <div class="row mt-3">
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/3.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Seeds</a>
+                            <p class="text-muted">Marketing manager</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="fa fa-whatsapp fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-gmail fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/10.pn' %}g"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Farmlands</a>
+                            <p class="text-muted">Graphics designer</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/1.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Farm Automation</a>
+                            <p class="text-muted">CEO</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/5.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Farm Logistics</a>
+                            <p class="text-muted">Programmer</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/9.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Farm Design</a>
+                            <p class="text-muted">Frontend Designer</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/4.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Warehousing</a>
+                            <p class="text-muted">Marketing</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/7.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Transportation</a>
+                            <p class="text-muted">Co-CEO</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-icon bg-transparent">
+                                <i class="demo-psi-star fs-5"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="demo-pli-dot-horizontal fs-5"></i>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item text-danger">
+                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+                        <div class="text-center position-relative">
+                            <div class="pb-3">
+                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/8.png' %}"
+                                     alt="Profile Picture" loading="lazy">
+                            </div>
+                            <a href="#" class="h5 stretched-link text-decoration-none">Export</a>
+                            <p class="text-muted">Sales manager</p>
+                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>
+                        </div>
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+                        <div class="mt-4 pt-3 text-center border-top">
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-twitter fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-google-plus fs-4"></i>
+                            </a>
+                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
+                                <i class="demo-psi-instagram fs-4"></i>
+                            </a>
+                        </div>
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+                        <!-- Favorite button and option dropdown -->
+                        <div class="d-flex justify-content-end">
+<!--                            <button type="button" class="btn btn-icon bg-transparent">-->
+<!--                                <i class="demo-psi-star fs-5"></i>-->
+<!--                            </button>-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"-->
+<!--                                        aria-expanded="false">-->
+<!--                                    <i class="demo-pli-dot-horizontal fs-5"></i>-->
+<!--                                    <span class="visually-hidden">Toggle Dropdown</span>-->
+<!--                                </button>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end">-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item text-danger">-->
+<!--                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <hr class="dropdown-divider">-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+                        </div>
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+<!--                        <div class="text-center position-relative">-->
+<!--                            <div class="pb-3">-->
+<!--                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/1.png' %}"-->
+<!--                                     alt="Profile Picture" loading="lazy">-->
+<!--                            </div>-->
+<!--                            <a href="#" class="h5 stretched-link text-decoration-none">Aaron Chavez</a>-->
+<!--                            <p class="text-muted">CEO</p>-->
+<!--                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; END : Profile picture and short information &ndash;&gt;-->
+
+<!--                        &lt;!&ndash; Social media buttons &ndash;&gt;-->
+<!--                        <div class="mt-4 pt-3 text-center border-top">-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-facebook fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-twitter fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-google-plus fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-instagram fs-4"></i>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+<!--                        &lt;!&ndash; Favorite button and option dropdown &ndash;&gt;-->
+<!--                        <div class="d-flex justify-content-end">-->
+<!--                            <button type="button" class="btn btn-icon bg-transparent">-->
+<!--                                <i class="demo-psi-star fs-5"></i>-->
+<!--                            </button>-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"-->
+<!--                                        aria-expanded="false">-->
+<!--                                    <i class="demo-pli-dot-horizontal fs-5"></i>-->
+<!--                                    <span class="visually-hidden">Toggle Dropdown</span>-->
+<!--                                </button>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end">-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item text-danger">-->
+<!--                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <hr class="dropdown-divider">-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; END : Favorite button and option dropdown &ndash;&gt;-->
+
+<!--                        &lt;!&ndash; Profile picture and short information &ndash;&gt;-->
+<!--                        <div class="text-center position-relative">-->
+<!--                            <div class="pb-3">-->
+<!--                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/3.png' %}"-->
+<!--                                     alt="Profile Picture" loading="lazy">-->
+<!--                            </div>-->
+<!--                            <a href="#" class="h5 stretched-link text-decoration-none">Stephen Tran</a>-->
+<!--                            <p class="text-muted">Marketing manager</p>-->
+<!--                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; END : Profile picture and short information &ndash;&gt;-->
+
+<!--                        &lt;!&ndash; Social media buttons &ndash;&gt;-->
+<!--                        <div class="mt-4 pt-3 text-center border-top">-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-facebook fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-twitter fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-google-plus fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-instagram fs-4"></i>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; END : Social media buttons &ndash;&gt;-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+<!--                        &lt;!&ndash; Favorite button and option dropdown &ndash;&gt;-->
+<!--                        <div class="d-flex justify-content-end">-->
+<!--                            <button type="button" class="btn btn-icon bg-transparent">-->
+<!--                                <i class="demo-psi-star fs-5"></i>-->
+<!--                            </button>-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"-->
+<!--                                        aria-expanded="false">-->
+<!--                                    <i class="demo-pli-dot-horizontal fs-5"></i>-->
+<!--                                    <span class="visually-hidden">Toggle Dropdown</span>-->
+<!--                                </button>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end">-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item text-danger">-->
+<!--                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <hr class="dropdown-divider">-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+<!--                        <div class="text-center position-relative">-->
+<!--                            <div class="pb-3">-->
+<!--                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/4.png' %}"-->
+<!--                                     alt="Profile Picture" loading="lazy">-->
+<!--                            </div>-->
+<!--                            <a href="#" class="h5 stretched-link text-decoration-none">Howard Rios</a>-->
+<!--                            <p class="text-muted">Marketing</p>-->
+<!--                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>-->
+<!--                        </div>-->
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+<!--                        <div class="mt-4 pt-3 text-center border-top">-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-facebook fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-twitter fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-google-plus fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-instagram fs-4"></i>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                <div class="card">
+                    <div class="card-body pt-2">
+
+<!--                        &lt;!&ndash; Favorite button and option dropdown &ndash;&gt;-->
+<!--                        <div class="d-flex justify-content-end">-->
+<!--                            <button type="button" class="btn btn-icon bg-transparent">-->
+<!--                                <i class="demo-psi-star fs-5"></i>-->
+<!--                            </button>-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-icon bg-transparent" data-bs-toggle="dropdown"-->
+<!--                                        aria-expanded="false">-->
+<!--                                    <i class="demo-pli-dot-horizontal fs-5"></i>-->
+<!--                                    <span class="visually-hidden">Toggle Dropdown</span>-->
+<!--                                </button>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end">-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-pen-5 text-muted me-2"></i> Edit-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item text-danger">-->
+<!--                                            <i class="demo-pli-recycling text-muted me-2"></i> Remove-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <hr class="dropdown-divider">-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-mail text-muted me-2"></i> Send a Message-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-calendar-4 text-muted me-2"></i> View Details-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#" class="dropdown-item">-->
+<!--                                            <i class="demo-pli-lock-user text-muted me-2"></i> Lock-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- END : Favorite button and option dropdown -->
+
+                        <!-- Profile picture and short information -->
+<!--                        <div class="text-center position-relative">-->
+<!--                            <div class="pb-3">-->
+<!--                                <img class="img-lg rounded-circle" src="{% static 'dashboard/img/profile-photos/5.png' %}"-->
+<!--                                     alt="Profile Picture" loading="lazy">-->
+<!--                            </div>-->
+<!--                            <a href="#" class="h5 stretched-link text-decoration-none">Donald Brown</a>-->
+<!--                            <p class="text-muted">Programmer</p>-->
+<!--                            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, ipsa?</small>-->
+<!--                        </div>-->
+                        <!-- END : Profile picture and short information -->
+
+                        <!-- Social media buttons -->
+<!--                        <div class="mt-4 pt-3 text-center border-top">-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-facebook fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-twitter fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-google-plus fs-4"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                <i class="demo-psi-instagram fs-4"></i>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                        <!-- END : Social media buttons -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}

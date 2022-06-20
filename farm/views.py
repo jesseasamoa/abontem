@@ -1,8 +1,6 @@
-from .models import DashboardCrop, DashboardLand, Invest
+from .models import DashboardCrop, DashboardLand, City, Finance
 from django.views.generic import ListView, TemplateView
-from itertools import chain
-from operator import attrgetter
-# Create your views here.
+import requests
 
 
 class Home(TemplateView):
@@ -13,11 +11,29 @@ class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
     context_object_name = 'crops'
+    # weather_data = []
+    # cities = City.objects.all()  # return all the cities in the database
+    # url = f'http://api.openweathermap.org/data/2.5/weather?q={cities}&units=imperial&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+    #
+    # for city in cities:
+    #     city_weather = requests.get(url.format(city)).json()
+    #
+    #     weather = {
+    #         'city': city,
+    #         'temperature': city_weather['main']['temp'],
+    #         'description': city_weather['weather'][0]['description'],
+    #         'icon': city_weather['weather'][0]['icon']
+    #     }
+    #
+    #     weather_data.append(weather)  # add the data for the current city into our list
+    #
+    # context = {'weather_data': weather_data}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['crops'] = DashboardCrop.objects.all()
         context['land'] = DashboardLand.objects.all()
+        # context['weather'] = City.objects.all()
         return context
 
 
@@ -53,11 +69,12 @@ class Services(ListView):
 
 class Finance(ListView):
     template_name = 'finance.html'
-    queryset = DashboardLand.objects.all()
+    queryset = Finance.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
+        # context['finance'] = Finance.objects.all()
         return context
 
 

@@ -58,3 +58,30 @@ class Invest(models.Model):
 
     def get_absolute_url(self):
         return reverse('invest', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Invest Requests'
+
+
+class City(models.Model):
+    name = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'cities'
+
+
+class Finance(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('finance', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Finance Page'

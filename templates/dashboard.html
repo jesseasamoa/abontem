@@ -648,15 +648,15 @@
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
                                             Today Earning
-                                            <small class="fw-bolder">$ 578</small>
+                                            <small class="fw-bolder">$ 0.00</small>
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
                                             Tax
-                                            <small class="fw-bolder text-danger">$ 28</small>
+                                            <small class="fw-bolder text-danger">$ 0.00</small>
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
                                             Total Earning
-                                            <span class="fw-bold text-primary">$ 6,578</span>
+                                            <span class="fw-bold text-primary">$ 0.00</span>
                                         </div>
                                     </div>
 
@@ -1295,13 +1295,24 @@
                                 <a href="{% url 'premium_services' %}" class="nav-link">Partnerships <span
                                         class="badge bg-danger ms-auto">NEW</span></a>
                             </li>
-
                         </ul>
                         <!-- END : Premium Icons submenu list -->
 
                     </li>
                     <!-- END : Link with submenu -->
+                    <li class="nav-item has-sub">
 
+                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-data-cloud fs-5 me-2"></i>
+                            <span class="nav-label">Today's Weather</span>
+                        </a>
+
+                        <!-- Premium Icons submenu list -->
+                        <ul class="mininav-content nav collapse">
+                            <li class="nav-item">
+                                <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- END : Extras Category -->
 

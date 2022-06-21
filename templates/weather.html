@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Weather{% endblock %}
+{% block content %}
+<h4>Weather</h4>
+<div class="table-responsive mw-100">
+    <table class="table align-middle">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>City</th>
+            <th>Coordinates</th>
+            <th class="text-center">Wind M/S</th>
+            <th class="text-center">Clouds</th>
+            <th class="text-center">Atmospheric Pressure</th>
+            <th class="text-center">Weather Condition</th>
+            <th class="text-center">Temperature</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for farm in products %}
+        <tr>
+            <td class="min-w-td">{{forloop.counter}}</td>
+            <td class="fs-5"><span class="d-block badge bg-primary">{{farm.service}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-warning">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-secondary">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-info">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-purple">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-success">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-danger">{{farm.description}}</span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

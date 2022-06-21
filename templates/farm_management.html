@@ -1,4 +1,49 @@
 {% extends 'base.html' %}
 {% block title %}Farm Management{% endblock %}
 {% block content %}
+<!-- Users Table -->
+<div class="table-responsive mw-100">
+    <table class="table align-middle">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Service</th>
+            <th>Description</th>
+            <th class="text-center">Click to Whatsapp</th>
+            <th class="text-center">Click to Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mgt in management %}
+        <tr>
+            <td class="min-w-td">{{forloop.counter}}</td>
+            <td class="fs-5"><span class="d-block badge bg-purple">{{mgt.service}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-info">{{mgt.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-secondary"><a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20a%20farm-management%20service" target="_blank">{{mgt.whatsapp}}</a></span></td>
+            <td class="fs-5"><span class="d-block badge bg-success"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=farm@abontem.com" target="_blank">{{mgt.email}}</a></span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <!--Pagination-->
+<!--    <nav class="text-align-center mt-5" aria-label="Table navigation">-->
+<!--        <ul class="pagination justify-content-center">-->
+<!--            <li class="page-item disabled">-->
+<!--                <a class="page-link">Previous</a>-->
+<!--            </li>-->
+<!--            <li class="page-item active" aria-current="page">-->
+<!--                <span class="page-link">1</span>-->
+<!--            </li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--            <li class="page-item disabled"><a class="page-link" href="#">...</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">5</a></li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" href="#">Next</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+</div>
+<!-- END : Users Table -->
 {% endblock %}

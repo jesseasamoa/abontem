@@ -17,6 +17,9 @@ class FrontForm(models.Model):
     def get_absolute_url(self):
         return reverse('dashbaord', kwargs={'pk': self.pk})
 
+    class Meta:
+        verbose_name_plural = 'Homepage Signup form'
+
 
 class DashboardCrop(models.Model):
     name = models.CharField(max_length=20)
@@ -60,7 +63,7 @@ class Invest(models.Model):
         return reverse('invest', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name_plural = 'Invest Requests'
+        verbose_name_plural = 'Investment Requests'
 
 
 class City(models.Model):
@@ -73,15 +76,33 @@ class City(models.Model):
         verbose_name_plural = 'cities'
 
 
-class Finance(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.CharField(max_length=100)
+class Management(models.Model):
+    service = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    email = models.EmailField(default='farm@abontem.com')
+    whatsapp = models.CharField(max_length=10, default='0245003234')
 
     def __str__(self):
-        return self.title
+        return self.service
 
     def get_absolute_url(self):
-        return reverse('finance', kwargs={'pk': self.pk})
+        return reverse('farm_management', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name_plural = 'Finance Page'
+        verbose_name_plural = 'Farm Management'
+
+
+class Products(models.Model):
+    service = models.CharField(max_length=100)
+    description = models.CharField(max_length=500, default='N/A')
+    email = models.EmailField(default='farm@abontem.com')
+    whatsapp = models.CharField(max_length=10, default='0245003234')
+
+    def __str__(self):
+        return self.service
+
+    def get_absolute_url(self):
+        return reverse('farm_products', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Farm Products'

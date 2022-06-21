@@ -1,4 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Farm Products{% endblock %}
 {% block content %}
+<div class="table-responsive mw-100">
+    <table class="table align-middle">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Service</th>
+            <th>Description</th>
+            <th class="text-center">Click to Whatsapp</th>
+            <th class="text-center">Click to Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for farm in products %}
+        <tr>
+            <td class="min-w-td">{{forloop.counter}}</td>
+            <td class="fs-5"><span class="d-block badge bg-purple">{{farm.service}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-info">{{farm.description}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-secondary"><a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20a%20farm-management%20service" target="_blank">{{farm.whatsapp}}</a></span></td>
+            <td class="fs-5"><span class="d-block badge bg-success"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=farm@abontem.com" target="_blank">{{farm.email}}</a></span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

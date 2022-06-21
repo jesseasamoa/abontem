@@ -1,4 +1,4 @@
-from .models import DashboardCrop, DashboardLand, City, Finance
+from .models import DashboardCrop, DashboardLand, Management, Products
 from django.views.generic import ListView, TemplateView
 import requests
 
@@ -69,13 +69,7 @@ class Services(ListView):
 
 class Finance(ListView):
     template_name = 'finance.html'
-    queryset = Finance.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['land'] = DashboardLand.objects.all()
-        # context['finance'] = Finance.objects.all()
-        return context
+    queryset = DashboardLand.objects.all()
 
 
 class Business(ListView):
@@ -95,6 +89,7 @@ class FarmProducts(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
+        context['products'] =Products.objects.all()
         return context
 
 
@@ -125,6 +120,7 @@ class FarmManagement(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
+        context['management'] = Management.objects.all()
         return context
 
 
@@ -164,3 +160,13 @@ class Login(TemplateView):
 
 class Register(TemplateView):
     template_name = 'register.html'
+
+
+class Contact(ListView):
+    template_name = 'contact_us.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context

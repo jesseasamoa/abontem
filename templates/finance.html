@@ -1,31 +1,5 @@
 {% extends 'base.html' %}
 {% block title %}Finance{% endblock %}
+{% load static %}
 {% block content %}
-{% for card in finance_list %}
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-
-    <div class="card-body">
-
-        <h5 class="card-title">{{card.title}}</h5>
-        <p class="card-text">{{card.content}}</p>
-        <div class="mt-4 pt-3 text-center border-top">
-            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                <i class="demo-psi-facebook fs-4"></i>
-            </a>
-            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                <i class="demo-psi-twitter fs-4"></i>
-            </a>
-            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                <i class="demo-psi-google-plus fs-4"></i>
-            </a>
-            <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                <i class="demo-psi-instagram fs-4"></i>
-            </a>
-
-        </div>
-
-    </div>
-</div>
-{% endfor %}
 {% endblock %}

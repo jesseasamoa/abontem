@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Finance
+from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products
 # Register your models here.
 
 
@@ -24,4 +24,5 @@ admin.site.register(DashboardCrop, DashboardCropAdmin)
 admin.site.register(DashboardLand, DashboardLandAdmin)
 admin.site.register(Invest, InvestAdmin)
 admin.site.register(City)
-admin.site.register(Finance)
+admin.site.register(Management)
+admin.site.register(Products)

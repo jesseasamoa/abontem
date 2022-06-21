@@ -1,75 +1,130 @@
 {% extends 'base.html' %}
 {% block title %}Invest{% endblock %}
 {% block content %}
-<section>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card h-100">
+<hr>
+<h4 class="pt-5 mb-5 text-center">Gain great returns by investing with us</h4>
+
+<!-- Timeline with date and time -->
+<div class="timeline timeline-two-column" style="--timeline-entry-gap: 2.5rem">
+
+    <div class="tl-entry active">
+        <div class="tl-time">
+            <div class="tl-date">Today</div>
+            <div class="tl-time">10:23 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
                 <div class="card-body">
-
-                    <h5 class="card-title">Start Investing</h5>
-
-                    <!-- Block styled form -->
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <label for="_dm-inputEmail2" class="form-label">Email</label>
-                            <input id="_dm-inputEmail2" type="email" class="form-control">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="_dm-inputPassword2" class="form-label">Password</label>
-                            <input id="_dm-inputPassword2" type="password" class="form-control">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="_dm-inputAddress" class="form-label">Address</label>
-                            <input id="_dm-inputAddress" type="text" class="form-control" placeholder="1234 Main St">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="_dm-inputAddress2" class="form-label">Address 2</label>
-                            <input id="_dm-inputAddress2" type="text" class="form-control"
-                                   placeholder="Apartment, studio, or floor">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="_dm-inputCity" class="form-label">City</label>
-                            <input id="_dm-inputCity" type="text" class="form-control">
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="inputState" class="form-label">State</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>State 1</option>
-                                <option>State 2</option>
-                                <option>State 3</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-2">
-                            <label for="_dm-inputZip" class="form-label">Zip</label>
-                            <input id="_dm-inputZip" type="text" class="form-control">
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input id="_dm-gridCheck" class="form-check-input" type="checkbox">
-                                <label for="_dm-gridCheck" class="form-check-label">
-                                    Check me out
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </div>
-                    </form>
-                    <!-- END : Block styled form -->
-
+                    <figure class="m-0">
+                        <blockquote class="blockquote">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
     </div>
-</section>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Today</div>
+            <div class="tl-time">07:47 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Yesterday</div>
+            <div class="tl-time">01:17 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <img class="img-xs rounded-circle" src="./assets/img/profile-photos/3.png" alt="Profile Picture">
+                    <span class="ms-2"><a href="#" class="btn-link fw-bold">Jackson</a> sent you a message.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Oct 20, 2021</div>
+            <div class="tl-time">05:19 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">August, 17</div>
+            <div class="tl-time">01:53 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Reminder</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Jul 22, 2021</div>
+            <div class="tl-time">02:05 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    But in certain circumstances and owing to the claims of duty
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Jun 11, 2021</div>
+            <div class="tl-time">05:50 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Infomation</h5>
+                    <p>The new common language will be more simple </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END : Timeline with date and time -->
 {% endblock %}

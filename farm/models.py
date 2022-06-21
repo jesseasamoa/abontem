@@ -106,3 +106,22 @@ class Products(models.Model):
 
     class Meta:
         verbose_name_plural = 'Farm Products'
+
+
+class Forecast(models.Model):
+    city = models.CharField(max_length=100)
+    # coo = models.CharField(max_length=500, default='N/A')
+    # wind = models.EmailField(default='farm@abontem.com')
+    # cloud = models.CharField(max_length=10, default='0245003234')
+    # atmosphere = models.IntegerField()
+    # condition = models.CharField(max_length=20)
+    # temp = models.IntegerField()
+
+    def __str__(self):
+        return self.city
+
+    def get_absolute_url(self):
+        return reverse('weather', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Weather'

@@ -1,4 +1,4 @@
-from .models import DashboardCrop, DashboardLand, Management, Products
+from .models import DashboardCrop, DashboardLand, Management, Products, Forecast
 from django.views.generic import ListView, TemplateView
 import requests
 
@@ -179,5 +179,5 @@ class Weather(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
-        context['products'] = Products.objects.all()
+        context['products'] = Forecast.objects.all()
         return context

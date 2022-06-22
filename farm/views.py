@@ -11,29 +11,29 @@ class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
     context_object_name = 'crops'
-    # weather_data = []
-    # cities = City.objects.all()  # return all the cities in the database
-    # url = f'http://api.openweathermap.org/data/2.5/weather?q={cities}&units=imperial&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    #
-    # for city in cities:
-    #     city_weather = requests.get(url.format(city)).json()
-    #
-    #     weather = {
-    #         'city': city,
-    #         'temperature': city_weather['main']['temp'],
-    #         'description': city_weather['weather'][0]['description'],
-    #         'icon': city_weather['weather'][0]['icon']
-    #     }
-    #
-    #     weather_data.append(weather)  # add the data for the current city into our list
-    #
-    # context = {'weather_data': weather_data}
+    weather_data = []
+    cities = Forecast.objects.all()  # return all the cities in the database
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+
+    for city in cities:
+        city_weather = requests.get(url.format(city)).json()
+
+        weather = {
+            'city': city,
+            # 'temperature': city_weather['temp'],
+            # 'description': city_weather['weather'][0]['description'],
+            # 'icon': city_weather['weather'][0]['icon']
+        }
+
+        weather_data.append(weather)  # add the data for the current city into our list
+
+    context = {'weather_data': weather_data}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['crops'] = DashboardCrop.objects.all()
         context['land'] = DashboardLand.objects.all()
-        # context['weather'] = City.objects.all()
+        context['weather'] = Forecast.objects.all()
         return context
 
 

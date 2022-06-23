@@ -559,7 +559,7 @@
                         <!-- Dashboard submenu list -->
                         <ul class="mininav-content nav collapse">
                             <!--                                <li class="nav-item">-->
-                            <!--                                    <a href="./index.html" class="nav-link">Dashboard 1</a>-->
+                            <!--                                    <a href="{% url 'invest' %}" class="nav-link">Dashboard 1</a>-->
                             <!--                                </li>-->
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./dashboard-2.html" class="nav-link active">Dashboard 2</a>-->
@@ -1147,13 +1147,13 @@
                         </a>
                         <ul class="mininav-content nav flex-column collapse">
                             <li class="nav-item">
+                                <a href="{% url 'login' %}" class="nav-link">Logout</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">This device only</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">All Devices</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Lock screen</a>
                             </li>
                         </ul>
                     </li>

@@ -3,14 +3,14 @@ import urllib
 
 from farm.models import Forecast, DashboardLand, DashboardCrop
 from django.views.generic import ListView
-import request
+import requests
 import json
 
 
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
-    city = request.POST['city']
+    city = requests.POST['city']
     ''' api key might be expired use your own api_key
         place api_key in place of appid ="your_api_key_here "  '''
 

@@ -46,7 +46,7 @@
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">28°C</div>
                                 <p class="mb-3">Want to farm but low on cash? Get land on hirepurchase!</p>
-                                <button type="button" class="btn btn-info btn-sm">Apply Instantly!</button>
+                                <a href="{% url 'finance' %}"><button type="button" class="btn btn-info btn-sm">Apply Instantly!</button></a>
                             </div>
                             <div class="w-md-250px flex-shrink-0 mb-4">
                                 <div class="list-group list-group-borderless">
@@ -95,7 +95,7 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">75</span>
                                         <p>Investors</p>
-                                        <i class="demo-pli-basket-coins text-white text-opacity-50 fs-5"></i>
+                                        <a href="{% url 'invest' %}"><i class="demo-pli-basket-coins text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -105,7 +105,7 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">82</span>
                                         <p>Farm Projects</p>
-                                        <i class="demo-psi-boot-2 text-white text-opacity-50 fs-5"></i>
+                                        <a href="{% url 'farmlands' %}"><i class="demo-psi-boot-2 text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -118,7 +118,7 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">99</span>
                                         <p>Seed Varieties</p>
-                                        <i class="demo-pli-file-search text-white text-opacity-50 fs-5"></i>
+                                        <a href="{% url 'services' %}"><i class="demo-pli-file-search text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -128,9 +128,9 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">12</span>
                                         <p>Forests Protected</p>
-                                        <i class="demo-psi-love text-white text-opacity-50 fs-5"></i>
+                                        <a href="{% url 'forest_preservation' %}"><i class="demo-psi-love text-white text-opacity-50 fs-5"></i></a>
                                     </div>
-                                </div>
+                                </div></a>
                                 <!--END : Tile-->
 
                             </div>
@@ -249,27 +249,27 @@
                 <!-- End - Additional actions nav -->
 
                 <!-- Public Settings -->
-                <h5 class="mt-5">Public Settings</h5>
+                <h5 class="mt-5">Quick Launch</h5>
                 <div class="list-group list-group-borderless">
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdOnlineStatus">Online Status</label>
-                        <div class="form-check form-switch">
-                            <input id="_dm-asdOnlineStatus" class="form-check-input" type="checkbox" checked>
-                        </div>
+                        <label class="form-check-label" for="_dm-asdOnlineStatus"><a href="{% url 'data_tech' %}">Agric Field Surveys</a></label>
+<!--                        <div class="form-check form-switch">-->
+<!--                            <input id="_dm-asdOnlineStatus" class="form-check-input" type="checkbox" checked>-->
+<!--                        </div>-->
                     </div>
 
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdMuteNotifications">Mute Notifications</label>
-                        <div class="form-check form-switch">
-                            <input id="_dm-asdMuteNotifications" class="form-check-input" type="checkbox" checked>
-                        </div>
+                        <label class="form-check-label" for="_dm-asdMuteNotifications"><a href="{% url 'farm_management' %}">Irrigation systems</label></a>
+<!--                        <div class="form-check form-switch">-->
+<!--                            <input id="_dm-asdMuteNotifications" class="form-check-input" type="checkbox" checked>-->
+<!--                        </div>-->
                     </div>
 
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdMyDevicesName">Show my device name</label>
-                        <div class="form-check form-switch">
-                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>
-                        </div>
+                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'farm_products' %}">Produce Buying for Export</a></label>
+<!--                        <div class="form-check form-switch">-->
+<!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
+<!--                        </div>-->
                     </div>
                 </div>
                 <!-- End - Public Settings -->
@@ -312,7 +312,7 @@
                 <div class="brand-wrap">
 
                     <!-- Brand logo -->
-                    <a href="./index.html" class="brand-img stretched-link">
+                    <a href="{% url 'invest' %}" class="brand-img stretched-link">
                         <img src="{% static 'dashboard/img/logo.svg' %}" alt="Nifty Logo" class="Nifty logo">
 
                     </a>
@@ -780,7 +780,7 @@
                         <!-- Dashboard submenu list -->
                         <ul class="mininav-content nav collapse">
                             <!--                                <li class="nav-item">-->
-                            <!--                                    <a href="./index.html" class="nav-link">Dashboard 1</a>-->
+                            <!--                                    <a href="{% url 'invest' %}" class="nav-link">Dashboard 1</a>-->
                             <!--                                </li>-->
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./dashboard-2.html" class="nav-link active">Dashboard 2</a>-->
@@ -1366,13 +1366,13 @@
                         </a>
                         <ul class="mininav-content nav flex-column collapse">
                             <li class="nav-item">
+                                <a href="{% url 'login' %}" class="nav-link">Logout</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">This device only</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">All Devices</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Lock screen</a>
                             </li>
                         </ul>
                     </li>

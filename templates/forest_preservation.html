@@ -2,69 +2,179 @@
 {% block title %}Forests Preservation{% endblock %}
 {% load static %}
 {% block content %}
-    <!-- PAGE CONTAINER -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div id="root" class="root mn--max hd--expanded sb--show sb--pinned sb--unite">
-
-        <!-- CONTENTS -->
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <section id="content" class="content">
-            <div class="content__header content__boxed overlapping">
-                <div class="content__wrap pt-3 pb-4">
-
-                    <!-- Breadcrumb -->
-
-                    <!-- END : Breadcrumb -->
-
-                    <h1 class="page-title mb-2 mt-4">Forest Preservation</h1>
-
-                    <p class="lead">
-                        Displayed or organized blog content in a logical or linear formation
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="content__boxed">
-                <div class="content__wrap">
-
-                    <!-- Card blog with image -->
-                    <div class="card flex-row mb-4">
-                        <div class="w-300px flex-shrink-0">
-                            <img class="img-fluid rounded-start" src="{% static 'dashboard/img/sample-img/img-2.jpg' %}" alt="coffee" loading="lazy">
-                        </div>
-                        <div class="card-body d-flex flex-column w-160px">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <a href="#" class="h5 text-decoration-none text-truncate m-0 pe-3">These sweet mornings of spring which I enjoy with my whole heart</a>
-                                <div class="ms-auto text-center text-nowrap">
-                                    <a href="#" class="btn bg-transparent p-1 text-muted">
-                                        <i class="demo-psi-facebook fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn bg-transparent p-1 text-muted">
-                                        <i class="demo-psi-twitter fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn bg-transparent p-1 text-muted">
-                                        <i class="demo-psi-google-plus fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn bg-transparent p-1 text-muted">
-                                        <i class="demo-psi-instagram fs-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                            <div class="mt-auto pt-3 border-top d-flex align-items-center">
-                                <a href="#" class="btn bg-transparent px-2 py-0">
-                                    <i class="text-muted demo-pli-heart-2 fs-5 me-2"></i>54k
-                                </a>
-                                <small class="text-muted ms-auto">03:08PM</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END : Card blog with image -->
-                </div>
-            </div>
-        </section>
+<hr>
+<h4 class="pt-5 mb-5 text-center">Help preserve forests globally to reverse climate change</h4>
+<form class="row row-cols-md-auto g-3 align-items-center">
+<!--    <div class="col-12">-->
+<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+<!--    </div>-->
+    <div class="col-12">
+        <select name="acres" id="acres" class="form-control">
+            <option value="select">Select Acres</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+            <option value="5000">5000</option>
+            <option value="custom">custom figure</option>
+            <option value="donate">Donate</option>
+            <option value="sponsor">Sponsor a Conservationist</option>
+        </select>
     </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+</form>
+<!-- Timeline with date and time -->
+<div class="timeline timeline-two-column" style="--timeline-entry-gap: 2.5rem">
+    <div class="tl-entry active">
+        <div class="tl-time">
+            <div class="tl-date">Start investing</div>
+            <div class="tl-time">Today</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <figure class="m-0">
+                        <blockquote class="blockquote">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Today</div>
+            <div class="tl-time">07:47 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Yesterday</div>
+            <div class="tl-time">01:17 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <img class="img-xs rounded-circle" src="./assets/img/profile-photos/3.png" alt="Profile Picture">
+                    <span class="ms-2"><a href="#" class="btn-link fw-bold">Jackson</a> sent you a message.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Oct 20, 2021</div>
+            <div class="tl-time">05:19 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">August, 17</div>
+            <div class="tl-time">01:53 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Reminder</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Jul 22, 2021</div>
+            <div class="tl-time">02:05 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    But in certain circumstances and owing to the claims of duty
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Jun 11, 2021</div>
+            <div class="tl-time">05:50 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Infomation</h5>
+                    <p>The new common language will be more simple </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<!-- Inline Form -->
+<h4>Get started on preserving forests</h4>
+<form class="row row-cols-md-auto g-3 align-items-center">
+<!--    <div class="col-12">-->
+<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+<!--    </div>-->
+    <div class="col-12">
+        <select name="acres" id="acres" class="form-control">
+            <option value="select">Select Acres</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+            <option value="5000">5000</option>
+            <option value="custom">custom figure</option>
+            <option value="donate">Donate</option>
+            <option value="sponsor">Sponsor a Conservationist</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+</form>
+<!-- END : Inline Form -->
+<!-- END : Timeline with date and time -->
+
 {% endblock %}

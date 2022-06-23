@@ -2,4 +2,172 @@
 {% block title %}Finance{% endblock %}
 {% load static %}
 {% block content %}
+<h4>Financial Services</h4>
+<div style="text-align:right">
+    <a href="{% url 'invest' %}"><button type="submit" class="btn btn-primary">Invest with us</button></a>
+    </div>
+<br>
+<form class="row row-cols-md-auto g-3 align-items-center">
+<!--    <div class="col-12">-->
+<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+<!--    </div>-->
+    <div class="col-12">
+        <select name="acres" class="form-control">
+            <option value="select">Select a service</option>
+            <option value="loan">Loan</option>
+            <option value="invest">Invest (We invest)</option>
+            <option value="partnerships">Partnerships(We partner)</option>
+            <option value="hirepurchase">Get Farmlands on hirepurchase</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+</form>
+<br>
+<!-- Timeline with date and time -->
+<div class="timeline timeline-two-column" style="--timeline-entry-gap: 2.5rem">
+    <div class="tl-entry active">
+        <div class="tl-time">
+            <div class="tl-date">Start investing</div>
+            <div class="tl-time">Today</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <figure class="m-0">
+                        <blockquote class="blockquote">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Today</div>
+            <div class="tl-time">07:47 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Yesterday</div>
+            <div class="tl-time">01:17 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <img class="img-xs rounded-circle" src="./assets/img/profile-photos/3.png" alt="Profile Picture">
+                    <span class="ms-2"><a href="#" class="btn-link fw-bold">Jackson</a> sent you a message.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Oct 20, 2021</div>
+            <div class="tl-time">05:19 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">August, 17</div>
+            <div class="tl-time">01:53 AM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Reminder</h5>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                        into a horrible vermin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry">
+        <div class="tl-time">
+            <div class="tl-date">Jul 22, 2021</div>
+            <div class="tl-time">02:05 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    But in certain circumstances and owing to the claims of duty
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tl-entry tl-entry-start">
+        <div class="tl-time">
+            <div class="tl-date">Jun 11, 2021</div>
+            <div class="tl-time">05:50 PM</div>
+        </div>
+        <div class="tl-point"></div>
+        <div class="tl-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Infomation</h5>
+                    <p>The new common language will be more simple </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<!-- Inline Form -->
+<h4>Get started</h4>
+<form class="row row-cols-md-auto g-3 align-items-center">
+<!--    <div class="col-12">-->
+<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+<!--    </div>-->
+    <div class="col-12">
+        <select class="form-control">
+            <option value="select">Select a service</option>
+            <option value="loan">Loan</option>
+            <option value="invest">Invest (We invest)</option>
+            <option value="partnerships">Partnerships(We partner)</option>
+            <option value="hirepurchase">Get Farmlands on hirepurchase</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+</form>
 {% endblock %}

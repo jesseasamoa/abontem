@@ -1,6 +1,8 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, Forecast
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City
 from django.views.generic import ListView, TemplateView
 import requests
+import json
+import urllib
 
 
 class Home(TemplateView):
@@ -10,30 +12,11 @@ class Home(TemplateView):
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
-    context_object_name = 'crops'
-    weather_data = []
-    cities = Forecast.objects.all()  # return all the cities in the database
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-
-    for city in cities:
-        city_weather = requests.get(url.format(city)).json()
-
-        weather = {
-            'city': city,
-            # 'temperature': city_weather['temp'],
-            # 'description': city_weather['weather'][0]['description'],
-            # 'icon': city_weather['weather'][0]['icon']
-        }
-
-        weather_data.append(weather)  # add the data for the current city into our list
-
-    context = {'weather_data': weather_data}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['crops'] = DashboardCrop.objects.all()
         context['land'] = DashboardLand.objects.all()
-        context['weather'] = Forecast.objects.all()
+        context['crops'] = DashboardCrop.objects.all()
         return context
 
 
@@ -70,6 +53,12 @@ class Services(ListView):
 class Finance(ListView):
     template_name = 'finance.html'
     queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        context['finance'] = FinancePage.objects.all()
+        return context
 
 
 class Business(ListView):
@@ -179,5 +168,5 @@ class Weather(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
-        context['products'] = Forecast.objects.all()
+        context['products'] = City.objects.all()
         return context

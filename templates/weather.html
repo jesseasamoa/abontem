@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Weather{% endblock %}
 {% block content %}
-<h4>Enter below city, location, region for weather</h4>
+<h4>Enter below city, location, region etc. for weather</h4>
 
 <form class="searchbox searchbox--auto-expand searchbox--hide-btn input-group">
     <input id="header-search-input" class="searchbox__input form-control bg-transparent" type="search"
@@ -28,7 +28,6 @@
         </tr>
         </thead>
         <tbody>
-<!--        {% for farm in products %}-->
         <tr>
             <td class="min-w-td">{{forloop.counter}}</td>
             <td class="fs-5"><span class="d-block badge bg-primary">{{farm.service}}</span></td>
@@ -39,10 +38,14 @@
             <td class="fs-5"><span class="d-block badge bg-success">{{farm.description}}</span></td>
             <td class="fs-5"><span class="d-block badge bg-danger">{{farm.description}}</span></td>
         </tr>
-<!--        {% endfor %}-->
         </tbody>
     </table>
 </div>
+<br>
+<br>
+<br>
+<br>
+<h4>Weather forecasts for some major cities in Ghana {% now 'l G:i' %} GMT</h4>
 <div class="table-responsive mw-100">
     <table class="table align-middle">
         <thead>

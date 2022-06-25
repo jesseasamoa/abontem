@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
-{% block title %}Forests Preservation{% endblock %}
+{% block title %}Forest Preservation{% endblock %}
+{% load static %}
 {% block content %}
 <h4 class="pt-5 mb-5 text-center">Help preserve forests globally to reverse climate change</h4>
 <form class="row row-cols-md-auto g-3 align-items-center">
-<!--    <div class="col-12">-->
-<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-<!--    </div>-->
+    <!--    <div class="col-12">-->
+    <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+    <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+    <!--    </div>-->
     <div class="col-12">
         <select name="acres" class="form-control">
             <option value="select">Select Acres</option>
@@ -151,10 +152,10 @@
 <!-- Inline Form -->
 <h4>Get started on preserving forests</h4>
 <form class="row row-cols-md-auto g-3 align-items-center">
-<!--    <div class="col-12">-->
-<!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-<!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-<!--    </div>-->
+    <!--    <div class="col-12">-->
+    <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+    <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+    <!--    </div>-->
     <div class="col-12">
         <select name="acres" id="acres" class="form-control">
             <option value="select">Select Acres</option>
@@ -174,5 +175,12 @@
 </form>
 <!-- END : Inline Form -->
 <!-- END : Timeline with date and time -->
+{% block additional_styles %}
+<style>
+body {
+background: white url("abontem1/static/dashboard/img/backgrounds/forest.jpg") no-repeat;
+}
+</style>
+{% endblock %}
 
 {% endblock %}

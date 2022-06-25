@@ -17,6 +17,7 @@ class DashboardHome(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
+        context['weather'] = City.objects.all()
         return context
 
 
@@ -169,4 +170,14 @@ class Weather(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['products'] = City.objects.all()
+        return context
+
+
+class Payments(ListView):
+    template_name = 'payments.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
         return context

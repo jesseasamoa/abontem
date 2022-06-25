@@ -1,34 +1,35 @@
 {% extends 'base.html' %}
 {% block title %}Invest{% endblock %}
+{% load static %}
 {% block content %}
 <h4 class="pt-5 mb-5 text-center">Gain great returns by investing with us</h4>
 <form class="row row-cols-md-auto g-3 align-items-center">
-            <!--    <div class="col-12">-->
-            <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-            <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-            <!--    </div>-->
-            <div class="col-12">
-                <select name="acres" class="form-control">
-                    <option value="select">Select your investor type</option>
-                    <option value="loan">Passive Investor</option>
-                    <option value="invest">Seeking Partnerships</option>
-                    <option value="partnerships">Income Investing</option>
-                    <option value="hirepurchase">Project based Investing</option>
-                    <option value="hirepurchase">Agribusiness setup assistance</option>
-                    <option value="hirepurchase">Acquire equity in our firm or projects</option>
-                    <option value="hirepurchase">Become a co-owner of projects and businesses</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Get started</button>
-            </div>
-        </form>
+    <!--    <div class="col-12">-->
+    <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+    <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+    <!--    </div>-->
+    <div class="col-12">
+        <select name="acres" class="form-control">
+            <option value="select">Select your investor type</option>
+            <option value="loan">Passive Investor</option>
+            <option value="invest">Seeking Partnerships</option>
+            <option value="partnerships">Income Investing</option>
+            <option value="hirepurchase">Project based Investing</option>
+            <option value="hirepurchase">Agribusiness setup assistance</option>
+            <option value="hirepurchase">Acquire equity in our firm or projects</option>
+            <option value="hirepurchase">Become a co-owner of projects and businesses</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+</form>
 <!-- Timeline with date and time -->
 <div class="timeline timeline-two-column" style="--timeline-entry-gap: 2.5rem">
     <div class="tl-entry active">
         <div class="tl-time">
-            <div class="tl-date">Start investing</div>
-            <div class="tl-time">Today</div>
+            <div class="tl-date">Start investing as a</div>
+            <div class="tl-time">Passive Investor</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
@@ -36,10 +37,13 @@
                 <div class="card-body">
                     <figure class="m-0">
                         <blockquote class="blockquote">
-                            <p>Become a limited partner and earn regular passive income with abontem</p>
+                            <p>Become a limited partner and earn regular passive income with abontem. We pay you a
+                                percentage after every harvest while preserving your capital. Payments are made every 3
+                                months, 6 months or 1 year depending on the crops invested in.</p>
                         </blockquote>
                         <figcaption class="blockquote-footer">
-                            Passive investor <cite title="Source Title">(None participation in day-to-day decisions of projects)</cite>
+                            Passive investor <cite title="Source Title">(None participation in day-to-day decisions of
+                            projects)</cite>
                         </figcaption>
                     </figure>
                 </div>
@@ -49,16 +53,17 @@
 
     <div class="tl-entry tl-entry-start">
         <div class="tl-time">
-            <div class="tl-date">Today</div>
-            <div class="tl-time">07:47 AM</div>
+            <div class="tl-date">Invest Today</div>
+            <div class="tl-time">Become a project partner</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
-                        into a horrible vermin.</p>
+                    <h5 class="card-title">Become a business partner in one or more of our projects.</h5>
+                    <p>Join us and become one of our dozen partners on one or several projects we undertake
+                        in the agribusiness space. You may choose to partner us on a project long-term or short-term.
+                        You decide!</p>
                 </div>
             </div>
         </div>
@@ -66,15 +71,17 @@
 
     <div class="tl-entry">
         <div class="tl-time">
-            <div class="tl-date">Yesterday</div>
-            <div class="tl-time">01:17 PM</div>
+            <div class="tl-date">Start</div>
+            <div class="tl-time">Investing</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    <img class="img-xs rounded-circle" src="./assets/img/profile-photos/3.png" alt="Profile Picture">
-                    <span class="ms-2"><a href="#" class="btn-link fw-bold">Jackson</a> sent you a message.</span>
+                    <img class="img-xs rounded-circle" src="{% static 'dashboard/img/backgrounds/forest.jpg' %}"
+                         alt="Profile Picture">
+                    <span class="ms-2">Generate income everyday within <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=farm@abontem.com" target="_blank"
+                                                                class="btn-link fw-bold"><button type="button" class="btn btn-outline-success">3</button><button type="button" class="btn btn-outline-success">6</button><button type="button" class="btn btn-outline-success">12</button> or <button type="button" class="btn btn-outline-success">24 Months</button></a> Seek our advice and get started.</span>
                 </div>
             </div>
         </div>
@@ -82,15 +89,26 @@
 
     <div class="tl-entry">
         <div class="tl-time">
-            <div class="tl-date">Oct 20, 2021</div>
-            <div class="tl-time">05:19 AM</div>
+            <div class="tl-date">Invest in</div>
+            <div class="tl-time">Agribusiness</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                    the blind texts.
+                    Looking to launch your farming project or invest in the agribusiness space but need management advice?
+                    Talk to us!
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=farm@abontem.com" target="_blank"
+                       class="btn btn-icon bg-transparent btn-underlined text-muted" data-bs-toggle="tooltip"
+                       data-bs-placement="top" title="Email us">
+                        <i class="demo-pli-mail-unread fs-4"></i>
+                    </a>
+                    <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20buying%20*********%20seeds%20services"
+                       target="_blank" class="btn btn-icon bg-transparent btn-underlined text-muted"
+                       data-bs-toggle="tooltip" data-bs-placement="top" title="Whatsapp us">
+                        <i class="demo-pli-smartphone-3 fs-4"></i>
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -98,16 +116,18 @@
 
     <div class="tl-entry tl-entry-start">
         <div class="tl-time">
-            <div class="tl-date">August, 17</div>
-            <div class="tl-time">01:53 AM</div>
+            <div class="tl-date">Cash out directly into your</div>
+            <div class="tl-time">Bank Account or Momo from your dashboard</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-danger">Reminder</h5>
-                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
-                        into a horrible vermin.</p>
+                    <h5 class="card-title text-danger">Reminder: Your dashboard contains it all</h5>
+                    <p>Click <a href="{% url 'dashboard' %}">Here</a> to return to your dashboard. Underneath 'Total Earnings' remains your
+                    balance. You may 'Request payout' of your returns instantly, while your capital works for you. Your initial
+                    capital deposit will show up at the end of the period you chose, and you may withdraw that
+                    as well or plough it back. It's all in your hands!</p>
                 </div>
             </div>
         </div>
@@ -115,14 +135,17 @@
 
     <div class="tl-entry">
         <div class="tl-time">
-            <div class="tl-date">Jul 22, 2021</div>
-            <div class="tl-time">02:05 PM</div>
+            <div class="tl-date">It's your choice</div>
+            <div class="tl-time">Get started</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    But in certain circumstances and owing to the claims of duty
+                    It's all in your hands! Choose how you want to earn with us and we will deliver your payout right on your
+                    dashboard. Become a partner, choose your investor style, acquire equity in us or our projects or allow
+                    us assist you in the agribusiness space. Rest assured we are in to help! It's all in your hands.
+
                 </div>
             </div>
         </div>
@@ -130,40 +153,41 @@
 
     <div class="tl-entry tl-entry-start">
         <div class="tl-time">
-            <div class="tl-date">Jun 11, 2021</div>
-            <div class="tl-time">05:50 PM</div>
+            <div class="tl-date">Generate income</div>
+            <div class="tl-time">Everyday</div>
         </div>
         <div class="tl-point"></div>
         <div class="tl-content">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-info">Infomation</h5>
-                    <p>The new common language will be more simple </p>
+                    <h5 class="card-title text-info">Start investing</h5>
+                    <p>Design your income investment with us and earn something almost daily. It's all up to
+                    you. 'Select your investor type' below and start earning!</p>
                 </div>
             </div>
         </div>
     </div>
     <form class="row row-cols-md-auto g-3 align-items-center">
-            <!--    <div class="col-12">-->
-            <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-            <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-            <!--    </div>-->
-            <div class="col-12">
-                <select name="acres" class="form-control">
-                    <option value="select">Select your investor type</option>
-                    <option value="loan">Passive Investor</option>
-                    <option value="invest">Seeking Partnerships</option>
-                    <option value="partnerships">Income Investing</option>
-                    <option value="hirepurchase">Project based Investing</option>
-                    <option value="hirepurchase">Agribusiness setup assistance</option>
-                    <option value="hirepurchase">Acquire equity in our firm or projects</option>
-                    <option value="hirepurchase">Become a co-owner of projects and businesses</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Get started</button>
-            </div>
-        </form>
+        <!--    <div class="col-12">-->
+        <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
+        <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
+        <!--    </div>-->
+        <div class="col-12">
+            <select name="acres" class="form-control">
+                <option value="select">Select your investor type</option>
+                <option value="loan">Passive Investor</option>
+                <option value="invest">Seeking Partnerships</option>
+                <option value="partnerships">Income Investing</option>
+                <option value="hirepurchase">Project based Investing</option>
+                <option value="hirepurchase">Agribusiness setup assistance</option>
+                <option value="hirepurchase">Acquire equity in our firm or projects</option>
+                <option value="hirepurchase">Become a co-owner of projects and businesses</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Get started</button>
+        </div>
+    </form>
 </div>
 
 <!-- END : Timeline with date and time -->

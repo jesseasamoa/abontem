@@ -52,7 +52,7 @@
                                 <div class="list-group list-group-borderless">
                                     {% for temp in weather %}
                                     <a class="list-group-item list-group-item-action" href="#"><i
-                                            class="demo-psi-temperature fs-5 me-2"></i> {{temp.city}} <span
+                                            class="demo-psi-temperature fs-5 me-2"></i> {{temp.name}} <span
                                             class="badge bg-danger ms-3">{{temp.temperature}}</span></a>
                                     {% endfor %}
 <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
@@ -251,6 +251,12 @@
                 <!-- Public Settings -->
                 <h5 class="mt-5">Quick Launch</h5>
                 <div class="list-group list-group-borderless">
+                    <div class="list-group-item d-flex justify-content-between mb-1 px-0">
+                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'payments' %}">Link payment accounts</a></label>
+<!--                        <div class="form-check form-switch">-->
+<!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
+<!--                        </div>-->
+                    </div>
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
                         <label class="form-check-label" for="_dm-asdOnlineStatus"><a href="{% url 'data_tech' %}">Agric Field Surveys</a></label>
 <!--                        <div class="form-check form-switch">-->
@@ -665,10 +671,9 @@
 
                                     <!-- User menu link -->
                                     <div class="list-group list-group-borderless h-100 py-3">
-                                        <a href="#"
+                                        <a href="{% url 'payments' %}"
                                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                            <span><i class="demo-pli-mail fs-5 me-2"></i> Messages</span>
-                                            <span class="badge bg-danger rounded-pill">14</span>
+                                            <span><i class="demo-pli-credit-card-2 fs-5 me-2"></i> Payments</span>
                                         </a>
                                         <a href="#" class="list-group-item list-group-item-action">
                                             <i class="demo-pli-male fs-5 me-2"></i> Profile
@@ -679,8 +684,9 @@
 
                                         <a href="{% url 'invest' %}" class="list-group-item list-group-item-action mt-auto">
                                             <i class="demo-pli-basket-coins fs-5 me-2"></i> Invest
+                                            <span class="badge bg-danger rounded-pill">Get started</span>
                                         </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
+                                        <a href="{% url 'login' %}" class="list-group-item list-group-item-action">
                                             <i class="demo-pli-unlock fs-5 me-2"></i> Logout
                                         </a>
                                     </div>
@@ -1001,7 +1007,7 @@
                                 <a href="{% url 'farm_products' %}" class="nav-link">Farm Logistics</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Chemicals</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Fertilizer & Other inputs</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'farm_products' %}" class="nav-link">Irrigation Systems</a>
@@ -1187,6 +1193,9 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'farm_management' %}" class="nav-link">Warehousing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'farm_management' %}" class="nav-link">Hire a farm manager</a>
                             </li>
 
                         </ul>

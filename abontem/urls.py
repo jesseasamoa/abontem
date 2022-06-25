@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
                         DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium, Login, Register, \
-                        Contact, Weather
+                        Contact, Weather, Payments
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,5 +38,6 @@ urlpatterns = [
     path('dashboard/login/', Login.as_view(), name='login'),
     path('dashboard/register/', Register.as_view(), name='register'),
     path('dashboard/contact_us/', Contact.as_view(), name='contact_us'),
-    path('dashboard/weather/', Weather.as_view(), name='weather')
+    path('dashboard/weather/', Weather.as_view(), name='weather'),
+    path('dashboard/payments/', Payments.as_view(), name='payments')
 ]

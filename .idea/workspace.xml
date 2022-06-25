@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afca80a-9717-4a57-a651-0ddaef8ec3cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/static/dashboard/scss/my-custom-styles/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/dashboard/scss/my-custom-styles/_variables.scss" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dashboard/css/backgrounds.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/farm/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forest_preservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forest_preservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

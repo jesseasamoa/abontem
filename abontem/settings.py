@@ -22,12 +22,12 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u5ecm0a5xb89*-&5q2fo($cjer6mzmscd*h)2mvfh4(ge90h$a'
+SECRET_KEY = '='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['abontem.com', 'https://abontem.com', 'www.abontem.com']
 
 
 # Application definition
@@ -119,10 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = '/home/engavqti/airgadapp/static'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATIC_ROOT = '/home/engavqti/abontem1/static'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

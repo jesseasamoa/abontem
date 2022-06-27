@@ -197,3 +197,11 @@ class Profile(ListView):
 
 class PasswordReset(TemplateView):
     template_name = 'password_reset.html'
+
+
+class FourHundred(TemplateView):
+    template_name = '404.html'
+
+
+class FiveHundred(TemplateView):
+    template_name = '500.html'

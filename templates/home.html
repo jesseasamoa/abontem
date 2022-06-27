@@ -464,7 +464,8 @@
                                 <button type="button" class="btn btn-success">farmlands,</button>
                                 <button type="button" class="btn btn-secondary">access loans,</button>
                                 <button type="button" class="btn btn-success">preserve a forest</button>
-                                <button type="button" class="btn btn-light">and more...</button>
+                                <button type="button" class="btn btn-warning">hire a farm manager</button>
+                                <button type="button" class="btn btn-dark">and more...</button>
                             </div>
                             </p>
 
@@ -488,9 +489,9 @@
 
                     <div class="col-lg-7 d-none d-lg-block">
 
-                        <form action="{% url 'dashboard' %}" target='_blank' class="sign-up-form white-popup-block"
-                              id="get-started">
+                        <form action="{% url 'dashboard' %}" target='_blank' class="sign-up-form white-popup-block" id="get-started">
                             <h3>Get Started</h3>
+                            {% csrf_token %}
 
                             <div class="form-group">
                                 <label>First Name</label>
@@ -744,7 +745,7 @@
                             <h3 class="widget-title">Platform</h3>
 
                             <ul class="footer-menu">
-                                <li><a href="#get-started" class="popup-with-form">Blog</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Farm management</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Farm Tech</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Consultations</a></li>

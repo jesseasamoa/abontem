@@ -12,6 +12,8 @@ class Home(TemplateView):
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
+    paginate_by = 1
+    model = DashboardCrop
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -175,6 +177,16 @@ class Weather(ListView):
 
 class Payments(ListView):
     template_name = 'payments.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
+
+
+class Profile(ListView):
+    template_name = 'profile.html'
     queryset = DashboardLand.objects.all()
 
     def get_context_data(self, **kwargs):

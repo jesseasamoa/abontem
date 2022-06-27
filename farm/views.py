@@ -193,3 +193,7 @@ class Profile(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         return context
+
+
+class PasswordReset(TemplateView):
+    template_name = 'password_reset.html'

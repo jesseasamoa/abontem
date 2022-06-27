@@ -458,13 +458,27 @@
                             <h2 class="title wow pixFadeUp">From seeds<br> to farm automation</h2>
                             <p class="wow pixFadeUp" data-wow-delay="0.3s">
                             <div class="mt-5 mb-3">
-                                <button type="button" class="btn btn-light">Signup to</button>
-                                <button type="button" class="btn btn-info">buy seeds,</button>
-                                <button type="button" class="btn btn-success">farmlands,</button>
-                                <button type="button" class="btn btn-secondary">access loans,</button>
-                                <button type="button" class="btn btn-success">preserve a forest</button>
-                                <button type="button" class="btn btn-warning">hire a farm manager</button>
-                                <button type="button" class="btn btn-dark">and more...</button>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-light">Signup to</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-info">buy seeds,</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-success">farmlands,</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-secondary">access loans,</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-success">preserve a forest</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-warning">hire a farm manager</button>
+                                </a>
+                                <a href="#get-started">
+                                    <button type="button" class="btn btn-dark">and more...</button>
+                                </a>
                             </div>
                             </p>
 
@@ -488,7 +502,8 @@
 
                     <div class="col-lg-7 d-none d-lg-block">
 
-                        <form action="{% url 'dashboard' %}" target='_blank' class="sign-up-form white-popup-block" id="get-started">
+                        <form action="{% url 'dashboard' %}" target='_blank' class="sign-up-form white-popup-block"
+                              id="get-started">
                             <h3>Get Started</h3>
                             {% csrf_token %}
 
@@ -828,6 +843,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
 
 </script>
 <!--End of Tawk.to Script-->

@@ -1,8 +1,10 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, Contact
 from django.views.generic import ListView, TemplateView
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+
 import requests
-import json
-import urllib
 
 
 class Home(TemplateView):
@@ -12,14 +14,32 @@ class Home(TemplateView):
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
-    paginate_by = 1
-    model = DashboardCrop
+    # url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+    # cities = City.objects.all()
+    #
+    # weather_data = []
+    #
+    # for city in cities:
+    #     response = requests.get(url.format(city))
+    #     if response.status_code == 404:
+    #         continue
+    #     city_weather = response.json()
+    #     weather = {
+    #         'city': city,
+    #         'coo': city_weather['coord']['lat']['lon'],
+    #         'temperature': city_weather['main']['temp'],
+    #         'description': city_weather['weather'][0]['description'],
+    #         'icon': city_weather['weather'][0]['icon']
+    #     }
+    #
+    #     weather_data.append(weather)  # add the data for the current city into our list
+    #
+    # context = {'weather_data': weather_data}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
-        context['weather'] = City.objects.all()
         return context
 
 
@@ -154,16 +174,6 @@ class Register(TemplateView):
     template_name = 'register.html'
 
 
-class Contact(ListView):
-    template_name = 'contact_us.html'
-    queryset = DashboardLand.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['land'] = DashboardLand.objects.all()
-        return context
-
-
 class Weather(ListView):
     template_name = 'weather.html'
     queryset = DashboardLand.objects.all()
@@ -205,3 +215,44 @@ class FourHundred(TemplateView):
 
 class FiveHundred(TemplateView):
     template_name = '500.html'
+
+
+class Contact(TemplateView):
+    template_name = 'contact_us.html'
+    queryset = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
+
+    def post(self, request):
+        if request.method == 'POST':
+            name = request.POST['name']
+            phone = request.POST['phone']
+            subject = request.POST['subject']
+            message = request.POST['message']
+            contact = Contact()
+            contact.name = name
+            contact.phone = phone
+            contact.subject = subject
+            contact.message = message
+            contact.save()
+            try:
+                send_mail(
+                    'Contact message from abontem.com',
+                    f'You have a contact message from:\n Name - {contact.name},\n'
+                    f'Contact - {contact.phone}\n'
+                    f'Subject - {contact.subject}\n'
+                    f'Message - {contact.message}\n',
+                    'farm@abontem.com',
+                    ['farm@abontem.com', 'jesseasamoa@gmail.com'],
+                    fail_silently=False,
+                )
+            except ConnectionRefusedError:
+                'No internet connection'
+
+            messages.info(request, 'Thank You! You will get a call shortly.')
+            return render(request, 'contact_us.html')
+        else:
+            return render(request, 'contact_us.html')

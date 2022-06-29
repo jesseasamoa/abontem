@@ -122,3 +122,21 @@ class FinancePage(models.Model):
 
     class Meta:
         verbose_name_plural = 'Finance Page'
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.IntegerField()
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=800)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('contact_us', kwargs={'pk', self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Contact us'
+
+

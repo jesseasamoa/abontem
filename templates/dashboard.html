@@ -50,10 +50,10 @@
                             </div>
                             <div class="w-md-250px flex-shrink-0 mb-4">
                                 <div class="list-group list-group-borderless">
-                                    {% for temp in weather %}
+                                    {% for weather in weather_data %}
                                     <a class="list-group-item list-group-item-action" href="#"><i
-                                            class="demo-psi-temperature fs-5 me-2"></i> {{temp.name}} <span
-                                            class="badge bg-danger ms-3">{{temp.temperature}}</span></a>
+                                            class="demo-psi-temperature fs-5 me-2"></i> {{weather.city}} <span
+                                            class="badge bg-danger ms-3">{{weather.temperature}}</span></a>
                                     {% endfor %}
 <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
 <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Brong Ahafo <span-->

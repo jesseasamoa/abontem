@@ -2,10 +2,12 @@
 {% block title %}Weather{% endblock %}
 {% block content %}
 <h4>Enter below city, location, region etc. for weather</h4>
-
+<br>
+<br>
 <form class="searchbox searchbox--auto-expand searchbox--hide-btn input-group">
+    {% csrf_token %}
     <input id="header-search-input" class="searchbox__input form-control bg-transparent" type="search"
-           placeholder="Type here . . ." aria-label="Search">
+           placeholder="Type here . . ." aria-label="Search" name="city_search">
     <div class="searchbox__backdrop">
         <button class="searchbox__btn header__btn btn btn-icon rounded shadow-none border-0 btn-sm" type="button"
                 id="button-addon2">
@@ -17,7 +19,7 @@
     <table class="table align-middle">
         <thead>
         <tr>
-            <th>#</th>
+            <th></th>
             <th>City</th>
             <th>Coordinates</th>
             <th class="text-center">Wind M/S</th>
@@ -28,52 +30,54 @@
         </tr>
         </thead>
         <tbody>
+        {% for weather in weather_data %}
         <tr>
-            <td class="min-w-td">{{forloop.counter}}</td>
-            <td class="fs-5"><span class="d-block badge bg-primary">{{farm.service}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-warning">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-secondary">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-info">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-purple">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-success">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-danger">{{farm.description}}</span></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<br>
-<br>
-<br>
-<br>
-<h4>Weather forecasts for some major cities in Ghana {% now 'l G:i' %} GMT</h4>
-<div class="table-responsive mw-100">
-    <table class="table align-middle">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>City</th>
-            <th>Coordinates</th>
-            <th class="text-center">Wind M/S</th>
-            <th class="text-center">Clouds</th>
-            <th class="text-center">Atmospheric Pressure</th>
-            <th class="text-center">Weather Condition</th>
-            <th class="text-center">Temperature</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for farm in products %}
-        <tr>
-            <td class="min-w-td">{{forloop.counter}}</td>
-            <td class="fs-5"><span class="d-block badge bg-primary">{{farm.service}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-warning">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-secondary">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-info">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-purple">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-success">{{farm.description}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-danger">{{farm.description}}</span></td>
+            <td class="min-w-td">{{weather.icon}}</td>
+            <td class="fs-5"><span class="d-block badge bg-primary">{{weather.city}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-warning">{{weather.coo}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-secondary">{{weather.wind}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-info">{{weather.clouds}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-purple">{{weather.pressure}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-success">{{weather.condition}}</span></td>
+            <td class="fs-5"><span class="d-block badge bg-danger">{{weather.temperature}}</span></td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
+<br>
+<br>
+<br>
+<br>
+<!--<h4>Weather forecasts for some major cities in Ghana {% now 'l G:i' %} GMT</h4>-->
+<!--<div class="table-responsive mw-100">-->
+<!--    <table class="table align-middle">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>#</th>-->
+<!--            <th>City</th>-->
+<!--            <th>Coordinates</th>-->
+<!--            <th class="text-center">Wind M/S</th>-->
+<!--            <th class="text-center">Clouds</th>-->
+<!--            <th class="text-center">Atmospheric Pressure</th>-->
+<!--            <th class="text-center">Weather Condition</th>-->
+<!--            <th class="text-center">Temperature</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        {% for farm in products %}-->
+<!--        <tr>-->
+<!--            <td class="min-w-td">{{forloop.counter}}</td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-primary">{{farm.service}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-warning">{{farm.description}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-secondary">{{farm.description}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-info">{{farm.description}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-purple">{{farm.description}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-success">{{farm.description}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-danger">{{farm.description}}</span></td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
 {% endblock %}

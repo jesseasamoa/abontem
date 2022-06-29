@@ -21,39 +21,47 @@
                            class="btn btn-icon bg-transparent btn-underlined text-muted">
                             <i class="demo-psi-old-telephone fs-4"></i>
                         </a>
-<!--                        <a href="" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
-<!--                            <i class="demo-psi-calendar-4 fs-4"></i>-->
-<!--                        </a>-->
+                        <!--                        <a href="" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+                        <!--                            <i class="demo-psi-calendar-4 fs-4"></i>-->
+                        <!--                        </a>-->
                     </div>
                     <!-- Contact form -->
-                    <div class="card-body">
+                    <form action="{% url 'contact_us' %}" method="post">
+                        <div class="card-body">
 
-                        <div class="row">
+                            <div class="row">
                                 <h5 style="text-align:center">or complete this form</h5>
 
-                            <div class="col-md-6 mb-4">
-                                <label for="_dm-inputFullName" class="form-label">Full name</label>
-                                <input id="_dm-inputFullName" class="form-control" type="text" placeholder="Full Name">
+                                <div class="col-md-6 mb-4">
+                                    <label for="_dm-inputFullName" class="form-label">Full name</label>
+                                    <input id="_dm-inputFullName" class="form-control" type="text"
+                                           placeholder="Full Name" name="name">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="_dm-inputEmail" class="form-label">Phone</label>
+                                    <input id="_dm-inputEmail" class="form-control" type="email" placeholder="Phone"
+                                           name="phone">
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <label for="_dm-inputEmail" class="form-label">Phone</label>
-                                <input id="_dm-inputEmail" class="form-control" type="email" placeholder="Email">
+
+                            <div class="mb-4">
+                                <label for="_dm-inputSubject" class="form-label">Subject</label>
+                                <input id="_dm-inputSubject" class="form-control" type="text" placeholder="Subject"
+                                       name="subject">
                             </div>
-                        </div>
 
-                        <div class="mb-4">
-                            <label for="_dm-inputSubject" class="form-label">Subject</label>
-                            <input id="_dm-inputSubject" class="form-control" type="text" placeholder="Subject">
+                            <div class="mb-4">
+                                <label for="_dm-inputMsg" class="form-label">Message</label>
+                                <textarea id="_dm-inputMsg" class="form-control" rows="5" name="message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            {% for message in messages %}
+                            <p>{{message}}</p>
+                            {% endfor %}
                         </div>
-
-                        <div class="mb-4">
-                            <label for="_dm-inputMsg" class="form-label">Message</label>
-                            <textarea id="_dm-inputMsg" class="form-control" rows="5"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
+                    </form>
                     <!-- END : Contact form -->
 
                 </div>

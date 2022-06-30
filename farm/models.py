@@ -130,13 +130,13 @@ class Contact(models.Model):
     subject = models.CharField(max_length=100)
     message = models.CharField(max_length=800)
 
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('contact_us', kwargs={'pk', self.pk})
-
-    class Meta:
-        verbose_name_plural = 'Contact us'
+    # def __str__(self):
+    #     return self.name
+    #
+    # def get_absolute_url(self):
+    #     return reverse('contact_us', kwargs={'pk', self.pk})
+    #
+    # class Meta:
+    #     verbose_name_plural = 'Contact us'
 
 

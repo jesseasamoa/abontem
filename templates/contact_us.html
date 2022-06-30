@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}Contact Us{% endblock %}
 {% block content %}
+
 <div class="content__boxed">
+
     <div class="content__wrap">
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
         <div class="card">
             <div class="row">
                 <div class="col-md-7">
@@ -27,6 +32,7 @@
                     </div>
                     <!-- Contact form -->
                     <form action="{% url 'contact_us' %}" method="post">
+                        {% csrf_token %}
                         <div class="card-body">
 
                             <div class="row">
@@ -38,8 +44,8 @@
                                            placeholder="Full Name" name="name">
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="_dm-inputEmail" class="form-label">Phone</label>
-                                    <input id="_dm-inputEmail" class="form-control" type="email" placeholder="Phone"
+                                    <label for="_dm-inputContact" class="form-label">Phone</label>
+                                    <input id="_dm-inputContact" class="form-control" type="contact" placeholder="Phone"
                                            name="phone">
                                 </div>
                             </div>

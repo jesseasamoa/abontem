@@ -19,8 +19,10 @@ class InvestAdmin(admin.ModelAdmin):
     list_display = ('name', 'contact', 'email')
 
 
-# class ContactAdmin(admin.ModelAdmin):
-#     list_display = 'name'
+class ContactAdmin(admin.ModelAdmin):
+    form = ContactUs
+    add_form = ContactUs
+    list_display = 'name'
 
 
 admin.site.register(FrontForm, FrontFormAdmin)
@@ -30,5 +32,4 @@ admin.site.register(Invest, InvestAdmin)
 admin.site.register(City)
 admin.site.register(Management)
 admin.site.register(Products)
-admin.site.register(Contact)
-# admin.site.register(ContactUs, ContactAdmin)
+# admin.site.register(ContactAdmin)

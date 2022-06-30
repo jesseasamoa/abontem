@@ -1,4 +1,4 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, Contact
 from django.views.generic import ListView, TemplateView
 from farm.forms import ContactUs
 from django.contrib import messages
@@ -244,20 +244,21 @@ class Contact(ListView):
             contact.phone = phone
             contact.subject = subject
             contact.message = message
-            contact.save()
-            try:
-                send_mail(
-                    'Contact message from abontem.com',
-                    f'You have a contact message from:\n Name - {contact.name},\n'
-                    f'Contact - {contact.phone}\n'
-                    f'Subject - {contact.subject}\n'
-                    f'Message - {contact.message}\n',
-                    'farm@abontem.com',
-                    ['farm@abontem.com', 'jesseasamoa@gmail.com'],
-                    fail_silently=False,
-                )
-            except ConnectionRefusedError:
-                'No internet connection'
+            if contact.is_valid():
+                contact.save()
+                try:
+                    send_mail(
+                        'Contact message from abontem.com',
+                        f'You have a contact message from:\n Name - {contact.name},\n'
+                        f'Contact - {contact.phone}\n'
+                        f'Subject - {contact.subject}\n'
+                        f'Message - {contact.message}\n',
+                        'farm@abontem.com',
+                        ['farm@abontem.com', 'jesseasamoa@gmail.com'],
+                        fail_silently=False,
+                    )
+                except ConnectionRefusedError:
+                    'No internet connection'
             messages.info(self.request, 'Thank You! You will get a call shortly.')
             return render(self.request, 'contact_us.html')
         else:

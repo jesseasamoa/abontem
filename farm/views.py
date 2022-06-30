@@ -1,6 +1,5 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, Contact
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage
 from django.views.generic import ListView, TemplateView
-from farm.forms import ContactUs
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
@@ -239,26 +238,25 @@ class Contact(ListView):
             phone = self.request.POST['phone']
             subject = self.request.POST['subject']
             message = self.request.POST['message']
-            contact = ContactUs()
+            contact = ContactPage()
             contact.name = name
             contact.phone = phone
             contact.subject = subject
             contact.message = message
-            if contact.is_valid():
-                contact.save()
-                try:
-                    send_mail(
-                        'Contact message from abontem.com',
-                        f'You have a contact message from:\n Name - {contact.name},\n'
-                        f'Contact - {contact.phone}\n'
-                        f'Subject - {contact.subject}\n'
-                        f'Message - {contact.message}\n',
-                        'farm@abontem.com',
-                        ['farm@abontem.com', 'jesseasamoa@gmail.com'],
-                        fail_silently=False,
-                    )
-                except ConnectionRefusedError:
-                    'No internet connection'
+            contact.save()
+            try:
+                send_mail(
+                    'Contact message from abontem.com',
+                    f'You have a contact message from:\n Name - {contact.name},\n'
+                    f'Contact - {contact.phone}\n'
+                    f'Subject - {contact.subject}\n'
+                    f'Message - {contact.message}\n',
+                    'farm@abontem.com',
+                    ['farm@abontem.com', 'jesseasamoa@gmail.com'],
+                    fail_silently=False,
+                )
+            except ConnectionRefusedError:
+                'No internet connection'
             messages.info(self.request, 'Thank You! You will get a call shortly.')
             return render(self.request, 'contact_us.html')
         else:

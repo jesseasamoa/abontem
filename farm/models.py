@@ -1,6 +1,9 @@
 from django.db import models
 from django.urls import reverse
 import datetime
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render
 
 # Create your models here.
 
@@ -124,7 +127,7 @@ class FinancePage(models.Model):
         verbose_name_plural = 'Finance Page'
 
 
-class Contact(models.Model):
+class ContactPage(models.Model):
     name = models.CharField(max_length=100)
     phone = models.IntegerField()
     subject = models.CharField(max_length=100)
@@ -138,5 +141,4 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name_plural = 'Contact us'
-
 

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products, Contact
-from farm.forms import ContactUs
+from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products, ContactPage
 
 
 class FrontFormAdmin(admin.ModelAdmin):
@@ -20,9 +19,7 @@ class InvestAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    form = ContactUs
-    add_form = ContactUs
-    list_display = 'name'
+    list_display = ('name', 'phone', 'message')
 
 
 admin.site.register(FrontForm, FrontFormAdmin)
@@ -32,4 +29,5 @@ admin.site.register(Invest, InvestAdmin)
 admin.site.register(City)
 admin.site.register(Management)
 admin.site.register(Products)
-# admin.site.register(ContactAdmin)
+admin.site.register(ContactPage, ContactAdmin)
+

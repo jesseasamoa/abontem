@@ -11,7 +11,7 @@ class Home(TemplateView):
     template_name = 'home.html'
 
 
-class DashboardHome(DetailView):
+class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
 
@@ -245,9 +245,7 @@ class Contact(ListView):
         context['land'] = DashboardLand.objects.all()
         return context
 
-    # @csrf_protect
     def post(self, request, *args, **kwargs):
-        # if request.method == 'POST':
         name = self.request.POST['name']
         phone = self.request.POST['phone']
         subject = self.request.POST['subject']

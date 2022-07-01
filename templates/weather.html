@@ -4,7 +4,7 @@
 <h4>Enter below city, location, region etc. for weather</h4>
 <br>
 <br>
-<form class="searchbox searchbox--auto-expand searchbox--hide-btn input-group">
+<form class="searchbox searchbox--auto-expand searchbox--hide-btn input-group" method="get">
     {% csrf_token %}
     <input id="header-search-input" class="searchbox__input form-control bg-transparent" type="search"
            placeholder="Type here . . ." aria-label="Search" name="city_search">
@@ -30,15 +30,15 @@
         </tr>
         </thead>
         <tbody>
-        {% for weather in weather_data %}
+        {% for weather in weather_search %}
         <tr>
-            <td class="min-w-td">{{weather.icon}}</td>
+            <td class="min-w-td"><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image"></td>
             <td class="fs-5"><span class="d-block badge bg-primary">{{weather.city}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-warning">{{weather.coo}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-secondary">{{weather.wind}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-info">{{weather.clouds}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-purple">{{weather.pressure}}</span></td>
-            <td class="fs-5"><span class="d-block badge bg-success">{{weather.condition}}</span></td>
+<!--            <td class="fs-5"><span class="d-block badge bg-warning">{{weather.coo}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-secondary">{{weather.wind}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-info">{{weather.clouds}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-purple">{{weather.pressure}}</span></td>-->
+<!--            <td class="fs-5"><span class="d-block badge bg-success">{{weather.condition}}</span></td>-->
             <td class="fs-5"><span class="d-block badge bg-danger">{{weather.temperature}}</span></td>
         </tr>
         {% endfor %}

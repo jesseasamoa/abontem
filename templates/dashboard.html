@@ -39,8 +39,8 @@
                     <div class="col-xl-5">
 
                         <!-- Activated Users -->
-                        <h3>Average Temperature</h3>
-                        <h5>in Ghana <i>{% now 'l G:i' %}</i></h5>
+                        <h3>Temperature</h3>
+                        <h5>in Accra <i>{% now 'l G:i' %}</i></h5>
 
                         <div class="d-md-flex my-3">
                             <div class="flex-fill mb-4">
@@ -51,13 +51,11 @@
                             <div class="w-md-250px flex-shrink-0 mb-4">
                                 <div class="list-group list-group-borderless">
                                     {% for weather in weather_data %}
-                                    <a class="list-group-item list-group-item-action" href="#"><i
-                                            class="demo-psi-temperature fs-5 me-2"></i> {{weather.city}} <span
-                                            class="badge bg-danger ms-3">{{weather.temperature}}</span></a>
+                                    <a class="list-group-item list-group-item-action" href="{% url 'weather' %}">
+                                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image"> {{weather.city}} <span
+                                            class="badge bg-danger ms-3">{{weather.temperature}} °C</span></a>
                                     {% endfor %}
-<!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
-<!--                                            class="demo-psi-temperature fs-5 me-2"></i> Brong Ahafo <span-->
-<!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
+                                    <a href="{% url 'weather' %}"><span class="badge bg-danger ms-3">Click for more weather</span></a>
 <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
 <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Ashanti <span-->
 <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
@@ -1023,7 +1021,7 @@
                     <li class="nav-item has-sub">
 
                         <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
-                                class="demo-pli-data-cloud fs-5 me-2"></i>
+                                class="demo-pli-celsius fs-5 me-2"></i>
                             <span class="nav-label">Today's Weather</span>
                         </a>
 
@@ -1034,6 +1032,8 @@
                             </li>
                         </ul>
                     </li>
+
+
                     <!-- END : Link with submenu -->
 
                     <!-- Link with submenu -->
@@ -1325,7 +1325,7 @@
                     <!-- END : Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-data-cloud fs-5 me-2"></i>
+                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-celsius fs-5 me-2"></i>
                             <span class="nav-label">Today's Weather</span>
                         </a>
 
@@ -1333,6 +1333,21 @@
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
                                 <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-sub">
+
+                        <a href="{% url 'contact_us' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-computer-secure fs-5 me-2"></i>
+                            <span class="nav-label">Contact us</span>
+                        </a>
+
+                        <!-- Premium Icons submenu list -->
+                        <ul class="mininav-content nav collapse">
+                            <li class="nav-item">
+                                <a href="{% url 'contact_us' %}" class="nav-link">Message us</a>
                             </li>
                         </ul>
                     </li>
@@ -1370,7 +1385,7 @@
                             <!--                                </li>-->
                         </ul>
                         <div class="d-grid px-3 mt-3">
-                            <!--                                <a href="#" class="btn btn-sm btn-success">View Details</a>-->
+                                                            <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services" class="btn btn-sm btn-success">Whatsapp us</a>
                         </div>
                     </div>
                 </div>

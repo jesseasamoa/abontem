@@ -803,7 +803,7 @@
                     <li class="nav-item has-sub">
 
                         <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
-                                class="demo-pli-data-cloud fs-5 me-2"></i>
+                                class="demo-pli-celsius fs-5 me-2"></i>
                             <span class="nav-label">Today's Weather</span>
                         </a>
 
@@ -1109,15 +1109,29 @@
                     <!-- END : Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
-                                class="demo-pli-data-cloud fs-5 me-2"></i>
+                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-celsius fs-5 me-2"></i>
                             <span class="nav-label">Today's Weather</span>
                         </a>
 
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                                <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-sub">
+
+                        <a href="{% url 'contact_us' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-computer-secure fs-5 me-2"></i>
+                            <span class="nav-label">Contact us</span>
+                        </a>
+
+                        <!-- Premium Icons submenu list -->
+                        <ul class="mininav-content nav collapse">
+                            <li class="nav-item">
+                                <a href="{% url 'contact_us' %}" class="nav-link">Message us</a>
                             </li>
                         </ul>
                     </li>
@@ -1156,7 +1170,7 @@
                             <!--                                </li>-->
                         </ul>
                         <div class="d-grid px-3 mt-3">
-                            <!--                                <a href="#" class="btn btn-sm btn-success">View Details</a>-->
+                                                            <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services" class="btn btn-sm btn-success">Whatsapp us</a>
                         </div>
                     </div>
                 </div>

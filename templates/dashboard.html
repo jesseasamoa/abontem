@@ -39,9 +39,8 @@
                     <div class="col-xl-5">
 
                         <!-- Activated Users -->
-                        <h3>Temperature</h3>
-                        <h5>in Accra <i>{% now 'l G:i' %}</i></h5>
-
+                        <h3>Average Temperature</h3>
+                        <h5>in Ghana <i>{% now 'l G:i' %}</i></h5>
                         <div class="d-md-flex my-3">
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">28°C</div>
@@ -52,7 +51,7 @@
                             </div>
                             <div class="w-md-250px flex-shrink-0 mb-4">
                                 <div class="list-group list-group-borderless">
-                                    {% for weather in weather_data %}
+                                    {% for weather in weather_gh %}
                                     <a class="list-group-item list-group-item-action" href="{% url 'weather' %}">
                                         <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
                                         {{weather.city}} <span
@@ -673,7 +672,7 @@
                                             <small class="fw-bolder text-danger">$ 0.00</small>
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
-                                            Total Earning
+                                            Total Earnings
                                             <span class="fw-bold text-primary">$ 0.00</span>
                                         </div>
                                     </div>
@@ -690,8 +689,8 @@
                                         <a href="{% url 'profile' %}" class="list-group-item list-group-item-action">
                                             <i class="demo-pli-male fs-5 me-2"></i> Profile
                                         </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <i class="demo-pli-gear fs-5 me-2"></i> Settings
+                                        <a href="{% url 'services' %}" class="list-group-item list-group-item-action">
+                                            <i class="demo-pli-happy fs-5 me-2"></i> Services
                                         </a>
 
                                         <a href="{% url 'invest' %}"

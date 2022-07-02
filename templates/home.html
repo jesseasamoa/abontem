@@ -114,7 +114,9 @@
                     <div class="menu-wrapper" data-top="992">
                         <ul class="site-main-menu">
                             {% for weather in weather_data %}
-                            <li><a href="#get-started" class="popup-with-form">{{weather.city}} {{weather.temperature}}</a></li>
+                            <li><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                                <a href="#get-started" class="popup-with-form">{{weather.city}}
+                                    {{weather.temperature}}</a></li>
                             {% endfor %}
                             <li><a href="#get-started" class="popup-with-form">Get Started</a></li>
                             <li><a href="#get-started" class="popup-with-form">Seeds</a></li>
@@ -846,6 +848,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
 
 
 </script>

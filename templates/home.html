@@ -113,6 +113,9 @@
 
                     <div class="menu-wrapper" data-top="992">
                         <ul class="site-main-menu">
+                            {% for weather in weather_data %}
+                            <li><a href="#get-started" class="popup-with-form">{{weather.city}} {{weather.temperature}}</a></li>
+                            {% endfor %}
                             <li><a href="#get-started" class="popup-with-form">Get Started</a></li>
                             <li><a href="#get-started" class="popup-with-form">Seeds</a></li>
                             <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>

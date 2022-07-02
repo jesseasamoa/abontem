@@ -46,28 +46,31 @@
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">28°C</div>
                                 <p class="mb-3">Want to farm but low on cash? Get land on hirepurchase!</p>
-                                <a href="{% url 'finance' %}"><button type="button" class="btn btn-info btn-sm">Apply Instantly!</button></a>
+                                <a href="{% url 'finance' %}">
+                                    <button type="button" class="btn btn-info btn-sm">Apply Instantly!</button>
+                                </a>
                             </div>
                             <div class="w-md-250px flex-shrink-0 mb-4">
                                 <div class="list-group list-group-borderless">
                                     {% for weather in weather_data %}
                                     <a class="list-group-item list-group-item-action" href="{% url 'weather' %}">
-                                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image"> {{weather.city}} <span
+                                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                                        {{weather.city}} <span
                                             class="badge bg-danger ms-3">{{weather.temperature}} °C</span></a>
                                     {% endfor %}
                                     <a href="{% url 'weather' %}"><span class="badge bg-danger ms-3">Click for more weather</span></a>
-<!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
-<!--                                            class="demo-psi-temperature fs-5 me-2"></i> Ashanti <span-->
-<!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
-<!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
-<!--                                            class="demo-psi-temperature fs-5 me-2"></i> Western <span-->
-<!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
-<!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
-<!--                                            class="demo-psi-temperature fs-5 me-2"></i> Volta <span-->
-<!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
-<!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
-<!--                                            class="demo-psi-temperature fs-5 me-2"></i> Northern <span-->
-<!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
+                                    <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
+                                    <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Ashanti <span-->
+                                    <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
+                                    <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
+                                    <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Western <span-->
+                                    <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
+                                    <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
+                                    <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Volta <span-->
+                                    <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
+                                    <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
+                                    <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Northern <span-->
+                                    <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->
                                 </div>
                             </div>
                         </div>
@@ -93,7 +96,8 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">75</span>
                                         <p>Investors</p>
-                                        <a href="{% url 'invest' %}"><i class="demo-pli-basket-coins text-white text-opacity-50 fs-5"></i></a>
+                                        <a href="{% url 'invest' %}"><i
+                                                class="demo-pli-basket-coins text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -103,7 +107,8 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">82</span>
                                         <p>Farm Projects</p>
-                                        <a href="{% url 'farmlands' %}"><i class="demo-psi-boot-2 text-white text-opacity-50 fs-5"></i></a>
+                                        <a href="{% url 'farmlands' %}"><i
+                                                class="demo-psi-boot-2 text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -116,7 +121,8 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">99</span>
                                         <p>Seed Varieties</p>
-                                        <a href="{% url 'services' %}"><i class="demo-pli-file-search text-white text-opacity-50 fs-5"></i></a>
+                                        <a href="{% url 'services' %}"><i
+                                                class="demo-pli-file-search text-white text-opacity-50 fs-5"></i></a>
                                     </div>
                                 </div>
                                 <!--END : Tile-->
@@ -126,9 +132,11 @@
                                     <div class="p-3 text-center">
                                         <span class="display-5">12</span>
                                         <p>Forests Protected</p>
-                                        <a href="{% url 'forest_preservation' %}"><i class="demo-psi-love text-white text-opacity-50 fs-5"></i></a>
+                                        <a href="{% url 'forest_preservation' %}"><i
+                                                class="demo-psi-love text-white text-opacity-50 fs-5"></i></a>
                                     </div>
-                                </div></a>
+                                </div>
+                                </a>
                                 <!--END : Tile-->
 
                             </div>
@@ -226,7 +234,8 @@
                         <i class="demo-pli-information me-2 fs-5"></i>
                         Adopt a Forest
                     </a>
-                    <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20buying%20some%20organic%20produce" target="_blank" class="list-group-item list-group-item-action">
+                    <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20buying%20some%20organic%20produce"
+                       target="_blank" class="list-group-item list-group-item-action">
                         <i class="demo-pli-mine me-2 fs-5"></i>
                         Buy Organic Produce
                     </a>
@@ -250,30 +259,34 @@
                 <h5 class="mt-5">Quick Launch</h5>
                 <div class="list-group list-group-borderless">
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'payments' %}">Link payment accounts</a></label>
-<!--                        <div class="form-check form-switch">-->
-<!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
-<!--                        </div>-->
+                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'payments' %}">Link
+                            payment accounts</a></label>
+                        <!--                        <div class="form-check form-switch">-->
+                        <!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdOnlineStatus"><a href="{% url 'data_tech' %}">Agric Field Surveys</a></label>
-<!--                        <div class="form-check form-switch">-->
-<!--                            <input id="_dm-asdOnlineStatus" class="form-check-input" type="checkbox" checked>-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdMuteNotifications"><a href="{% url 'farm_management' %}">Irrigation systems</label></a>
-<!--                        <div class="form-check form-switch">-->
-<!--                            <input id="_dm-asdMuteNotifications" class="form-check-input" type="checkbox" checked>-->
-<!--                        </div>-->
+                        <label class="form-check-label" for="_dm-asdOnlineStatus"><a href="{% url 'data_tech' %}">Agric
+                            Field Surveys</a></label>
+                        <!--                        <div class="form-check form-switch">-->
+                        <!--                            <input id="_dm-asdOnlineStatus" class="form-check-input" type="checkbox" checked>-->
+                        <!--                        </div>-->
                     </div>
 
                     <div class="list-group-item d-flex justify-content-between mb-1 px-0">
-                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'farm_products' %}">Produce Buying for Export</a></label>
-<!--                        <div class="form-check form-switch">-->
-<!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
-<!--                        </div>-->
+                        <label class="form-check-label" for="_dm-asdMuteNotifications"><a
+                                href="{% url 'farm_management' %}">Irrigation systems</label></a>
+                        <!--                        <div class="form-check form-switch">-->
+                        <!--                            <input id="_dm-asdMuteNotifications" class="form-check-input" type="checkbox" checked>-->
+                        <!--                        </div>-->
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between mb-1 px-0">
+                        <label class="form-check-label" for="_dm-asdMyDevicesName"><a href="{% url 'farm_products' %}">Produce
+                            Buying for Export</a></label>
+                        <!--                        <div class="form-check form-switch">-->
+                        <!--                            <input id="_dm-asdMyDevicesName" class="form-check-input" type="checkbox" checked>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
                 <!-- End - Public Settings -->
@@ -341,25 +354,25 @@
                     </button>
 
                     <!-- Searchbox -->
-<!--                    <div class="header-searchbox">-->
+                    <!--                    <div class="header-searchbox">-->
 
-                        <!-- Searchbox toggler for small devices -->
-<!--                        <label for="header-search-input"-->
-<!--                               class="header__btn d-md-none btn btn-icon rounded-pill shadow-none border-0 btn-sm"-->
-<!--                               type="button">-->
-<!--                            <i class="demo-psi-magnifi-glass"></i>-->
-<!--                        </label>-->
+                    <!-- Searchbox toggler for small devices -->
+                    <!--                        <label for="header-search-input"-->
+                    <!--                               class="header__btn d-md-none btn btn-icon rounded-pill shadow-none border-0 btn-sm"-->
+                    <!--                               type="button">-->
+                    <!--                            <i class="demo-psi-magnifi-glass"></i>-->
+                    <!--                        </label>-->
 
-                        <!-- Searchbox input -->
-                        <!--                            <form class="searchbox searchbox&#45;&#45;auto-expand searchbox&#45;&#45;hide-btn input-group">-->
-                        <!--                                <input id="header-search-input" class="searchbox__input form-control bg-transparent" type="search" placeholder="Type for search . . ." aria-label="Search">-->
-                        <!--                                <div class="searchbox__backdrop">-->
-                        <!--                                    <button class="searchbox__btn header__btn btn btn-icon rounded shadow-none border-0 btn-sm" type="button" id="button-addon2">-->
-                        <!--                                        <i class="demo-pli-magnifi-glass"></i>-->
-                        <!--                                    </button>-->
-                        <!--                                </div>-->
-                        <!--                            </form>-->
-<!--                    </div>-->
+                    <!-- Searchbox input -->
+                    <!--                            <form class="searchbox searchbox&#45;&#45;auto-expand searchbox&#45;&#45;hide-btn input-group">-->
+                    <!--                                <input id="header-search-input" class="searchbox__input form-control bg-transparent" type="search" placeholder="Type for search . . ." aria-label="Search">-->
+                    <!--                                <div class="searchbox__backdrop">-->
+                    <!--                                    <button class="searchbox__btn header__btn btn btn-icon rounded shadow-none border-0 btn-sm" type="button" id="button-addon2">-->
+                    <!--                                        <i class="demo-pli-magnifi-glass"></i>-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </form>-->
+                    <!--                    </div>-->
                 </div>
                 <!-- End - Content Header - Left Side -->
 
@@ -370,10 +383,10 @@
                     <div class="dropdown">
 
                         <!-- Toggler -->
-<!--                        <button class="header__btn btn btn-icon btn-sm" type="button" data-bs-toggle="dropdown"-->
-<!--                                data-bs-auto-close="outside" aria-expanded="false">-->
-<!--                            <i class="demo-psi-layout-grid"></i>-->
-<!--                        </button>-->
+                        <!--                        <button class="header__btn btn btn-icon btn-sm" type="button" data-bs-toggle="dropdown"-->
+                        <!--                                data-bs-auto-close="outside" aria-expanded="false">-->
+                        <!--                            <i class="demo-psi-layout-grid"></i>-->
+                        <!--                        </button>-->
 
                         <!-- Mega Dropdown Menu -->
                         <div class="dropdown-menu dropdown-menu-end p-3 mega-dropdown">
@@ -555,7 +568,8 @@
                                     </div>
 
                                     <div class="flex-grow-1 ">
-                                        <a href="{% url 'farmlands' %}" class="h6 d-block mb-0 stretched-link text-decoration-none">{{ land.region }}</a>
+                                        <a href="{% url 'farmlands' %}"
+                                           class="h6 d-block mb-0 stretched-link text-decoration-none">{{ land.region }}</a>
                                         <p>{{ land.size }} Acres+</p>
                                     </div>
 
@@ -635,8 +649,8 @@
                                          alt="Profile Picture" loading="lazy">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-0">Aaron Chavez</h5>
-                                    <span class="text-muted fst-italic">aaron_chavez@example.com</span>
+                                    <h5 class="mb-0">Jesse Asamoa</h5>
+                                    <span class="text-muted fst-italic">jesseasamoa@gmail.com</span>
                                 </div>
                             </div>
 
@@ -646,12 +660,12 @@
                                     <!-- Simple widget and reports -->
                                     <div class="list-group list-group-borderless mb-3">
                                         <div class="list-group-item text-center border-bottom mb-3">
-                                            <p class="display-2 text-warning">17</p>
-                                            <p class="h6 mb-0"><i class="demo-pli-basket-coins fs-4"></i> New orders</p>
-                                            <small class="text-muted">You have new orders</small>
+                                            <p class="display-2 text-warning">$0.00</p>
+                                            <p class="h6 mb-0"><i class="demo-pli-basket-coins fs-4"></i> Balance</p>
+                                            <small class="text-muted"><a href="{% url 'invest' %}">Own the land and relax</a></small>
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
-                                            Today Earning
+                                            Today's Earning
                                             <small class="fw-bolder">$ 0.00</small>
                                         </div>
                                         <div class="list-group-item py-0 d-flex justify-content-between align-items-center">
@@ -680,7 +694,8 @@
                                             <i class="demo-pli-gear fs-5 me-2"></i> Settings
                                         </a>
 
-                                        <a href="{% url 'invest' %}" class="list-group-item list-group-item-action mt-auto">
+                                        <a href="{% url 'invest' %}"
+                                           class="list-group-item list-group-item-action mt-auto">
                                             <i class="demo-pli-basket-coins fs-5 me-2"></i> Invest
                                             <span class="badge bg-danger rounded-pill">Get started</span>
                                         </a>
@@ -697,9 +712,9 @@
                     <!-- End - User dropdown -->
 
                     <!-- Sidebar Toggler -->
-<!--                    <button class="sidebar-toggler header__btn btn btn-icon btn-sm" type="button">-->
-<!--                        <i class="demo-psi-dot-vertical"></i>-->
-<!--                    </button>-->
+                    <!--                    <button class="sidebar-toggler header__btn btn btn-icon btn-sm" type="button">-->
+                    <!--                        <i class="demo-psi-dot-vertical"></i>-->
+                    <!--                    </button>-->
 
                 </div>
             </div>
@@ -761,13 +776,14 @@
                 <!-- End - Profile widget -->
 
                 <!-- Navigation Category -->
-                               <h6 class="mainnav__caption mt-5 px-3 fw-bold">Home</h6>
+                <h6 class="mainnav__caption mt-5 px-3 fw-bold">Home</h6>
                 <ul class="mainnav__menu nav flex-column">
 
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'dashboard' %}" class="mininav-toggle nav-link active"><i class="demo-pli-home fs-5 me-2"></i>
+                        <a href="{% url 'dashboard' %}" class="mininav-toggle nav-link active"><i
+                                class="demo-pli-home fs-5 me-2"></i>
                             <span class="nav-label">Dashboard</span>
                         </a>
 
@@ -860,7 +876,8 @@
 
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'invest' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-bell fs-5 me-2"></i>
+                        <a href="{% url 'invest' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-bell fs-5 me-2"></i>
                             <span class="nav-label">Get Started</span>
                         </a>
 
@@ -877,7 +894,8 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'services' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-happy fs-5 me-2"></i>
+                        <a href="{% url 'services' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-happy fs-5 me-2"></i>
                             <span class="nav-label">Services</span>
                         </a>
 
@@ -899,7 +917,8 @@
                                 <a href="{% url 'services' %}" class="nav-link">Farm Design</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link d-flex align-items-center">Warehousing<span
+                                <a href="{% url 'services' %}"
+                                   class="nav-link d-flex align-items-center">Warehousing<span
                                         class="badge bg-danger ms-auto">NEW</span></a>
                             </li>
                             <li class="nav-item">
@@ -1151,7 +1170,8 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'farmlands' %}" class="mininav-toggle nav-link collapsed"><i class="demo-psi-boot-2 fs-5 me-2"></i>
+                        <a href="{% url 'farmlands' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-psi-boot-2 fs-5 me-2"></i>
                             <span class="nav-label">Farmlands</span>
                         </a>
 
@@ -1221,7 +1241,8 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'forest_preservation' %}" class="mininav-toggle nav-link collapsed"><i class="demo-psi-love fs-5 me-2"></i>
+                        <a href="{% url 'forest_preservation' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-psi-love fs-5 me-2"></i>
                             <span class="nav-label">Forests Preservation</span>
                         </a>
 
@@ -1299,14 +1320,15 @@
                     <!-- Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'premium_services' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-medal-2 fs-5 me-2"></i>
+                        <a href="{% url 'premium_services' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-medal-2 fs-5 me-2"></i>
                             <span class="nav-label">Premium Services</span>
                         </a>
 
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href= "{% url 'premium_services' %}" class="nav-link">Ready Market</a>
+                                <a href="{% url 'premium_services' %}" class="nav-link">Ready Market</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'premium_services' %}" class="nav-link">Total Management</a>
@@ -1325,14 +1347,15 @@
                     <!-- END : Link with submenu -->
                     <li class="nav-item has-sub">
 
-                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-celsius fs-5 me-2"></i>
+                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
+                                class="demo-pli-celsius fs-5 me-2"></i>
                             <span class="nav-label">Today's Weather</span>
                         </a>
 
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                                <a href="{% url 'weather' %}" class="nav-link">Weather Forecast</a>
                             </li>
                         </ul>
                     </li>
@@ -1385,7 +1408,8 @@
                             <!--                                </li>-->
                         </ul>
                         <div class="d-grid px-3 mt-3">
-                                                            <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services" class="btn btn-sm btn-success">Whatsapp us</a>
+                            <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services"
+                               class="btn btn-sm btn-success">Whatsapp us</a>
                         </div>
                     </div>
                 </div>

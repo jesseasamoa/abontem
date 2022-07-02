@@ -142,3 +142,16 @@ class ContactPage(models.Model):
     class Meta:
         verbose_name_plural = 'Contact us'
 
+
+class HomeTemp(models.Model):
+    city = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.city
+
+    def get_absolute_url(self):
+        return reverse('home.html', kwargs={'pk', self.pk})
+
+    class Meta:
+        verbose_name_plural = 'home city'
+

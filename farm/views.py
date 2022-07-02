@@ -3,7 +3,6 @@ from django.views.generic import ListView, TemplateView, DetailView
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-# from django.views.decorators.csrf import csrf_protect
 import requests
 
 
@@ -15,34 +14,10 @@ class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
 
-    # def get(self, request):
-    #     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    #     cities = City.objects.order_by("?")[:3]
-    #
-    #     weather_data = []
-    #
-    #     for city in cities:
-    #         response = requests.get(url.format(city))
-    #         if response.status_code == 404:
-    #             continue
-    #         city_weather = response.json()
-    #         weather = {
-    #             'city': city,
-    #             'temperature': city_weather['main']['temp'],
-    #             'description': city_weather['weather'][0]['description'],
-    #             'icon': city_weather['weather'][0]['icon']
-    #         }
-    #
-    #         weather_data.append(weather)  # add the data for the current city into our list
-    #
-    #     context = {'weather_data': weather_data}
-    #     return render(request, 'dashboard.html', context)
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
-        # context['weather_data'] = self.weather_set
         return context
 
 
@@ -277,3 +252,26 @@ class StartInvesting(TemplateView):
     template_name = 'start_investing.html'
     query_set = DashboardLand.objects.all()
 
+
+# def get(self, request):
+    #     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+    #     cities = City.objects.order_by("?")[:3]
+    #
+    #     weather_data = []
+    #
+    #     for city in cities:
+    #         response = requests.get(url.format(city))
+    #         if response.status_code == 404:
+    #             continue
+    #         city_weather = response.json()
+    #         weather = {
+    #             'city': city,
+    #             'temperature': city_weather['main']['temp'],
+    #             'description': city_weather['weather'][0]['description'],
+    #             'icon': city_weather['weather'][0]['icon']
+    #         }
+    #
+    #         weather_data.append(weather)  # add the data for the current city into our list
+    #
+    #     context = {'weather_data': weather_data}
+    #     return render(request, 'dashboard.html', context)

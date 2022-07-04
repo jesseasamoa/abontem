@@ -4,18 +4,39 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 import requests
+import random
 
 
 class Home(TemplateView):
     template_name = 'home.html'
+
+    def get(self, request):
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+        cities = City.objects.filter(name='East Legon')
+        weather_data = []
+
+        for city in cities:
+            response = requests.get(url.format(city))
+            if response.status_code == 404:
+                continue
+            city_weather = response.json()
+            weather = {
+                'city': city,
+                'temperature': city_weather['main']['temp'],
+                'description': city_weather['weather'][0]['description'],
+                'icon': city_weather['weather'][0]['icon']
+            }
+
+            weather_data.append(weather)
+        context = {'weather_data': weather_data}
+        return render(self.request, 'home.html', context)
 
 
 class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    cities = City.objects.order_by("?")[:3]
-
+    cities = City.objects.order_by('?')
     weather_data = []
 
     for city in cities:
@@ -36,7 +57,8 @@ class DashboardHome(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
-        context['weather_gh'] = self.weather_data
+        context['weather_gh'] = self.weather_data[:3]
+        context['random_city'] = random.choices(self.weather_data)
         return context
 
 

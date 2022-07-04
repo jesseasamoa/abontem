@@ -39,11 +39,13 @@
                     <div class="col-xl-5">
 
                         <!-- Activated Users -->
-                        <h3>Average Temperature</h3>
-                        <h5>in Ghana <i>{% now 'l G:i' %}</i></h5>
+                        <h3>Temperature</h3>
+                        {% for temp in random_city %}
+                        <h5>in <i><b>{{temp.city}}</b></i> {% now 'l G:i' %}<small>GMT</small></h5>
                         <div class="d-md-flex my-3">
                             <div class="flex-fill mb-4">
-                                <div class="display-1 h5">28°C</div>
+                                <div class="display-1 h5">{{temp.temperature}}<b><small>°C</small></b></div>
+                                {% endfor %}
                                 <p class="mb-3">Want to farm but low on cash? Get land on hirepurchase!</p>
                                 <a href="{% url 'finance' %}">
                                     <button type="button" class="btn btn-info btn-sm">Apply Instantly!</button>

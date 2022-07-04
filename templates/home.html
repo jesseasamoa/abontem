@@ -502,7 +502,7 @@
 
                     <div class="col-lg-7 d-none d-lg-block">
 
-                        <form action="{% url 'dashboard' %}" target='_blank' class="sign-up-form white-popup-block"
+                        <form action="" target='_blank' class="sign-up-form white-popup-block"
                               id="get-started">
                             <h3>Get Started</h3>
                             {% csrf_token %}
@@ -701,7 +701,7 @@
                         <div class="widget footer-widget widget-about">
                             <!--<a href="#" class="footer-logo"><img src="assets/img/main-logo.png" alt="saaspik"></a>-->
                             <p>
-                                Abontem Maize seeds | Farmlands | Farm Automation and more...
+                                Invest in Africa | Farmlands | Farm Automation and more...
                             </p>
 
                             <h4 class="footer-title">Social</h4>
@@ -724,6 +724,9 @@
                             <ul class="widget-contact-info">
                                 <li><i class="ei ei-icon_pin_alt"></i>176 Yasmine's Place - East-Legon, Accra - Ghana
                                 </li>
+                                {% for temp in weather_data %}
+                                <li><a href="" target="_blank"><img src="http://openweathermap.org/img/w/{{ temp.icon }}.png" alt="Image"></i> {{temp.city}} {{temp.temperature}}°C</a></li>
+                                {% endfor %}
                                 <li>
                                     <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services"
                                        target="_blank"><i class="ei ei-icon_phone"></i>+(233) 024 500 32 34</a></li>

@@ -30,7 +30,7 @@
         </tr>
         </thead>
         <tbody>
-        {% for weather in weather_search %}
+        {% for weather in weather_data %}
         <tr>
             <td class="min-w-td"><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image"></td>
             <td class="fs-5"><span class="d-block badge bg-primary">{{weather.city}}</span></td>

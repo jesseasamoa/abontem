@@ -39,9 +39,9 @@
                     <div class="col-xl-5">
 
                         <!-- Activated Users -->
-                        <h3>Temperature</h3>
+                        <h3>Temperature in</h3>
                         {% for temp in random_city %}
-                        <h5>in <i><b>{{temp.city}}</b></i> {% now 'l G:i' %}<small>GMT</small></h5>
+                        <h5><i><b>{{temp.city}} <img src="http://openweathermap.org/img/w/{{ temp.icon }}.png" alt="Image"></b></i> {% now 'l G:i' %}<small>GMT</small></h5>
                         <div class="d-md-flex my-3">
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">{{temp.temperature}}<b><small>°C</small></b></div>
@@ -1042,13 +1042,16 @@
 
                         <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
                                 class="demo-pli-celsius fs-5 me-2"></i>
-                            <span class="nav-label">Today's Weather</span>
+                            <span class="nav-label">Soil Data</span>
                         </a>
 
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'weather' %}" class="nav-link">Weather Forecast</a>
+                                <a href="{% url 'weather' %}" class="nav-link">Get soil data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'weather' %}" class="nav-link">Soil testing</a>
                             </li>
                         </ul>
                     </li>

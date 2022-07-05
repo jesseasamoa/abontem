@@ -4,6 +4,7 @@ import datetime
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render
+from django_countries.fields import CountryField
 
 # Create your models here.
 
@@ -128,7 +129,7 @@ class FinancePage(models.Model):
 
 
 class ContactPage(models.Model):
-    name = models.CharField(max_length=100)
+    country = CountryField(default='Ghana')
     phone = models.IntegerField()
     subject = models.CharField(max_length=100)
     message = models.CharField(max_length=800)

@@ -39,26 +39,33 @@
                                 <h5 style="text-align:center">or complete this form</h5>
 
                                 <div class="col-md-6 mb-4">
-                                    <label for="_dm-inputFullName" class="form-label">Full name</label>
-                                    <input id="_dm-inputFullName" class="form-control" type="text"
-                                           placeholder="Full Name" name="name">
+                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                            </ul>
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <label for="_dm-inputContact" class="form-label">Phone</label>
                                     <input id="_dm-inputContact" class="form-control" type="contact" placeholder="Phone"
-                                           name="phone">
+                                           name="phone" required>
                                 </div>
                             </div>
 
                             <div class="mb-4">
                                 <label for="_dm-inputSubject" class="form-label">Subject</label>
                                 <input id="_dm-inputSubject" class="form-control" type="text" placeholder="Subject"
-                                       name="subject">
+                                       name="subject" required>
                             </div>
 
                             <div class="mb-4">
                                 <label for="_dm-inputMsg" class="form-label">Message</label>
-                                <textarea id="_dm-inputMsg" class="form-control" rows="5" name="message"></textarea>
+                                <textarea id="_dm-inputMsg" class="form-control" rows="5" name="message" required></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Submit</button>

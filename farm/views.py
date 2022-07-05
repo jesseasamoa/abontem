@@ -203,21 +203,24 @@ class Weather(ListView):
         context['products'] = City.objects.all()
         return context
 
-    # def get(self, request):
-    #     city_search = request.GET.get('city_search')
-    #     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=7fb276f6f47e92af3f066b383ddc9936'
-    #     response = requests.get(url.format(city_search))
-    #     if response.status_code == 404:
-    #         return render(request, 'weather.html', {'error': 'City Not Found'})
-    #     weather = response.json()
-    #     weather_search = {
-    #         'city': city_search,
-    #         'temperature': weather['main']['temp'],
-    #         'description': weather['weather'][0]['description'],
-    #         'icon': weather['weather'][0]['icon']
-    #     }
-    #     context = {'weather_search': weather_search}
-    #     return render(request, 'weather.html', context)
+    def post(self, request, *args, **kwargs):
+        weather_data = []
+        city_search = request.POST('city_search')
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=7fb276f6f47e92af3f066b383ddc9936'
+        for city in city_search:
+            response = requests.get(url.format(city_search))
+            if response.status_code == 404:
+                continue
+            weather = response.json()
+            weather_search = {
+                'city': city,
+                'temperature': weather['main']['temp'],
+                'description': weather['weather'][0]['description'],
+                'icon': weather['weather'][0]['icon']
+            }
+        context = {'weather_search': weather_search, 'city_search': city_search}
+        weather_data.append(weather_search)
+        return render(request, 'weather.html', context)
 
 
 class Payments(ListView):

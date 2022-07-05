@@ -19,7 +19,7 @@ class InvestAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'message')
+    list_display = ('country', 'phone', 'message')
 
 
 admin.site.register(FrontForm, FrontFormAdmin)

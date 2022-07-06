@@ -145,8 +145,8 @@ class ContactPage(models.Model):
 
 
 class MostCultivated(models.Model):
-    name = models.CharField(max_length=20)
-    hectares = models.IntegerField(default=0)
+    crop = models.CharField(max_length=20)
+    hectares = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

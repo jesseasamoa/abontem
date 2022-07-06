@@ -144,3 +144,17 @@ class ContactPage(models.Model):
         verbose_name_plural = 'Contact us'
 
 
+class MostCultivated(models.Model):
+    name = models.CharField(max_length=20)
+    hectares = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('dashboard', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name_plural = 'Most Cultivated'
+
+

@@ -36,7 +36,7 @@ class DashboardHome(ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    cities = City.objects.order_by('?')
+    cities = City.objects.all()
     weather_data = []
 
     for city in cities:
@@ -57,8 +57,8 @@ class DashboardHome(ListView):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
-        context['weather_gh'] = self.weather_data[:3]
-        context['random_city'] = random.choices(self.weather_data)
+        context['weather_gh'] = random.sample(self.weather_data, k=3)
+        context['random_city'] = random.choices(self.weather_data, k=1)
         return context
 
 

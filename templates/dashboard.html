@@ -41,7 +41,7 @@
                         <!-- Activated Users -->
                         <h3>Temperature in</h3>
                         {% for temp in random_city %}
-                        <h5><i><b>{{temp.city}} <img src="http://openweathermap.org/img/w/{{ temp.icon }}.png" alt="Image"></b></i> {% now 'l G:i' %}<small>GMT</small></h5>
+                        <h5><i><b>{{temp.city|upper}} <img src="http://openweathermap.org/img/w/{{ temp.icon }}.png" alt="Image"></b></i> {% now 'l G:i' %}<small>GMT</small></h5>
                         <div class="d-md-flex my-3">
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">{{temp.temperature}}<b><small>°C</small></b></div>
@@ -59,7 +59,7 @@
                                         {{weather.city}} <span
                                             class="badge bg-danger ms-3">{{weather.temperature}} °C</span></a>
                                     {% endfor %}
-                                    <a href="{% url 'weather' %}"><span class="badge bg-danger ms-3">Click for more weather</span></a>
+                                    <a href=""><span class="badge bg-danger ms-3"><button type="submit" onClick="refreshPage()">Refresh for more weather</button></span></a>
                                     <!--                                    <a class="list-group-item list-group-item-action" href="#"><i-->
                                     <!--                                            class="demo-psi-temperature fs-5 me-2"></i> Ashanti <span-->
                                     <!--                                            class="badge bg-danger ms-3">28°C</span></a>-->

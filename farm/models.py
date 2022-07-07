@@ -129,13 +129,14 @@ class FinancePage(models.Model):
 
 
 class ContactPage(models.Model):
-    country = CountryField(default='Ghana')
+    country = CountryField(default='Kenya')
+    # country = models.CharField(max_length=50)
     phone = models.IntegerField()
     subject = models.CharField(max_length=100)
     message = models.CharField(max_length=800)
 
-    def __str__(self):
-        return self.country
+    def __int__(self):
+        return self.phone
 
     def get_absolute_url(self):
         return reverse('contact_us', kwargs={'pk', self.pk})

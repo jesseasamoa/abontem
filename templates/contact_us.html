@@ -39,7 +39,9 @@
                                 <h5 style="text-align:center">or complete this form</h5>
 
                                 <div class="col-md-6">
-                                    <label for="_dm-inputEmail2" class="form-label">Country</label>
+                                    {% for nation in country_list %}
+                                    <label for="_dm-inputEmail2" class="form-label">{{nation.country}}</label>
+                                    {% endfor %}
                                     <input id="_dm-inputEmail2" type="text" class="form-control" placeholder="country"
                                     name="country" required>
                                 </div>

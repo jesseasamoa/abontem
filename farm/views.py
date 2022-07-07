@@ -1,6 +1,6 @@
 from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
                     MostCultivated
-from django.views.generic import ListView, TemplateView, DetailView
+from django.views.generic import ListView, TemplateView, DetailView, CreateView
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
@@ -277,43 +277,19 @@ class FiveHundred(TemplateView):
     template_name = '500.html'
 
 
-@method_decorator(csrf_exempt, name='dispatch')
-class Contact(ListView):
+class Contact(CreateView):
     template_name = 'contact_us.html'
-    queryset = DashboardLand.objects.all()
+    model = ContactPage
+    fields = ['country', 'phone', 'subject', 'message']
+
+    def form_valid(self, form):
+        return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
+        context['country_list'] = ContactPage.objects.all()
         return context
-
-    @method_decorator(csrf_protect)
-    def post(self, request, *args, **kwargs):
-        country = self.request.POST['country']
-        phone = self.request.POST['phone']
-        subject = self.request.POST['subject']
-        message = self.request.POST['message']
-        contact = ContactPage()
-        contact.name = country
-        contact.phone = phone
-        contact.subject = subject
-        contact.message = message
-        contact.save()
-        try:
-            send_mail(
-                'Contact message from abontem.com',
-                f'You have a contact message from:\n Name - {contact.name},\n'
-                f'Contact - {contact.phone}\n'
-                f'Subject - {contact.subject}\n'
-                f'Message - {contact.message}\n',
-                'farm@abontem.com',
-                ['farm@abontem.com', 'jesseasamoa@gmail.com'],
-                fail_silently=False,
-            )
-        except ConnectionRefusedError:
-            'No internet connection'
-        messages.info(self.request, 'Thank You! You will get a call shortly.')
-        return render(self.request, 'contact_us.html')
 
 
 class StartInvesting(TemplateView):

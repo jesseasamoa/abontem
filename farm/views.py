@@ -1,9 +1,10 @@
 from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
-                    MostCultivated
+                    MostCultivated, ContactForm
 from django.views.generic import ListView, TemplateView, DetailView, CreateView
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.core.mail import send_mail
+from django.urls import reverse_lazy
 import requests
 import random
 from django.utils.decorators import method_decorator
@@ -280,7 +281,9 @@ class FiveHundred(TemplateView):
 class Contact(CreateView):
     template_name = 'contact_us.html'
     model = ContactPage
-    fields = ['country', 'phone', 'subject', 'message']
+    # fields = ['country', 'phone', 'subject', 'message']
+    success_url = reverse_lazy('contact_us')
+    form_class = ContactForm
 
     def form_valid(self, form):
         return super().form_valid(form)

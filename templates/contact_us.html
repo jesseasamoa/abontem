@@ -39,16 +39,15 @@
                                 <h5 style="text-align:center">or complete this form</h5>
 
                                 <div class="col-md-6">
-                                    {% for nation in country_list %}
-                                    <label for="_dm-inputEmail2" class="form-label">{{nation.country}}</label>
-                                    {% endfor %}
-                                    <input id="_dm-inputEmail2" type="text" class="form-control" placeholder="country"
-                                    name="country" required>
+                                    <label for="_dm-inputCountry" class="form-label">Country</label>
+                                    <input id="_dm-inputCountry" type="text" class="form-control"
+                                           name="country" placeholder="country" required>
                                 </div>
-                                <div class="col-md-6 mb-4">
-                                    <label for="_dm-inputContact" class="form-label">Phone</label>
-                                    <input id="_dm-inputContact" class="form-control" type="contact" placeholder="Phone"
-                                           name="phone" required>
+
+                                <div class="col-md-6">
+                                    <label for="_dm-inputPassword2" class="form-label">Phone</label>
+                                    <input id="_dm-inputPassword2" type="password" class="form-control"
+                                    name="phone" placeholder="phone" required>
                                 </div>
                             </div>
 

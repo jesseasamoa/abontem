@@ -3,8 +3,8 @@ from django.urls import reverse
 import datetime
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.shortcuts import render
 from django_countries.fields import CountryField
+from django.forms import ModelForm
 
 # Create your models here.
 
@@ -134,6 +134,7 @@ class ContactPage(models.Model):
     phone = models.IntegerField()
     subject = models.CharField(max_length=100)
     message = models.CharField(max_length=800)
+    # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __int__(self):
         return self.phone
@@ -143,6 +144,12 @@ class ContactPage(models.Model):
 
     class Meta:
         verbose_name_plural = 'Contact us'
+
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = ContactPage
+        fields = '__all__'
 
 
 class MostCultivated(models.Model):

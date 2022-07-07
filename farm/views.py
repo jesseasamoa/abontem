@@ -6,11 +6,15 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 import requests
 import random
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class Home(TemplateView):
     template_name = 'home.html'
 
+    @method_decorator(csrf_protect)
     def get(self, request):
         url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
         cities = City.objects.filter(name='East Legon')
@@ -187,15 +191,24 @@ class Premium(ListView):
         context['land'] = DashboardLand.objects.all()
         return context
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class Login(TemplateView):
     template_name = 'login.html'
 
+    @method_decorator(csrf_protect)
+    def post(self):
+        pass
 
+@method_decorator(csrf_exempt, name='dispatch')
 class Register(TemplateView):
     template_name = 'register.html'
 
+    @method_decorator(csrf_protect)
+    def post(self):
+        pass
 
+
+@method_decorator(csrf_exempt, name='dispatch')
 class Weather(ListView):
     template_name = 'weather.html'
     queryset = DashboardLand.objects.all()
@@ -206,6 +219,7 @@ class Weather(ListView):
         context['products'] = City.objects.all()
         return context
 
+    @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
         weather_data = []
         city_search = request.POST('city_search')
@@ -246,8 +260,13 @@ class Profile(ListView):
         return context
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class PasswordReset(TemplateView):
     template_name = 'password_reset.html'
+
+    @method_decorator(csrf_protect)
+    def post(self):
+        pass
 
 
 class FourHundred(TemplateView):
@@ -258,6 +277,7 @@ class FiveHundred(TemplateView):
     template_name = '500.html'
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class Contact(ListView):
     template_name = 'contact_us.html'
     queryset = DashboardLand.objects.all()
@@ -267,13 +287,14 @@ class Contact(ListView):
         context['land'] = DashboardLand.objects.all()
         return context
 
+    @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
-        name = self.request.POST['name']
+        country = self.request.POST['country']
         phone = self.request.POST['phone']
         subject = self.request.POST['subject']
         message = self.request.POST['message']
         contact = ContactPage()
-        contact.name = name
+        contact.name = country
         contact.phone = phone
         contact.subject = subject
         contact.message = message

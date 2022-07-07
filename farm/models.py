@@ -135,7 +135,7 @@ class ContactPage(models.Model):
     message = models.CharField(max_length=800)
 
     def __str__(self):
-        return self.name
+        return self.country
 
     def get_absolute_url(self):
         return reverse('contact_us', kwargs={'pk', self.pk})

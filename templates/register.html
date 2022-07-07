@@ -71,26 +71,26 @@
                                 <p>Join the abontem community! Let's set up your account.</p>
                             </div>
 
-                            <form class="mt-5" action="#">
-
+                            <form class="mt-5" action="#" method="post">
+                                {% csrf_token %}
                                 <div class="w-md-400px d-inline-flex row g-3 mb-4">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="First name" aria-label="First name" autofocus>
+                                        <input name= "fname" id= "fname" type="text" class="form-control" placeholder="First name" aria-label="First name" autofocus>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                                        <input name= "lname" id= "lname" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                        <input name= "uname" id= "uname" type="text" class="form-control" placeholder="Username" aria-label="Username">
                                     </div>
                                     <div class="col-12">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                                        <input name= "email" id= "email" type="email" class="form-control" placeholder="Email" aria-label="Email">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                                        <input name= "pass1" id= "pass1" type="password" class="form-control" placeholder="Password" aria-label="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password">
+                                        <input name= "pass2" id= "pass2" type="password" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password">
                                     </div>
                                 </div>
 

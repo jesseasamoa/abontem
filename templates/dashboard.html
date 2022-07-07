@@ -46,9 +46,9 @@
                             <div class="flex-fill mb-4">
                                 <div class="display-1 h5">{{temp.temperature}}<b><small>°C</small></b></div>
                                 {% endfor %}
-                                <p class="mb-3">Want to farm but low on cash? Get land on hirepurchase!</p>
+                                <p class="mb-3">Fast track your farming project in 10 easy steps!</p>
                                 <a href="{% url 'finance' %}">
-                                    <button type="button" class="btn btn-info btn-sm">Apply Instantly!</button>
+                                    <button type="button" class="btn btn-info btn-sm">Start farming!</button>
                                 </a>
                             </div>
                             <div class="w-md-250px flex-shrink-0 mb-4">
@@ -888,7 +888,7 @@
                                 <a href="{% url 'invest' %}" class="nav-link">Invest</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Buy / Rent Farmland</a>
+                                <a href="{% url 'start_farming' %}" class="nav-link">Start farming</a>
                             </li>
                         </ul>
                     </li>

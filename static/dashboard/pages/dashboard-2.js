@@ -15,7 +15,7 @@ document.addEventListener( "DOMContentLoaded", () => {
     const barData = [ { y: '1', a: 520, b: 85, c: 50 }, { y: '2', a: 370,  b: 45, c: 30 }, { y: '3', a: 209,  b: 35, c: 29 }, { y: '4', a: 495,  b: 95, c: 95 }, { y: '5', a: 170,  b: 25, c: 70 }, { y: '6', a: 185,  b: 65, c: 15 }, { y: '7', a: 273,  b: 12, c: 73 } ];
     const barChart = new Chart(
         document.getElementById('_dm-barChart'), {
-            type: 'bar',
+            type: 'pie',
             data: {
                 datasets: [
                     {

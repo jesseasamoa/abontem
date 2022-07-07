@@ -1,4 +1,5 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
+                    MostCultivated
 from django.views.generic import ListView, TemplateView, DetailView
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -59,6 +60,8 @@ class DashboardHome(ListView):
         context['crops'] = DashboardCrop.objects.all()
         context['weather_gh'] = random.sample(self.weather_data, k=3)
         context['random_city'] = random.choices(self.weather_data, k=1)
+        # context['most_cultivated'] = MostCultivated.objects.all(name='crop')
+        # context['most_hectares'] = MostCultivated.objects.all(name='hectares')
         return context
 
 
@@ -294,5 +297,10 @@ class Contact(ListView):
 
 class StartInvesting(TemplateView):
     template_name = 'start_investing.html'
+    query_set = DashboardLand.objects.all()
+
+
+class StartFarming(TemplateView):
+    template_name = 'start_farming'
     query_set = DashboardLand.objects.all()
 

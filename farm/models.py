@@ -149,7 +149,7 @@ class MostCultivated(models.Model):
     hectares = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.crop
 
     def get_absolute_url(self):
         return reverse('dashboard', kwargs={'pk': self.pk})

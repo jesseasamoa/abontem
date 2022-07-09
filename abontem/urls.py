@@ -50,5 +50,5 @@ urlpatterns = [
     path('dashboard/500/', FiveHundred.as_view(), name='500'),
     path('dashboard/start_investing/', StartInvesting.as_view(), name='start_investing'),
     path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming'),
-    # path('da')
+    path('dashboard/activate/', Activate.as_view, name='activate')
 ]

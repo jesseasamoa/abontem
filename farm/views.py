@@ -1,18 +1,29 @@
 from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
-                    MostCultivated, ContactForm
-from django.views.generic import ListView, TemplateView, DetailView, CreateView
+                    ContactForm
+from django.views.generic import ListView, TemplateView, DetailView
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 from django.core.mail import send_mail
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 import requests
 import random
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from abontem import settings
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_str
+from abontem.tokens import generate_token
+from django.core.mail import EmailMessage, send_mail
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class Home(TemplateView):
+class Home(DetailView):
     template_name = 'home.html'
 
     @method_decorator(csrf_protect)
@@ -37,8 +48,38 @@ class Home(TemplateView):
         context = {'weather_data': weather_data}
         return render(self.request, 'home.html', context)
 
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        if request.method == 'POST':
+            email = request.POST["mail"]
+            pass1 = request.POST["password"]
+            user = authenticate(email=email, pass1=pass1)
+            if user is not None:
+                login(request, user)
+                fname = user.first_name
+                return render(request, 'dashboard.html', {'email': email})
+            else:
+                messages.error(request, 'Enter the right credentials!')
+                return redirect(request, 'login.html')
+        return render(request, 'login.html')
 
-class DashboardHome(ListView):
+    # HOME PAGE SIGNUP FORM
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        if request.method == 'POST':
+            fname = request.POST["fname"]
+            contact = request.POST["contact"]
+            email = request.POST["email"]
+            pass1 = request.POST["pass1"]
+            myuser = User.objects.create_user(fname, contact, email, pass1)
+            myuser.first_name = fname
+            myuser.save()
+            messages.success(request, 'Your account has been created successfully!')
+            return redirect('login.html')
+        return render(request, 'register.html')
+
+
+class DashboardHome(LoginRequiredMixin, ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
@@ -192,22 +233,6 @@ class Premium(ListView):
         context['land'] = DashboardLand.objects.all()
         return context
 
-@method_decorator(csrf_exempt, name='dispatch')
-class Login(TemplateView):
-    template_name = 'login.html'
-
-    @method_decorator(csrf_protect)
-    def post(self):
-        pass
-
-@method_decorator(csrf_exempt, name='dispatch')
-class Register(TemplateView):
-    template_name = 'register.html'
-
-    @method_decorator(csrf_protect)
-    def post(self):
-        pass
-
 
 @method_decorator(csrf_exempt, name='dispatch')
 class Weather(ListView):
@@ -278,20 +303,64 @@ class FiveHundred(TemplateView):
     template_name = '500.html'
 
 
-class Contact(CreateView):
+@method_decorator(csrf_exempt, name='dispatch')
+class Contact(TemplateView):
     template_name = 'contact_us.html'
-    model = ContactPage
-    # fields = ['country', 'phone', 'subject', 'message']
-    success_url = reverse_lazy('contact_us')
+    query_set = DashboardLand.objects.all()
+    success_url = 'contact_us.html'
     form_class = ContactForm
 
-    def form_valid(self, form):
-        return super().form_valid(form)
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        f = ContactForm(request.POST)
+        if f.is_valid():
+            messages.info(request, 'Thank you! You will get a call shortly!')
+            f.save()
+            country = request.POST["country"]
+            phone = request.POST["phone"]
+            subject = request.POST["subject"]
+            message = request.POST["message"]
+            from_email = settings.EMAIL_HOST_USER
+            recipients = ['farm@abontem.com', 'jesseasamoa@gmail.com']
+            send_mail(f'You have a message from {country},\n'
+                      f' the contact is {phone}, and {subject} as the subject,\n '
+                      f'Message: {message}, {from_email}, {recipients}')
+        return render(request, 'dashboard.html')
+
+    # @method_decorator(csrf_protect)
+    # def post(self, request):
+    #     country = request.POST['country']
+    #     phone = request.POST['phone']
+    #     subject = request.POST['subject']
+    #     message = request.POST['message']
+    #     contact = ContactPage()
+    #     contact.country = country
+    #     contact.phone = phone
+    #     contact.subject = subject
+    #     contact.message = message
+    #     contact.save()
+    #     # try:
+    #     send_mail(
+    #         'Contact message from abontem.com',
+    #         f'You have a contact message from:\n Name - {contact.country}\n'
+    #         f'Contact - {contact.phone}\n'
+    #         f'Subject - {contact.subject}\n'
+    #         f'Message - {contact.message}\n',
+    #         'farm@abontem.com',
+    #         ['farm@abontem.com', 'jesseasamoa@gmail.com'],
+    #         fail_silently=False,
+    #     )
+    #     # except ConnectionRefusedError:
+    #     #     'No internet connection'
+    #     messages.info(request, 'Thank You! You will get a call shortly.')
+    #     return render(request, 'contact_us.html')
+
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
-        context['country_list'] = ContactPage.objects.all()
+        # context['country_list'] = ContactPage.objects.all()
         return context
 
 
@@ -301,6 +370,105 @@ class StartInvesting(TemplateView):
 
 
 class StartFarming(TemplateView):
-    template_name = 'start_farming'
+    template_name = 'start_farming.html'
     query_set = DashboardLand.objects.all()
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class Register(TemplateView):
+    template_name = 'register.html'
+
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        if request.method == 'POST':
+            fname = request.POST['fname']
+            lname = request.POST['lname']
+            username = request.POST['uname']
+            contact = request.POST['contact']
+            email = request.POST['email']
+            pass1 = request.POST['pass1']
+            pass2 = request.POST['pass2']
+            if User.objects.filter(email=email):
+                messages.error(request, 'Email already exists, kindly choose another email')
+                return redirect('register.html')
+            if User.objects.filter(uname=username):
+                messages.error(request, 'Username already exists, kindly choose another username')
+                return redirect('register.html')
+            if len(username) > 10:
+                messages.error(request, 'Username should not be more than 10 characters')
+            if pass1 != pass2:
+                messages.error(request, 'The passwords do not match. Please retype!')
+            self.myuser = User.objects.create_user(username, email, pass1)
+            self.myuser.first_name = fname
+            self.myuser.is_active = False
+            self.myuser.save()
+            messages.success(request, 'Your account has been created successfully!')
+
+            # WELCOME EMAIL
+            subject = 'hi'
+            message = 'hi + myuser.firs_name'
+            from_email = settings.EMAIL_HOST_USER
+            recipients = [self.myuser.email]
+            send_mail(subject, message, from_email, recipients, fail_silently=True)
+
+            # EMAIL ACTIVATION
+
+            current_site = get_current_site(request)
+            email_subject = "confirm your email "
+            message2 = render_to_string("email_confirmation.html"),{
+                'name': self.myuser.first_name,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(self.myuser.pk)),
+                'token': generate_token.make_token(self.myuser)
+            }
+
+            email = EmailMessage(
+                email_subject,
+                message2,
+                settings.EMAIL_HOST_USER,
+
+                [self.myuser.email],
+            )
+            email.fail_silently = True
+            email.send()
+            return redirect('login.html')
+        return render(request, 'register.html')
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class Login(TemplateView):
+    template_name = 'login.html'
+
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        if request.method == 'POST':
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                login(request, user)
+                fname = user.first_name
+                return render(request, 'dashboard.html', {'email': email})
+            else:
+                messages.error(request, 'Enter the right credentials!')
+                return redirect(request, 'login.html')
+        return render(request, 'login.html')
+
+
+class Logout(TemplateView):
+    template_name = 'login.html'
+    next_page = 'login.html'
+
+
+class PasswordReset(TemplateView):
+    template_name = 'password_reset.html'
+    success_url = 'login.html'
+
+
+class PasswordResetCompleteView(TemplateView):
+    pass
+
+
+class Activate(TemplateView):
+    pass
 

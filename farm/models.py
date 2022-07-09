@@ -1,8 +1,6 @@
 from django.db import models
 from django.urls import reverse
 import datetime
-from django.contrib import messages
-from django.core.mail import send_mail
 from django_countries.fields import CountryField
 from django.forms import ModelForm
 
@@ -129,11 +127,11 @@ class FinancePage(models.Model):
 
 
 class ContactPage(models.Model):
-    country = CountryField(default='Kenya')
-    # country = models.CharField(max_length=50)
+    # country = CountryField(default='Kenya')
+    country = models.CharField(max_length=50)
     phone = models.IntegerField()
     subject = models.CharField(max_length=100)
-    message = models.CharField(max_length=800)
+    message = models.TextField(max_length=1000)
     # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __int__(self):
@@ -144,12 +142,6 @@ class ContactPage(models.Model):
 
     class Meta:
         verbose_name_plural = 'Contact us'
-
-
-class ContactForm(ModelForm):
-    class Meta:
-        model = ContactPage
-        fields = '__all__'
 
 
 class MostCultivated(models.Model):
@@ -164,5 +156,23 @@ class MostCultivated(models.Model):
 
     class Meta:
         verbose_name_plural = 'Most Cultivated'
+
+
+# class RegisterUser(models.Model):
+#     first_name = models.CharField()
+#     last_name = models.CharField()
+#     username = models.CharField()
+#     contact = models.IntegerField()
+#     email = models.EmailField()
+#     password = models.CharField()
+#     confirmpassword = models.CharField()
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = ContactPage
+        Fields = '__all__'
+        # widgets = {'phone': }
+
+
 
 

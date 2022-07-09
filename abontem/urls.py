@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
                         DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium, Login, Register, \
                         Contact, Weather, Payments, Profile, PasswordReset, FourHundred, FiveHundred, \
-                        StartInvesting, StartFarming
+                        StartInvesting, StartFarming, Logout, PasswordReset, Activate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,7 +38,8 @@ urlpatterns = [
     path('dashboard/forest_preservation/', Forests.as_view(), name='forest_preservation'),
     path('dashboard/consultations/', Consultations.as_view(), name='consultations'),
     path('dashboard/premium_services/', Premium.as_view(), name='premium_services'),
-    path('dashboard/login/', Login.as_view(), name='login'),
+    path('dashboard/login/', login_required(TemplateView.as_view(template_name='login.html')), name='login'),
+    path('dashboard/logout', Logout.as_view, name='logout'),
     path('dashboard/register/', Register.as_view(), name='register'),
     path('dashboard/contact_us/', Contact.as_view(), name='contact_us'),
     path('dashboard/weather/', Weather.as_view(), name='weather'),
@@ -46,5 +49,6 @@ urlpatterns = [
     path('dashboard/404/', FourHundred.as_view(), name='404'),
     path('dashboard/500/', FiveHundred.as_view(), name='500'),
     path('dashboard/start_investing/', StartInvesting.as_view(), name='start_investing'),
-    path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming')
+    path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming'),
+    # path('da')
 ]

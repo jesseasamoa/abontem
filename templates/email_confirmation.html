@@ -1,0 +1,12 @@
+{% autoescape off %}
+
+Welcome to DJanog Login
+
+Hello {{name}}
+
+Please confirm your email by clicking on the link.
+
+Confirmation link: https://{{domain}}{% url 'activate' uid64=uid token=token%}
+
+
+{% endautoescape %}

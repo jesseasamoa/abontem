@@ -47,7 +47,7 @@
                                 <div class="display-1 h5">{{temp.temperature}}<b><small>°C</small></b></div>
                                 {% endfor %}
                                 <p class="mb-3">Fast track your farming project in 10 easy steps!</p>
-                                <a href="{% url 'finance' %}">
+                                <a href="{% url 'start_farming' %}">
                                     <button type="button" class="btn btn-info btn-sm">Start farming!</button>
                                 </a>
                             </div>
@@ -650,7 +650,9 @@
                                          alt="Profile Picture" loading="lazy">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-0">Jesse Asamoa</h5>
+                                    {% if user.is_authenticated %}
+                                    <h5 class="mb-0">{{fname}}</h5>
+                                    {% endif %}
                                     <span class="text-muted fst-italic">jesseasamoa@gmail.com</span>
                                 </div>
                             </div>

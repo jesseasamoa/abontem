@@ -503,28 +503,28 @@
                     <div class="col-lg-7 d-none d-lg-block">
 
                         <form action="" target='_blank' class="sign-up-form white-popup-block"
-                              id="get-started">
+                              id="get-started" method="post">
                             <h3>Get Started</h3>
                             {% csrf_token %}
 
                             <div class="form-group">
                                 <label>First Name</label>
-                                <input type="text">
+                                <input name= "fname" id= "fname" type="text" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Contact</label>
-                                <input type="text">
+                                <input name= "contact" id= "contact" type="phone" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text">
+                                <input name= "email" id= "email" type="text" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password">
+                                <input name= "pass1"  id="pass1" type="password" required>
                             </div>
 
                             <input type="submit">
@@ -797,17 +797,17 @@
 
 </div><!-- /#site -->
 
-<form id="login-form" action="#" class="login-form mfp-hide">
+<form id="login-form" action="#" class="login-form mfp-hide" method="post">
 
-
+    {% csrf_token %}
     <div class="form-group">
         <label>Email</label>
-        <input type="text">
+        <input name= "mail" id= "mail" type="text" required>
     </div>
 
     <div class="form-group">
         <label>Password</label>
-        <input type="password">
+        <input name= "password" id="password" type="password">
     </div>
     <input type="submit">
     <!--        <p></p>-->

@@ -354,6 +354,7 @@
                         <i class="demo-psi-view-list"></i>
                     </button>
 
+
                     <!-- Searchbox -->
                     <!--                    <div class="header-searchbox">-->
 
@@ -646,14 +647,19 @@
                             <!-- User dropdown header -->
                             <div class="d-flex align-items-center border-bottom p-3">
                                 <div class="flex-shrink-0">
-                                    <img class="img-sm rounded-circle" src="./assets/img/profile-photos/1.png"
-                                         alt="Profile Picture" loading="lazy">
+                                    {% for message in messages %}
+                                    {{message}}
+                                    {% endfor %}
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     {% if user.is_authenticated %}
-                                    <h5 class="mb-0">{{fname}}</h5>
+<!--                                    <h5 class="mb-0">{{user.username|upper}}</h5>-->
+
+                                    <div class="alert alert-info" role="alert">
+                                        <h5>{{user.username|upper}}</h5>
+                            {{user.email}}
+                        </div>
                                     {% endif %}
-                                    <span class="text-muted fst-italic">jesseasamoa@gmail.com</span>
                                 </div>
                             </div>
 
@@ -702,7 +708,7 @@
                                             <i class="demo-pli-basket-coins fs-5 me-2"></i> Invest
                                             <span class="badge bg-danger rounded-pill">Get started</span>
                                         </a>
-                                        <a href="{% url 'login' %}" class="list-group-item list-group-item-action">
+                                        <a href="{% url 'logout' %}" class="list-group-item list-group-item-action">
                                             <i class="demo-pli-unlock fs-5 me-2"></i> Logout
                                         </a>
                                     </div>
@@ -1428,13 +1434,13 @@
             <div class="mainnav__bottom-content border-top pb-2">
                 <ul id="mainnav" class="mainnav__menu nav flex-column">
                     <li class="nav-item has-sub">
-                        <a href="{% url 'login' %}" class="nav-link mininav-toggle collapsed" aria-expanded="false">
+                        <a href="{% url 'logout' %}" class="nav-link mininav-toggle collapsed" aria-expanded="false">
                             <i class="demo-pli-unlock fs-5 me-2"></i>
                             <span class="nav-label">Logout</span>
                         </a>
                         <ul class="mininav-content nav flex-column collapse">
                             <li class="nav-item">
-                                <a href="{% url 'login' %}" class="nav-link">Logout</a>
+                                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">This device only</a>

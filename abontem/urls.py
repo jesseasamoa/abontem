@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
+from farm import views
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
                         DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium, Login, Register, \
                         Contact, Weather, Payments, Profile, PasswordReset, FourHundred, FiveHundred, \
-                        StartInvesting, StartFarming, Logout, PasswordReset, Activate
+                        StartInvesting, StartFarming, PasswordChange
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,17 +39,18 @@ urlpatterns = [
     path('dashboard/forest_preservation/', Forests.as_view(), name='forest_preservation'),
     path('dashboard/consultations/', Consultations.as_view(), name='consultations'),
     path('dashboard/premium_services/', Premium.as_view(), name='premium_services'),
-    path('dashboard/login/', login_required(TemplateView.as_view(template_name='login.html')), name='login'),
-    path('dashboard/logout', Logout.as_view, name='logout'),
-    path('dashboard/register/', Register.as_view(), name='register'),
+    path('login/', Login.as_view(), name='login'),
+    path('dashboard/logout', views.logout_page, name='logout'),
+    path('register/', Register.as_view(), name='register'),
     path('dashboard/contact_us/', Contact.as_view(), name='contact_us'),
     path('dashboard/weather/', Weather.as_view(), name='weather'),
     path('dashboard/payments/', Payments.as_view(), name='payments'),
     path('dashboard/profile/', Profile.as_view(), name='profile'),
     path('dashboard/password_reset/', PasswordReset.as_view(), name='password_reset'),
+    path('dashboard/password_change/', PasswordChange.as_view(), name='password_change'),
     path('dashboard/404/', FourHundred.as_view(), name='404'),
     path('dashboard/500/', FiveHundred.as_view(), name='500'),
     path('dashboard/start_investing/', StartInvesting.as_view(), name='start_investing'),
     path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming'),
-    path('dashboard/activate/', Activate.as_view, name='activate')
+    # path('dashboard/activate/<uidb64>/<token>', Activate.as_view, name='activate')
 ]

@@ -170,8 +170,11 @@ class MostCultivated(models.Model):
 class ContactForm(ModelForm):
     class Meta:
         model = ContactPage
-        Fields = '__all__'
+        fields = ['country', 'phone', 'subject', 'message']
         # widgets = {'phone': }
+
+
+form = ContactForm()
 
 
 

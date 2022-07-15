@@ -32,7 +32,7 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = '='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com']
 
@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'farm',
-    'django_countries'
+    'farm'
+    # 'django_countries'
 ]
 
 MIDDLEWARE = [
@@ -138,3 +138,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_TRUSTED_ORIGINS = ['https://abontem.com', 'http://api.openweathermap.org']

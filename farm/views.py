@@ -1,6 +1,6 @@
 from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
                     ContactForm
-from django.views.generic import ListView, TemplateView, DetailView
+from django.views.generic import ListView, TemplateView, DetailView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
@@ -13,17 +13,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from abontem import settings
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes
+from django.utils.encoding import force_bytes, force_str
 from abontem.tokens import generate_token
 from django.core.mail import EmailMessage, send_mail
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.contrib.auth.views import PasswordResetView, PasswordChangeView
+from django.contrib.auth.forms import PasswordResetForm, PasswordChangeForm
+from django.urls import reverse_lazy
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+# @method_decorator(csrf_exempt, name='dispatch')
 class Home(DetailView):
     template_name = 'home.html'
 
-    @method_decorator(csrf_protect)
+    # @method_decorator(csrf_protect)
     def get(self, request):
         url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
         cities = City.objects.filter(name='East Legon')
@@ -45,35 +48,59 @@ class Home(DetailView):
         context = {'weather_data': weather_data}
         return render(self.request, 'home.html', context)
 
-    @method_decorator(csrf_protect)
-    def post(self, request):
-        if request.method == 'POST':
-            email = request.POST["mail"]
-            pass1 = request.POST["password"]
-            user = authenticate(email=email, pass1=pass1)
-            if user is not None:
-                login(request, user)
-                fname = user.first_name
-                return render(request, 'dashboard.html', {'email': email})
-            else:
-                messages.error(request, 'Enter the right credentials!')
-                return redirect(request, 'login.html')
-        return render(request, 'login.html')
-
     # HOME PAGE SIGNUP FORM
     @method_decorator(csrf_protect)
     def post(self, request):
+        """
+        LOGIN & SIGNUP FORMS ON HOMEPAGE
+        """
+        # LOGIN - POPUP MODAL
         if request.method == 'POST':
-            fname = request.POST["fname"]
-            contact = request.POST["contact"]
-            email = request.POST["email"]
-            pass1 = request.POST["pass1"]
-            myuser = User.objects.create_user(fname, contact, email, pass1)
-            myuser.first_name = fname
-            myuser.save()
-            messages.success(request, 'Your account has been created successfully!')
-            return redirect('login.html')
-        return render(request, 'register.html')
+            if request.POST.get("form_type") == 'formOne':
+                if request.method == 'POST':
+                    uname = request.POST.get('uname')
+                    password = request.POST.get('password')
+                    user = authenticate(request, username=uname, password=password)
+                    if user is None:
+                        messages.error(request, 'Login with your right credentials!')
+                        return render(request, 'home.html')
+                    else:
+                        login(request, user)
+                        # fname = user.first_name
+                        # messages.success(request, 'You are successfully loggedin!')
+                        # context = {'firstname':first_name}
+                        return redirect('dashboard')
+
+                return render(request, 'dashboard.html')
+
+            # REGISTER
+            elif request.POST.get("form_type") == 'formTwo':
+                fname = request.POST['fname']
+                contact = request.POST['contact']
+                email = request.POST['email']
+                pass1 = request.POST['pass1']
+                if User.objects.filter(email=email):
+                    messages.error(request, 'Your email already exists, kindly sign in!')
+                    return redirect('home')
+                if User.objects.filter(password=pass1):
+                    messages.error(request, 'Kindly choose another password')
+                    return redirect('home')
+                if len(contact) != 10:
+                    messages.error(request, 'Please enter your 10 digit contact starting with 0')
+                    return redirect('home')
+                if len(pass1) < 8:
+                    messages.error(request, 'Your password must contain at least 8 characters.')
+                    return redirect('home')
+                if User.objects.filter(username=fname).first():
+                    messages.error(request, "This username(first name) is already taken")
+                    return redirect('home')
+                self.myuser = User.objects.create_user(fname, email, pass1)
+                self.myuser.first_name = fname
+                self.myuser.is_active = True
+                self.myuser.save()
+                messages.success(request, f'{self.myuser.first_name.upper()}! Your account has been created successfully! Login.')
+                return redirect('login')
+        return redirect('home')
 
 
 class DashboardHome(LoginRequiredMixin, ListView):
@@ -231,7 +258,7 @@ class Premium(ListView):
         return context
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+# @method_decorator(csrf_exempt, name='dispatch')
 class Weather(ListView):
     template_name = 'weather.html'
     queryset = DashboardLand.objects.all()
@@ -242,7 +269,7 @@ class Weather(ListView):
         context['products'] = City.objects.all()
         return context
 
-    @method_decorator(csrf_protect)
+    # @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
         weather_data = []
         city_search = request.POST('city_search')
@@ -370,57 +397,62 @@ class Register(TemplateView):
     def post(self, request):
         if request.method == 'POST':
             fname = request.POST['fname']
-            lname = request.POST['lname']
-            username = request.POST['uname']
+            # lname = request.POST['lname']
+            # username = request.POST['uname']
             contact = request.POST['contact']
             email = request.POST['email']
             pass1 = request.POST['pass1']
             pass2 = request.POST['pass2']
             if User.objects.filter(email=email):
-                messages.error(request, 'Email already exists, kindly choose another email')
-                return redirect('register.html')
-            if User.objects.filter(uname=username):
-                messages.error(request, 'Username already exists, kindly choose another username')
-                return redirect('register.html')
-            if len(username) > 10:
-                messages.error(request, 'Username should not be more than 10 characters')
+                messages.error(request, 'Your email already exists, kindly sign in!')
+                return redirect('register')
+            if len(contact) < 10:
+                messages.error(request, 'Please enter your contact correctly starting with 0')
+                return redirect('register')
+            if len(pass1) < 8:
+                messages.error(request, 'Your password must contain at least 8 characters.')
+                return redirect('register')
             if pass1 != pass2:
                 messages.error(request, 'The passwords do not match. Please retype!')
-            self.myuser = User.objects.create_user(username, email, pass1)
+                return redirect('register')
+            if fname in pass1:
+                messages.error(request, "Your name shouldn't be in your password!")
+                return redirect('register')
+            self.myuser = User.objects.create_user(fname, email, pass1)
             self.myuser.first_name = fname
-            self.myuser.is_active = False
+            self.myuser.is_active = True
             self.myuser.save()
-            messages.success(request, 'Your account has been created successfully!')
+            messages.success(request, f'{self.myuser.first_name}! Your account has been created successfully! Login.')
 
             # WELCOME EMAIL
-            subject = 'hi'
-            message = 'hi + myuser.firs_name'
-            from_email = settings.EMAIL_HOST_USER
-            recipients = [self.myuser.email]
-            send_mail(subject, message, from_email, recipients, fail_silently=True)
+            # subject = 'hi'
+            # message = 'hi + myuser.firs_name'
+            # from_email = settings.EMAIL_HOST_USER
+            # recipients = [self.myuser.email]
+            # send_mail(subject, message, from_email, recipients, fail_silently=True)
 
             # EMAIL ACTIVATION
 
-            current_site = get_current_site(request)
-            email_subject = "confirm your email "
-            message2 = render_to_string("email_confirmation.html", {
-                'name': self.myuser.first_name,
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(self.myuser.pk)),
-                'token': generate_token.make_token(self.myuser)
-            })
-
-            email = EmailMessage(
-                email_subject,
-                message2,
-                settings.EMAIL_HOST_USER,
-
-                [self.myuser.email],
-            )
-            email.fail_silently = True
-            email.send()
-            return redirect('login.html')
-        return render(request, 'register.html')
+            # current_site = get_current_site(request)
+            # email_subject = "confirm your email "
+            # message2 = render_to_string("email_confirmation.html", {
+            #     'name': self.myuser.first_name,
+            #     'domain': current_site.domain,
+            #     'uid': urlsafe_base64_encode(force_bytes(self.myuser.pk)),
+            #     'token': generate_token.make_token(self.myuser)
+            # })
+            #
+            # email = EmailMessage(
+            #     email_subject,
+            #     message2,
+            #     settings.EMAIL_HOST_USER,
+            #
+            #     [self.myuser.email],
+            # )
+            # email.fail_silently = True
+            # email.send()
+            return redirect('login')
+        return redirect('register')
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -430,53 +462,59 @@ class Login(TemplateView):
     @method_decorator(csrf_protect)
     def post(self, request):
         if request.method == 'POST':
-            email = request.POST['email']
-            password = request.POST['password']
-            user = authenticate(email=email, password=password)
-            if user is not None:
-                login(request, user)
-                fname = user.first_name
-                return render(request, 'dashboard.html', {'email': email})
-            else:
+            fname = request.POST.get('fname')
+            password = request.POST.get('password')
+            user = authenticate(request, username=fname, password=password)
+            if user is None:
                 messages.error(request, 'Enter the right credentials!')
-                return redirect(request, 'login.html')
-        return render(request, 'login.html')
+                return render(request, 'login.html')
+            else:
+                login(request, user)
+                # messages.success(request, 'You are successfully loggedin!')
+                return redirect('dashboard')
 
+        return render(request, 'dashboard.html')
 
-class Logout(TemplateView):
-    template_name = 'login.html'
-    next_page = 'login.html'
+@csrf_protect
+def logout_page(request):
+    logout(request)
+    messages.success(request, 'You are successfully logged out!')
+    return redirect('home')
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class PasswordReset(TemplateView):
-    template_name = 'password_reset.html'
+class PasswordReset(PasswordResetView):
+    # template_name = 'password_reset.html'
+    success_url = reverse_lazy('login')
+    form_class = PasswordResetForm
 
     @method_decorator(csrf_protect)
     def post(self):
         pass
 
 
-class PasswordResetCompleteView(TemplateView):
-    pass
+class PasswordChange(PasswordChangeView):
+    template_name = 'password_change.html'
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('login')
 
 
-class Activate(TemplateView):
-    template_name = 'activate.html'
-
-    def post(self, request, uidb64, token):
-        try:
-            uid = str(urlsafe_base64_decode(uidb64))
-            myuser = User.obj.get(pk=uid)
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            myuser = None
-
-        if myuser is not None and generate_token.check_token(myuser, token):
-            myuser.is_active = True
-            myuser.save()
-            login(request, myuser)
-            return redirect('home.html')
-        else:
-            return  render(request, 'activation_failed.html')
+# class Activate(TemplateView):
+#     template_name = 'activate.html'
+#
+#     def post(self, request, uidb64, token):
+#         try:
+#             uid = str(urlsafe_base64_decode(uidb64))
+#             myuser = User.objects.get(pk=uid)
+#         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+#             myuser = None
+#
+#         if myuser is not None and generate_token.check_token(myuser, token):
+#             myuser.is_active = True
+#             myuser.save()
+#             login(request, myuser)
+#             return redirect('home.html')
+#         else:
+#             return render(request, 'activation_failed.html')
 
 

@@ -72,25 +72,30 @@
                         <div class="text-center">
                             <h1 class="h3">Create a New Account</h1>
                             <p>Join the abontem community! Let's set up your account.</p>
+                            {% for message in messages %}
+                            <div class="alert alert-warning" role="alert">
+                                {{message}}
+                            </div>
+                            {% endfor %}
                         </div>
 
-                        <form class="mt-5" action="{% url 'register' %}" method="post">
+                        <form class="mt-5" action="" method="post">
                             {% csrf_token %}
                             <div class="w-md-400px d-inline-flex row g-3 mb-4">
+                                <!--                                <div class="col-sm-6">-->
+                                <!--                                    <input name="fname" id="fname" type="text" class="form-control"-->
+                                <!--                                           placeholder="First name" aria-label="First name" autofocus required>-->
+                                <!--                                </div>-->
+                                <!--                                <div class="col-sm-6">-->
+                                <!--                                    <input name="lname" id="lname" type="text" class="form-control"-->
+                                <!--                                           placeholder="Last name" aria-label="Contact" required>-->
+                                <!--                                </div>-->
                                 <div class="col-sm-6">
                                     <input name="fname" id="fname" type="text" class="form-control"
                                            placeholder="First name" aria-label="First name" autofocus required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input name="lname" id="lname" type="text" class="form-control"
-                                           placeholder="Last name" aria-label="Contact" required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input name="uname" id="uname" type="text" class="form-control"
-                                           placeholder="Username" aria-label="First name" autofocus required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input name="contact" id="contact" type="phone" class="form-control"
+                                    <input name="contact" id="contact" type="number" class="form-control"
                                            placeholder="Contact" aria-label="Contact" required>
                                 </div>
                                 <div class="col-12">
@@ -108,7 +113,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input id="_dm-registerCheck" class="form-check-input" type="checkbox">
+                                <input id="_dm-registerCheck" class="form-check-input" type="checkbox" required>
                                 <label for="_dm-registerCheck" class="form-check-label">
                                     I agree with the <a href="#">Terms and Conditions</a>
                                 </label>

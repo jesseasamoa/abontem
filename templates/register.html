@@ -92,7 +92,7 @@
                                 <!--                                </div>-->
                                 <div class="col-sm-6">
                                     <input name="fname" id="fname" type="text" class="form-control"
-                                           placeholder="First name" aria-label="First name" autofocus required>
+                                           placeholder="Username" aria-label="First name" autofocus required>
                                 </div>
                                 <div class="col-sm-6">
                                     <input name="contact" id="contact" type="number" class="form-control"
@@ -103,15 +103,15 @@
                                            aria-label="Email">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input name="pass1" id="pass1" type="password" class="form-control"
+                                    <input name="pass1" id="id_password" type="password" class="form-control"
                                            placeholder="Password" aria-label="Password" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input name="pass2" id="pass2" type="password" class="form-control"
+                                    <input name="pass2" id="id_password" type="password" class="form-control"
                                            placeholder="Confirm Password" aria-label="Confirm Password" required>
+
                                 </div>
                             </div>
-
                             <div class="form-check">
                                 <input id="_dm-registerCheck" class="form-check-input" type="checkbox" required>
                                 <label for="_dm-registerCheck" class="form-check-label">
@@ -129,27 +129,27 @@
                             <a href="{% url 'login' %}" class="btn-link text-decoration-none">Sign In</a>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
-                            <h5 class="m-0">Sign Up with</h5>
+                        <!--                        <div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">-->
+                        <!--                            <h5 class="m-0">Sign Up with</h5>-->
 
-                            <!-- Social media buttons -->
-                            <div class="ms-3">
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-facebook fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-twitter fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-google-plus fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-instagram fs-4"></i>
-                                </a>
-                            </div>
-                            <!-- END : Social media buttons -->
+                        <!--                            &lt;!&ndash; Social media buttons &ndash;&gt;-->
+                        <!--                            <div class="ms-3">-->
+                        <!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+                        <!--                                    <i class="demo-psi-facebook fs-4"></i>-->
+                        <!--                                </a>-->
+                        <!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+                        <!--                                    <i class="demo-psi-twitter fs-4"></i>-->
+                        <!--                                </a>-->
+                        <!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+                        <!--                                    <i class="demo-psi-google-plus fs-4"></i>-->
+                        <!--                                </a>-->
+                        <!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+                        <!--                                    <i class="demo-psi-instagram fs-4"></i>-->
+                        <!--                                </a>-->
+                        <!--                            </div>-->
+                        <!--                            &lt;!&ndash; END : Social media buttons &ndash;&gt;-->
 
-                        </div>
+                        <!--                        </div>-->
 
                     </div>
                 </div>
@@ -421,6 +421,8 @@
 <!-- END - BOXED LAYOUT : BACKGROUND IMAGES CONTENT [ DEMO ] -->
 <!-- JAVASCRIPTS -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--Password reveal-->
+<script src="{% static 'dashboard/js/pass-reveal.js' %}"></script>
 
 <!-- Popper JS [ OPTIONAL ] -->
 <script src="./assets/vendors/popperjs/popper.min.js" defer></script>
@@ -433,6 +435,7 @@
 
 <!-- Nifty Settings [ DEMO ] -->
 <script src="./assets/js/demo-purpose-only.js" defer></script>
+
 
 </body>
 

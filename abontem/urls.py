@@ -14,14 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
-from django.views.generic import TemplateView
 from farm import views
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
                         DataTech, FarmLands, FarmManagement, Forests, Consultations, Premium, Login, Register, \
                         Contact, Weather, Payments, Profile, PasswordReset, FourHundred, FiveHundred, \
-                        StartInvesting, StartFarming, PasswordChange
+                        StartInvesting, StartFarming, PasswordChange, ForestsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -52,5 +50,6 @@ urlpatterns = [
     path('dashboard/500/', FiveHundred.as_view(), name='500'),
     path('dashboard/start_investing/', StartInvesting.as_view(), name='start_investing'),
     path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming'),
+    path('dashboard/start_preserving_forests', ForestsView.as_view(), name='start_preserving_forests'),
     # path('dashboard/activate/<uidb64>/<token>', Activate.as_view, name='activate')
 ]

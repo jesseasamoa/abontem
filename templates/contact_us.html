@@ -6,7 +6,9 @@
 
     <div class="content__wrap">
         {% for message in messages %}
-        <p>{{message}}</p>
+        <div class="alert alert-info" role="alert">
+                                        <h5>{{message}}</h5>
+                        </div>
         {% endfor %}
         <div class="card">
             <div class="row">
@@ -46,7 +48,7 @@
 
                                 <div class="col-md-6">
                                     <label for="_dm-inputPassword2" class="form-label">Phone</label>
-                                    <input id="_dm-inputPassword2" type="phone" class="form-control"
+                                    <input id="_dm-inputPassword2" type="number" class="form-control"
                                     name="phone" placeholder="phone" required>
                                 </div>
                             </div>
@@ -68,9 +70,12 @@
                             </div>
 
                         </div>
+                        <br>
                         {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
+        <div class="alert alert-info" role="alert">
+                                        <h5>{{message}}</h5>
+                        </div>
+        {% endfor %}
                     </form>
                     <!-- END : Contact form -->
 

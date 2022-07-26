@@ -3,6 +3,7 @@ from django.urls import reverse
 import datetime
 from django_countries.fields import CountryField
 from django.forms import ModelForm
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -25,12 +26,12 @@ class FrontForm(models.Model):
 
 class DashboardCrop(models.Model):
     name = models.CharField(max_length=20)
-    cash = models.CharField(max_length=60)
+    production = models.CharField(max_length=60)
     duration = models.IntegerField()
     price = models.IntegerField()
     soil = models.CharField(max_length=20, default='loam')
-    humidity = models.IntegerField(default=0)
-    temp = models.IntegerField(default=0)
+    humidity = models.CharField(max_length=10)
+    temp = models.CharField(max_length=10)
     published = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
@@ -145,8 +146,8 @@ class ContactPage(models.Model):
 
 
 class MostCultivated(models.Model):
-    crop = models.CharField(max_length=20)
-    hectares = models.CharField(max_length=100)
+    crop = models.CharField(max_length=20, unique=True)
+    hectares = models.IntegerField()
 
     def __str__(self):
         return self.crop
@@ -158,23 +159,22 @@ class MostCultivated(models.Model):
         verbose_name_plural = 'Most Cultivated'
 
 
-# class RegisterUser(models.Model):
-#     first_name = models.CharField()
-#     last_name = models.CharField()
-#     username = models.CharField()
-#     contact = models.IntegerField()
-#     email = models.EmailField()
-#     password = models.CharField()
-#     confirmpassword = models.CharField()
+class PaymentDetails(models.Model):
+    channel = models.CharField(max_length=20)
+    number = models.IntegerField()
+    name = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    zip = models.IntegerField()
 
-class ContactForm(ModelForm):
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('payments', kwargs={'pk': self.pk})
+
     class Meta:
-        model = ContactPage
-        fields = ['country', 'phone', 'subject', 'message']
-        # widgets = {'phone': }
+        verbose_name_plural = 'Payment Details'
 
-
-form = ContactForm()
 
 
 

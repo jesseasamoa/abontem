@@ -120,7 +120,12 @@
                             <li><a href="#get-started" class="popup-with-form">Farm Logistics</a></li>
                             <li><a href="#get-started" class="popup-with-form">Data & Tech</a></li>
                             <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
                             <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                     <!-- /.menu-wrapper -->
@@ -515,8 +520,8 @@
                                     </button>
                                 </div>
                                 {% endfor %}
-                                <label>First Name</label>
-                                <input name="fname" id="fname" type="text" required>
+                                <label>Username</label>
+                                <input name="uname" id="uname" type="text" required>
                             </div>
 
                             <div class="form-group">
@@ -708,7 +713,7 @@
                         <div class="widget footer-widget widget-about">
                             <!--<a href="#" class="footer-logo"><img src="assets/img/main-logo.png" alt="saaspik"></a>-->
                             <p>
-                                Invest in Africa | Farmlands | Farm Automation and more...
+                                Invest in Africa | Farmlands | Abontem Maize Seeds | Farm Automation and more...
                             </p>
 
                             <h4 class="footer-title">Social</h4>
@@ -759,6 +764,7 @@
                                 <li><a href="#get-started" class="popup-with-form">Invest in Africa</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Terms of Service</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Privacy Policy</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Virtual Farming</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Forests Preservation</a></li>
                             </ul>
                         </div>
@@ -775,6 +781,7 @@
                                 <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Farm Tech</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Consultations</a></li>
+                                <li><a href="#get-started" class="popup-with-form">Own the land & relax</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Invest</a></li>
                                 <li><a href="#login-form" class="popup-with-login">Log In</a></li>
                             </ul>
@@ -808,12 +815,15 @@
 
 <form id="login-form" action="" class="login-form mfp-hide" method="post">
     {% for message in messages %}
-    <div class="alert alert-info" role="alert">
-        {{message}}
-                        </div>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Hi!</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     {% endfor %}
     {% csrf_token %}
-    <label>First name</label>
+    <label>Username</label>
     <input name="uname" id="uname" type="text" required>
     </div>
 
@@ -859,6 +869,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
 
 
 

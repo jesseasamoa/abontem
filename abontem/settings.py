@@ -32,7 +32,7 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = '='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com']
 

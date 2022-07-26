@@ -82,7 +82,7 @@
                         <form class="mt-4" action="" method="post">
                             {% csrf_token %}
                             <div class="mb-3">
-                                <input name="fname" id="fname" type="text" class="form-control" placeholder="First name"
+                                <input name="uname" id="uname" type="text" class="form-control" placeholder="Username"
                                        autofocus required>
                             </div>
 
@@ -104,33 +104,33 @@
                         </form>
 
                         <div class="d-flex justify-content-between mt-4">
-                            <a href="{% url 'password_reset' %}" class="btn-link text-decoration-none">Forgot password
-                                ?</a>
+<!--                            <a href="{% url 'password_reset' %}" class="btn-link text-decoration-none">Forgot password-->
+<!--                                ?</a>-->
                             <a href="{% url 'register' %}" class="btn-link text-decoration-none">Create a new
                                 account</a>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
-                            <h5 class="m-0">Login with</h5>
+<!--                        <div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">-->
+<!--                            <h5 class="m-0">Login with</h5>-->
 
-                            <!-- Social media buttons -->
-                            <div class="ms-3">
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-facebook fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-twitter fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-google-plus fs-4"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">
-                                    <i class="demo-psi-instagram fs-4"></i>
-                                </a>
-                            </div>
-                            <!-- END : Social media buttons -->
+<!--                            &lt;!&ndash; Social media buttons &ndash;&gt;-->
+<!--                            <div class="ms-3">-->
+<!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                    <i class="demo-psi-facebook fs-4"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                    <i class="demo-psi-twitter fs-4"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                    <i class="demo-psi-google-plus fs-4"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#" class="btn btn-icon bg-transparent btn-underlined text-muted">-->
+<!--                                    <i class="demo-psi-instagram fs-4"></i>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; END : Social media buttons &ndash;&gt;-->
 
-                        </div>
+<!--                        </div>-->
 
                     </div>
                 </div>

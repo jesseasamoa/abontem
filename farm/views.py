@@ -1,6 +1,6 @@
-from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, \
-                    ContactForm
-from django.views.generic import ListView, TemplateView, DetailView, CreateView
+from .models import DashboardCrop, DashboardLand, Management, Products, FinancePage, City, ContactPage, MostCultivated,\
+                    PaymentDetails
+from django.views.generic import ListView, TemplateView, DetailView, CreateView, UpdateView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
@@ -20,13 +20,18 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.auth.views import PasswordResetView, PasswordChangeView
 from django.contrib.auth.forms import PasswordResetForm, PasswordChangeForm
 from django.urls import reverse_lazy
+import pandas as pd
+import plotly.express as px
+from plotly.offline import plot
+from django.core.paginator import Paginator
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
-# @method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt, name='dispatch')
 class Home(DetailView):
     template_name = 'home.html'
 
-    # @method_decorator(csrf_protect)
+    @method_decorator(csrf_protect)
     def get(self, request):
         url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
         cities = City.objects.filter(name='East Legon')
@@ -75,7 +80,7 @@ class Home(DetailView):
 
             # REGISTER
             elif request.POST.get("form_type") == 'formTwo':
-                fname = request.POST['fname']
+                uname = request.POST['uname']
                 contact = request.POST['contact']
                 email = request.POST['email']
                 pass1 = request.POST['pass1']
@@ -88,17 +93,22 @@ class Home(DetailView):
                 if len(contact) != 10:
                     messages.error(request, 'Please enter your 10 digit contact starting with 0')
                     return redirect('home')
+                if '.' not in email:
+                    messages.error(request, 'Please enter your best email address to proceed!')
+                    return redirect('home')
                 if len(pass1) < 8:
                     messages.error(request, 'Your password must contain at least 8 characters.')
                     return redirect('home')
-                if User.objects.filter(username=fname).first():
-                    messages.error(request, "This username(first name) is already taken")
+                if User.objects.filter(username=uname).first():
+                    messages.error(request, "This username is already taken")
                     return redirect('home')
-                self.myuser = User.objects.create_user(fname, email, pass1)
-                self.myuser.first_name = fname
+                self.myuser = User.objects.create_user(uname, email, pass1)
+                self.myuser.first_name = uname
+                self.myuser.last_name = contact
                 self.myuser.is_active = True
                 self.myuser.save()
-                messages.success(request, f'{self.myuser.first_name.upper()}! Your account has been created successfully! Login.')
+                messages.success(request,
+                                 f'{self.myuser.first_name}! Your account has been created successfully! Login.')
                 return redirect('login')
         return redirect('home')
 
@@ -106,6 +116,8 @@ class Home(DetailView):
 class DashboardHome(LoginRequiredMixin, ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
+
+    # DISPLAY WEATHER ON DASHBOARD HOMEPAGE
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
     cities = City.objects.all()
     weather_data = []
@@ -124,15 +136,41 @@ class DashboardHome(LoginRequiredMixin, ListView):
 
         weather_data.append(weather)  # add the data for the current city into our list
 
+    # CREATE A GRAPH WITH PLOTLY ON DASHBOARD HOMEPAGE
+    crops_cultivated = MostCultivated.objects.all()
+    gh_crops = [
+        {'crop': x.crop,
+         'hectares': x.hectares,
+         } for x in crops_cultivated
+    ]
+
+    df = pd.DataFrame(gh_crops)
+    # tips = px.data.tips()
+    fig = px.line(df, x='crop', y='hectares', width=600, height=300, title="Most cultivated crops in Ghana "
+                                            "by hectares", template='seaborn', color_discrete_sequence=['forestgreen'])
+    fig.update_layout({
+        'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+        'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+    })
+    bar_plot = plot(fig, output_type='div')
+
+    # DISPLAY CONTEXTS ON DASHBOARD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
         context['weather_gh'] = random.sample(self.weather_data, k=3)
         context['random_city'] = random.choices(self.weather_data, k=1)
-        # context['most_cultivated'] = MostCultivated.objects.all(name='crop')
-        # context['most_hectares'] = MostCultivated.objects.all(name='hectares')
+        context['crops_cultivated'] = self.bar_plot
+        # context['valuable'] =self.worldcrops(self.request)
         return context
+
+    # PAGINATE MOST VALUABLE CROPS TABLE ON HOMEPAGE
+    # def worldcrops(self, request):
+    #     p = Paginator(DashboardCrop.objects.all(), 3)
+    #     page = request.GET.get('page')
+    #     valuable = p.get_page(page)
+    #     return valuable
 
 
 class Invest(ListView):
@@ -294,20 +332,42 @@ class Payments(ListView):
     template_name = 'payments.html'
     queryset = DashboardLand.objects.all()
 
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        channel = request.POST['channel']
+        number = request.POST['number']
+        name = request.POST['name']
+        country = request.POST['country']
+        zip = request.POST['zip']
+        details = PaymentDetails()
+        details.channel = channel
+        details.number = number
+        details.name = name
+        details.country = country
+        details.zip = zip
+        details.save()
+        messages.info(request, 'Your details have been successfully updated!')
+        return render(request, 'payments.html')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         return context
 
 
-class Profile(ListView):
+class Profile(UpdateView):
+    form_class = UserChangeForm
     template_name = 'profile.html'
     queryset = DashboardLand.objects.all()
+    success_url = reverse_lazy('dashboard ')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         return context
+
+    def get_object(self):
+        return self.request.user
 
 
 class FourHundred(TemplateView):
@@ -322,55 +382,41 @@ class FiveHundred(TemplateView):
 class Contact(TemplateView):
     template_name = 'contact_us.html'
     query_set = DashboardLand.objects.all()
-    success_url = 'contact_us.html'
-    form_class = ContactForm
 
-    @method_decorator(csrf_protect)
-    def post(self, request):
-        f = ContactForm(request.POST)
-        if f.is_valid():
-            messages.info(request, 'Thank you! You will get a call shortly!')
-            f.save()
-            country = request.POST["country"]
-            phone = request.POST["phone"]
-            subject = request.POST["subject"]
-            message = request.POST["message"]
-            from_email = settings.EMAIL_HOST_USER
-            recipients = ['farm@abontem.com', 'jesseasamoa@gmail.com']
-            send_mail(f'You have a message from {country},\n'
-                      f' the contact is {phone}, and {subject} as the subject,\n '
-                      f'Message: {message}, {from_email}, {recipients}')
-        return render(request, 'dashboard.html')
+    # success_url = 'contact_us.html'
+    # form_class = ContactForm
 
     # @method_decorator(csrf_protect)
     # def post(self, request):
-    #     country = request.POST['country']
-    #     phone = request.POST['phone']
-    #     subject = request.POST['subject']
-    #     message = request.POST['message']
-    #     contact = ContactPage()
-    #     contact.country = country
-    #     contact.phone = phone
-    #     contact.subject = subject
-    #     contact.message = message
-    #     contact.save()
-    #     # try:
-    #     send_mail(
-    #         'Contact message from abontem.com',
-    #         f'You have a contact message from:\n Name - {contact.country}\n'
-    #         f'Contact - {contact.phone}\n'
-    #         f'Subject - {contact.subject}\n'
-    #         f'Message - {contact.message}\n',
-    #         'farm@abontem.com',
-    #         ['farm@abontem.com', 'jesseasamoa@gmail.com'],
-    #         fail_silently=False,
-    #     )
-    #     # except ConnectionRefusedError:
-    #     #     'No internet connection'
-    #     messages.info(request, 'Thank You! You will get a call shortly.')
-    #     return render(request, 'contact_us.html')
+    #     f = ContactForm(request.POST)
+    #     if f.is_valid():
+    #         messages.info(request, 'Thank you! You will get a call shortly!')
+    #         f.save()
+    #         country = request.POST["country"]
+    #         phone = request.POST["phone"]
+    #         subject = request.POST["subject"]
+    #         message = request.POST["message"]
+    #         from_email = settings.EMAIL_HOST_USER
+    #         recipients = ['farm@abontem.com', 'jesseasamoa@gmail.com']
+    #         send_mail(f'You have a message from {country},\n'
+    #                   f' the contact is {phone}, and {subject} as the subject,\n '
+    #                   f'Message: {message}, {from_email}, {recipients}')
+    #     return render(request, 'dashboard.html')
 
-
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        country = request.POST['country']
+        phone = request.POST['phone']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        contact = ContactPage()
+        contact.country = country
+        contact.phone = phone
+        contact.subject = subject
+        contact.message = message
+        contact.save()
+        messages.info(request, 'Thank You! You will get a call shortly.')
+        return render(request, 'contact_us.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -383,10 +429,30 @@ class StartInvesting(TemplateView):
     template_name = 'start_investing.html'
     query_set = DashboardLand.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
+
+
+class ForestsView(TemplateView):
+    template_name = 'start_preserving_forests.html'
+    query_set = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
+
 
 class StartFarming(TemplateView):
     template_name = 'start_farming.html'
     query_set = DashboardLand.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['land'] = DashboardLand.objects.all()
+        return context
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -420,6 +486,7 @@ class Register(TemplateView):
                 return redirect('register')
             self.myuser = User.objects.create_user(fname, email, pass1)
             self.myuser.first_name = fname
+            self.myuser.last_name = contact
             self.myuser.is_active = True
             self.myuser.save()
             messages.success(request, f'{self.myuser.first_name}! Your account has been created successfully! Login.')
@@ -462,9 +529,9 @@ class Login(TemplateView):
     @method_decorator(csrf_protect)
     def post(self, request):
         if request.method == 'POST':
-            fname = request.POST.get('fname')
+            uname = request.POST.get('uname')
             password = request.POST.get('password')
-            user = authenticate(request, username=fname, password=password)
+            user = authenticate(request, username=uname, password=password)
             if user is None:
                 messages.error(request, 'Enter the right credentials!')
                 return render(request, 'login.html')
@@ -475,10 +542,11 @@ class Login(TemplateView):
 
         return render(request, 'dashboard.html')
 
+
 @csrf_protect
 def logout_page(request):
     logout(request)
-    messages.success(request, 'You are successfully logged out!')
+    messages.success(request, 'You are logged out. Login!')
     return redirect('home')
 
 
@@ -488,16 +556,15 @@ class PasswordReset(PasswordResetView):
     success_url = reverse_lazy('login')
     form_class = PasswordResetForm
 
-    @method_decorator(csrf_protect)
-    def post(self):
-        pass
+    # @method_decorator(csrf_protect)
+    # def post(self, request):
+    #     pass
 
 
 class PasswordChange(PasswordChangeView):
     template_name = 'password_change.html'
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
-
 
 # class Activate(TemplateView):
 #     template_name = 'activate.html'
@@ -516,5 +583,3 @@ class PasswordChange(PasswordChangeView):
 #             return redirect('home.html')
 #         else:
 #             return render(request, 'activation_failed.html')
-
-

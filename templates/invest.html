@@ -3,13 +3,13 @@
 {% load static %}
 {% block content %}
 <h4 class="pt-5 mb-5 text-center">Gain great returns by investing with us</h4>
-<form class="row row-cols-md-auto g-3 align-items-center">
+<form class="row row-cols-md-auto g-3 align-items-center" action="{% url 'start_investing' %}">
     <!--    <div class="col-12">-->
     <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
     <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
     <!--    </div>-->
     <div class="col-12">
-        <select name="acres" class="form-control">
+        <select class="form-control">
             <option value="select">Select your investor type</option>
             <option value="loan">Passive Investor</option>
             <option value="invest">Seeking Partnerships</option>
@@ -177,13 +177,13 @@
             </div>
         </div>
     </div>
-    <form class="row row-cols-md-auto g-3 align-items-center">
+    <form class="row row-cols-md-auto g-3 align-items-center" action="{% url 'start_investing' %}">
         <!--    <div class="col-12">-->
         <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
         <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
         <!--    </div>-->
         <div class="col-12">
-            <select name="acres" class="form-control">
+            <select class="form-control">
                 <option value="select">Select your investor type</option>
                 <option value="loan">Passive Investor</option>
                 <option value="invest">Seeking Partnerships</option>
@@ -196,8 +196,9 @@
             </select>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Get started</button>
-        </div>
+           <button type="submit" class="btn btn-primary">
+                Get started</button>
+        </div></a>
     </form>
 </div>
 

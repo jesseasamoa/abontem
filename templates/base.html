@@ -36,9 +36,11 @@
     <section id="content" class="content">
         <div class="content__boxed d-md-flex">
             <!-- Dashboard content -->
+
             <div class="content__wrap order-2 min-w-0">
                 {% block content %}
                 {% endblock %}
+
 
                 <div class="row mb-4 mb-md-5">
                     <div class="col-xl-5">
@@ -408,17 +410,14 @@
                             <!-- User dropdown header -->
                             <div class="d-flex align-items-center border-bottom p-3">
                                 <div class="flex-shrink-0">
-                                    {% for message in messages %}
-                                    {{message}}
-                                    {% endfor %}
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     {% if user.is_authenticated %}
 <!--                                    <h5 class="mb-0">{{user.username|upper}}</h5>-->
 
                                     <div class="alert alert-info" role="alert">
-                                        <h5>{{user.username|upper}}</h5>
-                            {{user.email}}
+                                        <h6><b>Username:</b> {{user.first_name}} | <b>Contact:</b> {{user.last_name}}</h6>
+                                        <h6><b>Email:</b> {{user.email}}</h6>
                         </div>
                                     {% endif %}
                                 </div>
@@ -657,7 +656,7 @@
                                 <a href="{% url 'invest' %}" class="nav-link">Invest</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'start_farming' %}" class="nav-link">Start farming</a>
+                                <a href="https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20farming%20services" target="_blank"" class="nav-link">Start farming</a>
                             </li>
                         </ul>
                     </li>
@@ -672,31 +671,34 @@
                         <!-- Ui Elements submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Seeds</a>
+                                <a href="{% url 'services' %}" class="nav-link">Services</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Farmlands</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Farm Automation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Farm Logistics</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Farm Design</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}"
-                                   class="nav-link d-flex align-items-center">Warehousing<span
-                                        class="badge bg-danger ms-auto">NEW</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Transportation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'services' %}" class="nav-link">Export</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Seeds</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farmlands' %}" class="nav-link">Farmlands</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Farm Automation</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Farm Logistics</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Farm Design</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}"-->
+<!--                                   class="nav-link d-flex align-items-center">Warehousing<span-->
+<!--                                        class="badge bg-danger ms-auto">NEW</span></a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Transportation</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'services' %}" class="nav-link">Export</a>-->
+<!--                            </li>-->
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./ui-elements-tooltips-and-popover.html" class="nav-link">Tooltips &amp; Popover</a>-->
                             <!--                                </li>-->
@@ -718,17 +720,20 @@
                         <!-- Forms submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'finance' %}" class="nav-link">Loans</a>
+                                <a href="{% url 'finance' %}" class="nav-link">Finance</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'invest' %}" class="nav-link">Invest</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'finance' %}" class="nav-link">Partnerships</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'finance' %}" class="nav-link">Farmlands on HirePurchase</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'finance' %}" class="nav-link">Loans</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'invest' %}" class="nav-link">Invest</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'finance' %}" class="nav-link">Partnerships</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'finance' %}" class="nav-link">Farmlands on HirePurchase</a>-->
+<!--                            </li>-->
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./forms-wizard.html" class="nav-link">Wizard</a>-->
                             <!--                                </li>-->
@@ -756,17 +761,20 @@
                         <!-- Tables submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'business' %}" class="nav-link">Sales Plan</a>
+                                <a href="{% url 'business' %}" class="nav-link">Business</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'business' %}" class="nav-link">Marketing Plan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'business' %}" class="nav-link">Operational Plan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'business' %}" class="nav-link">Sales Plan</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'business' %}" class="nav-link">Marketing Plan</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'business' %}" class="nav-link">Operational Plan</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Tables submenu list -->
@@ -785,45 +793,48 @@
                         <!-- Charts submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Buying</a>
+                                <a href="{% url 'farm_products' %}" class="nav-link">Farm Products</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Aggregation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Farm Logistics</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Fertilizer & Other inputs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Irrigation Systems</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_products' %}" class="nav-link">Processing Plants</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Buying</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Produce Aggregation</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Farm Logistics</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Fertilizer & Other inputs</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Irrigation Systems</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_products' %}" class="nav-link">Processing Plants</a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Charts submenu list -->
 
                     </li>
-                    <li class="nav-item has-sub">
+<!--                    <li class="nav-item has-sub">-->
 
-                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i
-                                class="demo-pli-celsius fs-5 me-2"></i>
-                            <span class="nav-label">Soil Data</span>
-                        </a>
+<!--                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i-->
+<!--                                class="demo-pli-celsius fs-5 me-2"></i>-->
+<!--                            <span class="nav-label">Soil Data</span>-->
+<!--                        </a>-->
 
                         <!-- Premium Icons submenu list -->
-                        <ul class="mininav-content nav collapse">
-                            <li class="nav-item">
-                                <a href="{% url 'weather' %}" class="nav-link">Get soil data</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'weather' %}" class="nav-link">Soil testing</a>
-                            </li>
-                        </ul>
-                    </li>
+<!--                        <ul class="mininav-content nav collapse">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'weather' %}" class="nav-link">Get soil data</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'weather' %}" class="nav-link">Soil testing</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
                     <!-- END : Link with submenu -->
 
                     <!-- Link with submenu -->
@@ -909,17 +920,20 @@
                         <!-- App Views submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'data_tech' %}" class="nav-link">Research</a>
+                                <a href="{% url 'data_tech' %}" class="nav-link">Data & Tech</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'data_tech' %}" class="nav-link">Field Surveys</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'data_tech' %}" class="nav-link">Data Science</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'data_tech' %}" class="nav-link">Farm Tech</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'data_tech' %}" class="nav-link">Research</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'data_tech' %}" class="nav-link">Field Surveys</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'data_tech' %}" class="nav-link">Data Science</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'data_tech' %}" class="nav-link">Farm Tech</a>-->
+<!--                            </li>-->
                             <!--                                <li class="nav-item">-->
                             <!--                                    <a href="./app-views-calendar.html" class="nav-link">Calendar</a>-->
                             <!--                                </li>-->
@@ -949,18 +963,21 @@
                         <!-- Email submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Buy</a>
+                                <a href="{% url 'farmlands' %}" class="nav-link">Farmlands</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Rent</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Hirepurchase</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farmlands' %}" class="nav-link">Partnerships <span
-                                        class="badge bg-danger ms-auto">NEW</span></a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farmlands' %}" class="nav-link">Buy</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farmlands' %}" class="nav-link">Rent</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farmlands' %}" class="nav-link">Hirepurchase</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farmlands' %}" class="nav-link">Partnerships <span-->
+<!--                                        class="badge bg-danger ms-auto">NEW</span></a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Email submenu list -->
@@ -979,29 +996,32 @@
                         <!-- Other Pages submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Recruitment</a>
+                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Logistics Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Sales Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Operational Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Water Resources</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Transportation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Warehousing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Hire a farm manager</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Recruitment</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Logistics Management</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Sales Management</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Operational Management</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Water Resources</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Transportation</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Warehousing</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Hire a farm manager</a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Other Pages submenu list -->
@@ -1020,22 +1040,25 @@
                         <!-- Other Pages submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'forest_preservation' %}" class="nav-link">Donate</a>
+                                <a href="{% url 'forest_preservation' %}" class="nav-link">Forests Preservation</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'forest_preservation' %}" class="nav-link">Buy a Forest</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'forest_preservation' %}" class="nav-link">Adopt a Forest</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'forest_preservation' %}" class="nav-link">Preserve a Forest <span
-                                        class="badge bg-danger ms-auto">NEW</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'forest_preservation' %}" class="nav-link">Sponsor a
-                                    conservationist</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'forest_preservation' %}" class="nav-link">Donate</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'forest_preservation' %}" class="nav-link">Buy a Forest</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'forest_preservation' %}" class="nav-link">Adopt a Forest</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'forest_preservation' %}" class="nav-link">Preserve a Forest <span-->
+<!--                                        class="badge bg-danger ms-auto">NEW</span></a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'forest_preservation' %}" class="nav-link">Sponsor a-->
+<!--                                    conservationist</a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Other Pages submenu list -->
@@ -1064,23 +1087,26 @@
                         <!-- Icons Pack submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'consultations' %}" class="nav-link">Research</a>
+                                <a href="{% url 'consultations' %}" class="nav-link">Consultations</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'consultations' %}" class="nav-link">Market Surveys</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'consultations' %}" class="nav-link">Processing Plants</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'consultations' %}" class="nav-link">Sales & Marketing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'consultations' %}" class="nav-link">Trade & Export</a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'consultations' %}" class="nav-link">Research</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'consultations' %}" class="nav-link">Market Surveys</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'farm_management' %}" class="nav-link">Farm Management</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'consultations' %}" class="nav-link">Processing Plants</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'consultations' %}" class="nav-link">Sales & Marketing</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'consultations' %}" class="nav-link">Trade & Export</a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Icons Pack submenu list -->
@@ -1099,37 +1125,40 @@
                         <!-- Premium Icons submenu list -->
                         <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                                <a href="{% url 'premium_services' %}" class="nav-link">Ready Market</a>
+                                <a href="{% url 'premium_services' %}" class="nav-link">Premium Services</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'premium_services' %}" class="nav-link">Total Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'premium_services' %}" class="nav-link">Capital Injection</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'premium_services' %}" class="nav-link">Partnerships <span
-                                        class="badge bg-danger ms-auto">NEW</span></a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'premium_services' %}" class="nav-link">Ready Market</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'premium_services' %}" class="nav-link">Total Management</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'premium_services' %}" class="nav-link">Capital Injection</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{% url 'premium_services' %}" class="nav-link">Partnerships <span-->
+<!--                                        class="badge bg-danger ms-auto">NEW</span></a>-->
+<!--                            </li>-->
 
                         </ul>
                         <!-- END : Premium Icons submenu list -->
 
                     </li>
                     <!-- END : Link with submenu -->
-                    <li class="nav-item has-sub">
+<!--                    <li class="nav-item has-sub">-->
 
-                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-celsius fs-5 me-2"></i>
-                            <span class="nav-label">Today's Weather</span>
-                        </a>
+<!--                        <a href="{% url 'weather' %}" class="mininav-toggle nav-link collapsed"><i class="demo-pli-celsius fs-5 me-2"></i>-->
+<!--                            <span class="nav-label">Today's Weather</span>-->
+<!--                        </a>-->
 
                         <!-- Premium Icons submenu list -->
-                        <ul class="mininav-content nav collapse">
-                            <li class="nav-item">
-                                <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>
-                            </li>
-                        </ul>
-                    </li>
+<!--                        <ul class="mininav-content nav collapse">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href= "{% url 'weather' %}" class="nav-link">Weather Forecast</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
 
                     <li class="nav-item has-sub">
 

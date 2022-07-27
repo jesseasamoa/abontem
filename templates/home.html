@@ -783,7 +783,12 @@
                                 <li><a href="#get-started" class="popup-with-form">Consultations</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Own the land & relax</a></li>
                                 <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
                                 <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                         <!-- /.widget footer-widget -->

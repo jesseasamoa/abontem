@@ -2,185 +2,30 @@
 {% block title %}Forest Preservation{% endblock %}
 {% load static %}
 {% block content %}
-<h4 class="pt-5 mb-5 text-center">Help preserve forests globally to reverse climate change</h4>
-<form class="row row-cols-md-auto g-3 align-items-center" action="{% url 'start_preserving_forests' %}">
-    <!--    <div class="col-12">-->
-    <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-    <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-    <!--    </div>-->
-    <div class="col-12">
-        <select class="form-control">
-            <option value="select">Select Acres</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="1000">1000</option>
-            <option value="5000">5000</option>
-            <option value="custom">custom figure</option>
-            <option value="donate">Donate</option>
-            <option value="sponsor">Sponsor a Conservationist</option>
-        </select>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Get started</button>
-    </div>
-</form>
-<!-- Timeline with date and time -->
-<div class="timeline timeline-two-column" style="--timeline-entry-gap: 2.5rem">
-    <div class="tl-entry active">
-        <div class="tl-time">
-            <div class="tl-date">Start investing</div>
-            <div class="tl-time">Today</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    <figure class="m-0">
-                        <blockquote class="blockquote">
-                            <p>A well-known quote, contained in a blockquote element.</p>
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="root" class="root front-container">
 
-    <div class="tl-entry tl-entry-start">
-        <div class="tl-time">
-            <div class="tl-date">Today</div>
-            <div class="tl-time">07:47 AM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
-                        into a horrible vermin.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- CONTENTS -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section id="content" class="content">
+            <div class="content__boxed w-100 min-vh-100 d-flex flex-column align-items-stretch justify-content-center">
+                <div class="content__wrap">
 
-    <div class="tl-entry">
-        <div class="tl-time">
-            <div class="tl-date">Yesterday</div>
-            <div class="tl-time">01:17 PM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    <img class="img-xs rounded-circle" src="./assets/img/profile-photos/3.png" alt="Profile Picture">
-                    <span class="ms-2"><a href="#" class="btn-link fw-bold">Jackson</a> sent you a message.</span>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <i class=" demo-pli-gears display-1"></i>
+                        </div>
+                        <h3 class="mb-5">
+                            <div class="badge bg-secondary">Page under maintenance...</div>
+                        </h3>
+                        <p class="lead">This page is currently undergoing scheduled maintenance. <br> We should be back shortly. Thank you for your patience. </p>
+                    </div>
 
-    <div class="tl-entry">
-        <div class="tl-time">
-            <div class="tl-date">Oct 20, 2021</div>
-            <div class="tl-time">05:19 AM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                    the blind texts.
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="tl-entry tl-entry-start">
-        <div class="tl-time">
-            <div class="tl-date">August, 17</div>
-            <div class="tl-time">01:53 AM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">Reminder</h5>
-                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
-                        into a horrible vermin.</p>
-                </div>
-            </div>
-        </div>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!-- END - CONTENTS -->
     </div>
-
-    <div class="tl-entry">
-        <div class="tl-time">
-            <div class="tl-date">Jul 22, 2021</div>
-            <div class="tl-time">02:05 PM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    But in certain circumstances and owing to the claims of duty
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tl-entry tl-entry-start">
-        <div class="tl-time">
-            <div class="tl-date">Jun 11, 2021</div>
-            <div class="tl-time">05:50 PM</div>
-        </div>
-        <div class="tl-point"></div>
-        <div class="tl-content">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-info">Infomation</h5>
-                    <p>The new common language will be more simple </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<!-- Inline Form -->
-<h4>Get started on preserving forests</h4>
-<form class="row row-cols-md-auto g-3 align-items-center" action="{% url 'start_preserving_forests' %}">
-    <!--    <div class="col-12">-->
-    <!--        <label for="_dm-staticEmail" class="visually-hidden">Contact Number</label>-->
-    <!--        <input type="text" class="form-control" id="_dm-inputEmail" placeholder="Contact">-->
-    <!--    </div>-->
-    <div class="col-12">
-        <select name="acres" id="acres" class="form-control">
-            <option value="select">Select Acres</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="1000">1000</option>
-            <option value="5000">5000</option>
-            <option value="custom">custom figure</option>
-            <option value="donate">Donate</option>
-            <option value="sponsor">Sponsor a Conservationist</option>
-        </select>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Get started</button>
-    </div>
-</form>
-<!-- END : Inline Form -->
-<!-- END : Timeline with date and time -->
-{% block additional_styles %}
-<style>
-body {
-background: white url("abontem1/static/dashboard/img/backgrounds/forest.jpg") no-repeat;
-}
-</style>
-{% endblock %}
 
 {% endblock %}

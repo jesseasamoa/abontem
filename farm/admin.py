@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products, ContactPage,\
-                    MostCultivated, PaymentDetails
+from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products, ContactPage, MostCultivated, PaymentDetails
 
 
 class MostCultivatedAdmin(admin.ModelAdmin):

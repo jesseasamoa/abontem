@@ -1,0 +1,1 @@
+from abontem.wsgi import application

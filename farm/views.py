@@ -119,7 +119,7 @@ class DashboardHome(LoginRequiredMixin, ListView):
 
     # DISPLAY WEATHER ON DASHBOARD HOMEPAGE
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    cities = City.objects.all()
+    cities = City.objects.exclude(name='East Legon')
     weather_data = []
 
     for city in cities:

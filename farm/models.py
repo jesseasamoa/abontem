@@ -83,7 +83,7 @@ class Management(models.Model):
     service = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     email = models.EmailField(default='farm@abontem.com')
-    whatsapp = models.CharField(max_length=10, default='0245003234')
+    whatsapp = models.CharField(max_length=10, default='0553612697')
 
     def __str__(self):
         return self.service

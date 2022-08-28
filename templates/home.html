@@ -506,7 +506,8 @@
                     <!-- /.col-lg-5 -->
 
                     <div class="col-lg-7 d-none d-lg-block">
-
+                        {% if user.is_authenticated %}
+                        {% else %}
                         <form action="" class="sign-up-form white-popup-block"
                               id="get-started" method="post">
                             {% csrf_token %}
@@ -544,6 +545,7 @@
 
                             <a href="#login-form" class="popup-with-login login-btn">Log In</a>
                         </form>
+                        {% endif %}
                         <!-- /.download-feature-image -->
                     </div>
                     <!-- /.col-lg-7 -->

@@ -173,7 +173,7 @@ class DashboardHome(LoginRequiredMixin, ListView):
     #     return valuable
 
 
-class Invest(ListView):
+class Invest(LoginRequiredMixin, ListView):
     template_name = 'invest.html'
     queryset = DashboardLand.objects.all()
 
@@ -183,7 +183,7 @@ class Invest(ListView):
         return context
 
 
-class BuyRentFarmland(TemplateView):
+class BuyRentFarmland(LoginRequiredMixin, TemplateView):
     template_name = 'buy_rent_farmland.html'
     queryset = DashboardLand.objects.all()
 
@@ -193,7 +193,7 @@ class BuyRentFarmland(TemplateView):
         return context
 
 
-class Services(ListView):
+class Services(LoginRequiredMixin, ListView):
     template_name = 'services.html'
     queryset = DashboardLand.objects.all()
 
@@ -203,7 +203,7 @@ class Services(ListView):
         return context
 
 
-class Finance(ListView):
+class Finance(LoginRequiredMixin, ListView):
     template_name = 'finance.html'
     queryset = DashboardLand.objects.all()
 
@@ -214,7 +214,7 @@ class Finance(ListView):
         return context
 
 
-class Business(ListView):
+class Business(LoginRequiredMixin, ListView):
     template_name = 'business.html'
     queryset = DashboardLand.objects.all()
 
@@ -224,7 +224,7 @@ class Business(ListView):
         return context
 
 
-class FarmProducts(ListView):
+class FarmProducts(LoginRequiredMixin, ListView):
     template_name = 'farm_products.html'
     queryset = DashboardLand.objects.all()
 
@@ -235,7 +235,7 @@ class FarmProducts(ListView):
         return context
 
 
-class DataTech(ListView):
+class DataTech(LoginRequiredMixin, ListView):
     template_name = 'data_tech.html'
     queryset = DashboardLand.objects.all()
 
@@ -245,7 +245,7 @@ class DataTech(ListView):
         return context
 
 
-class FarmLands(ListView):
+class FarmLands(LoginRequiredMixin, ListView):
     template_name = 'farmlands.html'
     queryset = DashboardLand.objects.all()
 
@@ -255,7 +255,7 @@ class FarmLands(ListView):
         return context
 
 
-class FarmManagement(ListView):
+class FarmManagement(LoginRequiredMixin, ListView):
     template_name = 'farm_management.html'
     queryset = DashboardLand.objects.all()
 
@@ -266,7 +266,7 @@ class FarmManagement(ListView):
         return context
 
 
-class Forests(ListView):
+class Forests(LoginRequiredMixin, ListView):
     template_name = 'forest_preservation.html'
     queryset = DashboardLand.objects.all()
 
@@ -276,7 +276,7 @@ class Forests(ListView):
         return context
 
 
-class Consultations(ListView):
+class Consultations(LoginRequiredMixin, ListView):
     template_name = 'consultations.html'
     queryset = DashboardLand.objects.all()
 
@@ -286,7 +286,7 @@ class Consultations(ListView):
         return context
 
 
-class Premium(ListView):
+class Premium(LoginRequiredMixin, ListView):
     template_name = 'premium_services.html'
     queryset = DashboardLand.objects.all()
 
@@ -297,7 +297,7 @@ class Premium(ListView):
 
 
 # @method_decorator(csrf_exempt, name='dispatch')
-class Weather(ListView):
+class Weather(LoginRequiredMixin, ListView):
     template_name = 'weather.html'
     queryset = DashboardLand.objects.all()
 
@@ -328,7 +328,7 @@ class Weather(ListView):
         return render(request, 'weather.html', context)
 
 
-class Payments(ListView):
+class Payments(LoginRequiredMixin, ListView):
     template_name = 'payments.html'
     queryset = DashboardLand.objects.all()
 
@@ -355,7 +355,7 @@ class Payments(ListView):
         return context
 
 
-class Profile(UpdateView):
+class Profile(LoginRequiredMixin, UpdateView):
     form_class = UserChangeForm
     template_name = 'profile.html'
     queryset = DashboardLand.objects.all()
@@ -379,7 +379,7 @@ class FiveHundred(TemplateView):
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class Contact(TemplateView):
+class Contact(LoginRequiredMixin, TemplateView):
     template_name = 'contact_us.html'
     query_set = DashboardLand.objects.all()
 
@@ -425,7 +425,7 @@ class Contact(TemplateView):
         return context
 
 
-class StartInvesting(TemplateView):
+class StartInvesting(LoginRequiredMixin, TemplateView):
     template_name = 'start_investing.html'
     query_set = DashboardLand.objects.all()
 
@@ -435,7 +435,7 @@ class StartInvesting(TemplateView):
         return context
 
 
-class ForestsView(TemplateView):
+class ForestsView(LoginRequiredMixin, TemplateView):
     template_name = 'start_preserving_forests.html'
     query_set = DashboardLand.objects.all()
 
@@ -445,7 +445,7 @@ class ForestsView(TemplateView):
         return context
 
 
-class StartFarming(TemplateView):
+class StartFarming(LoginRequiredMixin, TemplateView):
     template_name = 'start_farming.html'
     query_set = DashboardLand.objects.all()
 

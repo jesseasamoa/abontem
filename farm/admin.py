@@ -2,6 +2,9 @@ from django.contrib import admin
 from .models import FrontForm, DashboardLand, DashboardCrop, Invest, City, Management, Products, ContactPage, MostCultivated, PaymentDetails
 
 
+admin.site.site_header = "abontem.com Dashboard"
+
+
 class MostCultivatedAdmin(admin.ModelAdmin):
     list_display = ('crop', 'hectares')
 

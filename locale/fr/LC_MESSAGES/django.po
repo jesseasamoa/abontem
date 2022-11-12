@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 16:07+0000\n"
+"POT-Creation-Date: 2022-11-12 16:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "Logistique agricole"
 msgid "AI & Data"
 msgstr "IA et données"
 
-#: templates/home.html:124
+#: templates/home.html:124 templates/home.html:808
 msgid "Invest"
 msgstr "Investir"
 
@@ -82,7 +82,7 @@ msgstr "engager un gestionnaire d'exploitation"
 msgid "and more..."
 msgstr "et plus encore..."
 
-#: templates/home.html:527
+#: templates/home.html:527 templates/home.html:855
 msgid "Username"
 msgstr "Nom d'utilisateur :"
 
@@ -94,7 +94,7 @@ msgstr "Contacter"
 msgid "Email"
 msgstr "Courriel"
 
-#: templates/home.html:542
+#: templates/home.html:542 templates/home.html:860
 msgid "Password"
 msgstr "Mot de passe"
 

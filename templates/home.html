@@ -852,12 +852,12 @@
     </div>
     {% endfor %}
     {% csrf_token %}
-    <label>Username</label>
+    <label>{% trans 'Username' %}</label>
     <input name="uname" id="uname" type="text" required>
     </div>
 
     <div class="form-group">
-        <label>Password</label>
+        <label>{% trans 'Password' %}</label>
         <input name="password" id="password" type="password">
         <input type="hidden" name="form_type" value="formOne">
     </div>

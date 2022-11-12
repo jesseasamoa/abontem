@@ -29,12 +29,12 @@ EMAIL_PORT = EMAIL_PORT
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '='
+SECRET_KEY = 'django-insecure-u5ecm0a5xb89*-&5q2fo($cjer6mzmscd*h)2mvfh4(ge90h$a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com']
+ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com', '127.0.0.1']
 
 # Application definition
 

@@ -29,10 +29,10 @@ EMAIL_PORT = EMAIL_PORT
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u5ecm0a5xb89*-&5q2fo($cjer6mzmscd*h)2mvfh4(ge90h$a'
+SECRET_KEY = '='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com', '127.0.0.1']
 
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -141,8 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
-# STATIC_ROOT = '/home/engavqti/abontemapp/static'
+# STATIC_ROOT = '/static/'
+STATIC_ROOT = '/home/engavqti/abontemapp/static'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]

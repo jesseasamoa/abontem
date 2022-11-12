@@ -29,13 +29,12 @@ EMAIL_PORT = EMAIL_PORT
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '='
+SECRET_KEY = 'django-insecure-u5ecm0a5xb89*-&5q2fo($cjer6mzmscd*h)2mvfh4(ge90h$a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com']
-
 
 # Application definition
 
@@ -52,9 +51,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,7 +116,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
+LANGUAGE_CODE = 'en'
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR / 'locale'),
+]
+
+LANGUAGES = [
+    ('sw', 'Kiswahili'),
+    ('en', 'English'),
+    ('fr', 'French'),
+
+]
 
 TIME_ZONE = 'UTC'
 
@@ -129,10 +141,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/engavqti/abontemapp/static'
-# STAT/ICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/home/engavqti/abontemapp/static'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

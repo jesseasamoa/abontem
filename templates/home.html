@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
+<html lang="{{ LANGUAGE_CODE }}">
+{% load static%}
+{% load i18n %}
 
 <head>
     <!-- Meta Data -->
@@ -113,19 +114,21 @@
 
                     <div class="menu-wrapper" data-top="992">
                         <ul class="site-main-menu">
-                            <li><a href="#get-started" class="popup-with-form">Get Started</a></li>
-                            <li><a href="#get-started" class="popup-with-form">Seeds</a></li>
-                            <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
-                            <li><a href="#get-started" class="popup-with-form">Loans</a></li>
-                            <li><a href="#get-started" class="popup-with-form">Farm Logistics</a></li>
-                            <li><a href="#get-started" class="popup-with-form">AI & Data</a></li>
-                            <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Get Started' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Seeds' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Farmlands' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Loans' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Farm Logistics' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'AI & Data' %}</a></li>
+                            <li><a href="#get-started" class="popup-with-form">{% trans 'Invest' %}</a></li>
                             {% if user.is_authenticated %}
                             <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
                             <li><a href="{% url 'logout' %}">Logout</a></li>
                             {% else %}
-                            <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                            <li><a href="#login-form" class="popup-with-login">{% trans 'Log In' %}</a></li>
                             {% endif %}
+
                         </ul>
                     </div>
                     <!-- /.menu-wrapper -->
@@ -460,29 +463,29 @@
 
                     <div class="col-lg-5 pix-order-one">
                         <div class="download-wrapper-two">
-                            <h2 class="title wow pixFadeUp">Start a farm<br> in 1 Minute</h2>
+                            <h2 class="title wow pixFadeUp">{% trans "Start a farm in 1 Minute" %}</h2>
                             <p class="wow pixFadeUp" data-wow-delay="0.3s">
                             <div class="mt-5 mb-3">
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-light">Signup to</button>
+                                    <button type="button" class="btn btn-light">{% trans 'Signup to' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-info">buy seeds,</button>
+                                    <button type="button" class="btn btn-info">{% trans 'buy seeds,' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-success">farmlands,</button>
+                                    <button type="button" class="btn btn-success">{% trans 'farmlands,' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-primary">invest</button>
+                                    <button type="button" class="btn btn-primary">{% trans 'invest' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-success">preserve a forest</button>
+                                    <button type="button" class="btn btn-success">{% trans 'preserve a forest' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-warning">hire a farm manager</button>
+                                    <button type="button" class="btn btn-warning">{% trans 'hire a farm manager' %}</button>
                                 </a>
                                 <a href="#get-started">
-                                    <button type="button" class="btn btn-light">and more...</button>
+                                    <button type="button" class="btn btn-light">{% trans 'and more...' %}</button>
                                 </a>
                             </div>
                             </p>
@@ -494,7 +497,7 @@
 
                                         <span class="btn-text">
 
-                                            <span>Get Started</span>
+                                            <span>{% trans 'Get Started' %}</span>
                                         </span>
                                 </a>
 
@@ -511,7 +514,7 @@
                         <form action="" class="sign-up-form white-popup-block"
                               id="get-started" method="post">
                             {% csrf_token %}
-                            <h3>Get Started</h3>
+                            <h3>{% trans "Get Started" %}</h3>
                             <div class="form-group">
                                 {% for message in messages %}
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -521,29 +524,29 @@
                                     </button>
                                 </div>
                                 {% endfor %}
-                                <label>Username</label>
+                                <label>{% trans 'Username' %}</label>
                                 <input name="uname" id="uname" type="text" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Contact</label>
+                                <label>{% trans 'Contact' %}</label>
                                 <input name="contact" id="contact" type="number" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>{% trans 'Email' %}</label>
                                 <input name="email" id="email" type="email" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Password</label>
+                                <label>{% trans 'Password' %}</label>
                                 <input name="pass1" id="pass1" type="password" required>
                             </div>
                             <input type="hidden" name="form_type" value="formTwo">
                             <input name="register" type="submit">
                             <p></p>
 
-                            <a href="#login-form" class="popup-with-login login-btn">Log In</a>
+                            <a href="#login-form" class="popup-with-login login-btn">{% trans 'Log In' %}</a>
                         </form>
                         {% endif %}
                         <!-- /.download-feature-image -->
@@ -715,15 +718,33 @@
                         <div class="widget footer-widget widget-about">
                             <!--<a href="#" class="footer-logo"><img src="assets/img/main-logo.png" alt="saaspik"></a>-->
                             <p>
-                                Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm Automation and more...
-                            </p>
+                                {% trans 'Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm Automation and more...' %}</p>
 
-                            <h4 class="footer-title">Social</h4>
+                            <h4 class="footer-title">{% trans 'Social' %}</h4>
                             <ul class="social-share-link">
                                 <li><a href="#" class="share_youtube"><i class="fab fa-youtube"></i></a></li>
                                 <li><a href="#" class="share_twitter"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#" class="share_linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 
+                            </ul>
+                            <br>
+                            <ul>
+                                <li>
+                                {% get_current_language as LANGUAGE_CODE %}
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="n  ext" value="{{redirect_to}}">
+                                        <select name="language" id="" onchange="this.form.submit()">
+                                            {% get_available_languages as LANGUAGES %}
+                                            {% get_language_info_list for LANGUAGES as languages %}
+                                            {% for language in languages %}
+                                            <option value="{{language.code}}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                                {{ language.name_local }} ({{ language.code }})
+                                                {% endfor %}
+                                            </option>
+                                        </select>
+                                    </form>
+                                </li>
                             </ul>
 
 
@@ -733,7 +754,7 @@
                     <!-- /.col-lg-3 col-md-6 col-sm-6 -->
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget footer-widget widget-contact">
-                            <h3 class="widget-title">Main Office</h3>
+                            <h3 class="widget-title">{% trans 'Main Office' %}</h3>
 
                             <ul class="widget-contact-info">
                                 <li><i class="ei ei-icon_pin_alt"></i>176 Yasmine's Place - East-Legon, Accra - Ghana
@@ -761,13 +782,13 @@
                         <div class="widget footer-widget">
                             <h3 class="widget-title">Company</h3>
                             <ul class="footer-menu">
-                                <li><a href="#get-started" class="popup-with-form">About Us</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Careers</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Invest in Africa</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Terms of Service</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Privacy Policy</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Virtual Farming</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Forests Preservation</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'About Us' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Careers' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Invest in Africa' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Terms of Service' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Privacy Policy' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Virtual Farming' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Forests Preservation' %}</a></li>
                             </ul>
                         </div>
                         <!-- /.widget footer-widget -->
@@ -776,20 +797,21 @@
 
                     <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="widget footer-widget">
-                            <h3 class="widget-title">Platform</h3>
+                            <h3 class="widget-title">{% trans 'Platform' %}</h3>
 
                             <ul class="footer-menu">
-                                <li><a href="#get-started" class="popup-with-form">Farm management</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Farmlands</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Farm Tech</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Consultations</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Own the land & relax</a></li>
-                                <li><a href="#get-started" class="popup-with-form">Invest</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Farm management' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Farmlands' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Farm Tech' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Consultations' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Own the land & relax' %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Invest' %}</a></li>
                                 {% if user.is_authenticated %}
                                 <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
-                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                <li><a href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
                                 {% else %}
-                                <li><a href="#login-form" class="popup-with-login">Log In</a></li>
+                                <li><a href="#login-form" class="popup-with-login">{% trans 'Log In' %}</a></li>
+
                                 {% endif %}
                             </ul>
                         </div>
@@ -805,7 +827,7 @@
                 <div class="copyright text-center">
                     <p>&copy; {% now 'Y' %} abontem.com</p>
                     </p>
-                    <p>Designed by <a
+                    <p>{% trans 'Designed by' %} <a
                             href='https://wa.me/233245003234?text=I%27m%20interested%20in%20your%20web%20development%20services'
                             target='_blank'>Jesse Asamoa-Krodua</a></p>
                 </div>
@@ -876,6 +898,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
 
 
 

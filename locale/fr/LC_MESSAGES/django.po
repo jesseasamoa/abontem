@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-12 16:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: templates/home.html:118 templates/home.html:500 templates/home.html:517
+msgid "Get Started"
+msgstr "Commencez"
+
+#: templates/home.html:119
+msgid "Seeds"
+msgstr "Graines"
+
+#: templates/home.html:120 templates/home.html:804
+msgid "Farmlands"
+msgstr "Terres agricoles"
+
+#: templates/home.html:121
+msgid "Loans"
+msgstr "Prêts"
+
+#: templates/home.html:122
+msgid "Farm Logistics"
+msgstr "Logistique agricole"
+
+#: templates/home.html:123
+msgid "AI & Data"
+msgstr "IA et données"
+
+#: templates/home.html:124
+msgid "Invest"
+msgstr "Investir"
+
+#: templates/home.html:129 templates/home.html:549 templates/home.html:813
+msgid "Log In"
+msgstr "Connectez-vous"
+
+#: templates/home.html:466
+msgid "Start a farm in 1 Minute"
+msgstr "Démarrer une ferme en 1 minute"
+
+#: templates/home.html:470
+msgid "Signup to"
+msgstr "Inscrivez-vous pour"
+
+#: templates/home.html:473
+msgid "buy seeds,"
+msgstr "acheter des graines"
+
+#: templates/home.html:476
+msgid "farmlands,"
+msgstr "terres agricoles"
+
+#: templates/home.html:479
+msgid "invest"
+msgstr "investir"
+
+#: templates/home.html:482
+msgid "preserve a forest"
+msgstr "préserver une forêt"
+
+#: templates/home.html:485
+msgid "hire a farm manager"
+msgstr "engager un gestionnaire d'exploitation"
+
+#: templates/home.html:488
+msgid "and more..."
+msgstr "et plus encore..."
+
+#: templates/home.html:527
+msgid "Username"
+msgstr "Nom d'utilisateur :"
+
+#: templates/home.html:532
+msgid "Contact"
+msgstr "Contacter"
+
+#: templates/home.html:537
+msgid "Email"
+msgstr "Courriel"
+
+#: templates/home.html:542
+msgid "Password"
+msgstr "Mot de passe"
+
+#: templates/home.html:721
+msgid ""
+"Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm "
+"Automation and more..."
+msgstr ""
+"IA agricole | Investir en Afrique | Terres agricoles | Abontem Semences de "
+"maïs | Ferme Automatisation et autres..."
+
+#: templates/home.html:723
+msgid "Social"
+msgstr "Sociale"
+
+#: templates/home.html:757
+msgid "Main Office"
+msgstr "Bureau principal"
+
+#: templates/home.html:785
+msgid "About Us"
+msgstr "A propos de nous"
+
+#: templates/home.html:786
+msgid "Careers"
+msgstr "Carrières"
+
+#: templates/home.html:787
+msgid "Invest in Africa"
+msgstr "Investir en Afrique"
+
+#: templates/home.html:788
+msgid "Terms of Service"
+msgstr "Conditions d'utilisation"
+
+#: templates/home.html:789
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/home.html:790
+msgid "Virtual Farming"
+msgstr "L'agriculture virtuelle"
+
+#: templates/home.html:791
+msgid "Forests Preservation"
+msgstr "Préservation des forêts"
+
+#: templates/home.html:800
+msgid "Platform"
+msgstr "Plate-forme"
+
+#: templates/home.html:803
+msgid "Farm management"
+msgstr "Gestion de l'exploitation"
+
+#: templates/home.html:805
+msgid "Farm Tech"
+msgstr "Technologie agricole"
+
+#: templates/home.html:806
+msgid "Consultations"
+msgstr "Consultations"
+
+#: templates/home.html:807
+msgid "Own the land & relax"
+msgstr "Posséder le terrain et se détendre"
+
+#: templates/home.html:811
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: templates/home.html:830
+msgid "Designed by"
+msgstr "Conçu par"
+
+#~ msgid "submit"
+#~ msgstr "Soumettre"

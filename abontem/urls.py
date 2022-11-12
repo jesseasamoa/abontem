@@ -14,6 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls import include
 from farm import views
 from django.urls import path
 from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, Finance, Business, FarmProducts, \
@@ -23,6 +27,9 @@ from farm.views import Home, DashboardHome, BuyRentFarmland, Invest, Services, F
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+urlpatterns += i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', Home.as_view(), name='home'),
     path('dashboard/', DashboardHome.as_view(), name='dashboard'),
     path('dashboard/buy_rent_farmland/', BuyRentFarmland.as_view(), name='buy_rent_farmland'),
@@ -52,4 +59,5 @@ urlpatterns = [
     path('dashboard/start_farming/', StartFarming.as_view(), name='start_farming'),
     path('dashboard/start_preserving_forests', ForestsView.as_view(), name='start_preserving_forests'),
     # path('dashboard/activate/<uidb64>/<token>', Activate.as_view, name='activate')
-]
+    prefix_default_language=False,
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

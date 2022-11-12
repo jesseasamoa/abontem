@@ -117,51 +117,63 @@ class DashboardHome(LoginRequiredMixin, ListView):
     template_name = 'dashboard.html'
     queryset = DashboardCrop.objects.all()
 
-    # DISPLAY WEATHER ON DASHBOARD HOMEPAGE
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
-    cities = City.objects.exclude(name='East Legon')
-    weather_data = []
-
-    for city in cities:
-        response = requests.get(url.format(city))
-        if response.status_code == 404:
-            continue
-        city_weather = response.json()
-        weather = {
-            'city': city,
-            'temperature': city_weather['main']['temp'],
-            'description': city_weather['weather'][0]['description'],
-            'icon': city_weather['weather'][0]['icon']
-        }
-
-        weather_data.append(weather)  # add the data for the current city into our list
-
-    # CREATE A GRAPH WITH PLOTLY ON DASHBOARD HOMEPAGE
-    crops_cultivated = MostCultivated.objects.all()
-    gh_crops = [
-        {'crop': x.crop,
-         'hectares': x.hectares,
-         } for x in crops_cultivated
-    ]
-
-    df = pd.DataFrame(gh_crops)
-    # tips = px.data.tips()
-    fig = px.line(df, x='crop', y='hectares', width=600, height=300, title="Most cultivated crops in Ghana "
-                                            "by hectares", template='seaborn', color_discrete_sequence=['forestgreen'])
-    fig.update_layout({
-        'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-        'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-    })
-    bar_plot = plot(fig, output_type='div')
-
-    # DISPLAY CONTEXTS ON DASHBOARD
     def get_context_data(self, **kwargs):
+        # DISPLAY WEATHER ON DASHBOARD HOMEPAGE
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+        cities = City.objects.exclude(name='East Legon')
+        weather_data = []
+
+        for city in cities:
+            response = requests.get(url.format(city))
+            if response.status_code == 404:
+                continue
+            city_weather = response.json()
+            weather = {
+                'city': city,
+                'temperature': city_weather['main']['temp'],
+                'description': city_weather['weather'][0]['description'],
+                'icon': city_weather['weather'][0]['icon']
+            }
+
+            weather_data.append(weather)  # add the data for the current city into our list
+
+        # CREATE A GRAPH WITH PLOTLY ON DASHBOARD HOMEPAGE
+        # crops_cultivated = MostCultivated.objects.all()
+        crops_cultivated = list(MostCultivated.objects.all())
+        crops_cultivated = random.sample(crops_cultivated, 11)
+
+        # Create context data
+        gh_crops = [
+
+            {'crop': x.crop,
+             'hectares': x.hectares,
+             } for x in crops_cultivated
+        ]
+
+        # Insert context data into dataframe
+        df = pd.DataFrame(gh_crops)
+        # tips = px.data.tips()
+
+        # Pass dataframe into chart
+        fig = px.line(df, x='crop', y='hectares', width=600, height=300, title="Most cultivated crops in Ghana "
+                                                                               "by hectares", template='seaborn',
+                      color_discrete_sequence=['forestgreen'])
+
+        # Manage background colours (Transparent)
+        fig.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+        })
+
+        # Insert plot into a div to display inside html template
+        bar_plot = plot(fig, output_type='div')
+
         context = super().get_context_data(**kwargs)
         context['land'] = DashboardLand.objects.all()
         context['crops'] = DashboardCrop.objects.all()
-        context['weather_gh'] = random.sample(self.weather_data, k=3)
-        context['random_city'] = random.choices(self.weather_data, k=1)
-        context['crops_cultivated'] = self.bar_plot
+        context['weather_gh'] = random.sample(weather_data, k=3)
+        context['random_city'] = random.choices(weather_data, k=1)
+        context['crops_cultivated'] = bar_plot
         # context['valuable'] =self.worldcrops(self.request)
         return context
 

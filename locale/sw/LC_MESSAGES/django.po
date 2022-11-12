@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-12 16:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/home.html:118 templates/home.html:500 templates/home.html:517
+msgid "Get Started"
+msgstr "Anza"
+
+#: templates/home.html:119
+msgid "Seeds"
+msgstr "Mbegu"
+
+#: templates/home.html:120 templates/home.html:804
+msgid "Farmlands"
+msgstr "Mashamba"
+
+#: templates/home.html:121
+msgid "Loans"
+msgstr "Mikopo"
+
+#: templates/home.html:122
+msgid "Farm Logistics"
+msgstr "Vifaa vya shamba"
+
+#: templates/home.html:123
+msgid "AI & Data"
+msgstr "Akili Bandia na Data"
+
+#: templates/home.html:124
+msgid "Invest"
+msgstr "Wekeza"
+
+#: templates/home.html:129 templates/home.html:549 templates/home.html:813
+msgid "Log In"
+msgstr "Ingia"
+
+#: templates/home.html:466
+msgid "Start a farm in 1 Minute"
+msgstr "Anzisha shamba baada ya Dakika 1"
+
+#: templates/home.html:470
+msgid "Signup to"
+msgstr "Jisajili kwa"
+
+#: templates/home.html:473
+msgid "buy seeds,"
+msgstr "kununua mbegu"
+
+#: templates/home.html:476
+msgid "farmlands,"
+msgstr "mashamba"
+
+#: templates/home.html:479
+msgid "invest"
+msgstr "wekeza"
+
+#: templates/home.html:482
+msgid "preserve a forest"
+msgstr "kuhifadhi msitu"
+
+#: templates/home.html:485
+msgid "hire a farm manager"
+msgstr "kuajiri meneja shamba"
+
+#: templates/home.html:488
+msgid "and more..."
+msgstr "na zaidi..."
+
+#: templates/home.html:527
+msgid "Username"
+msgstr "Jina la mtumiaji"
+
+#: templates/home.html:532
+msgid "Contact"
+msgstr "Wasiliana"
+
+#: templates/home.html:537
+msgid "Email"
+msgstr "Barua pepe"
+
+#: templates/home.html:542
+msgid "Password"
+msgstr "Nenosiri"
+
+#: templates/home.html:721
+msgid ""
+"Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm "
+"Automation and more..."
+msgstr ""
+"Shamba AI | Wekeza Afrika | Mashamba | Mbegu za Mahindi za Abontem | "
+"ShambaOtomatiki na zaidi ..."
+
+#: templates/home.html:723
+msgid "Social"
+msgstr "Kijamii"
+
+#: templates/home.html:757
+msgid "Main Office"
+msgstr "Ofisi kuu"
+
+#: templates/home.html:785
+msgid "About Us"
+msgstr "Kuhusu sisi"
+
+#: templates/home.html:786
+msgid "Careers"
+msgstr "Ajira"
+
+#: templates/home.html:787
+msgid "Invest in Africa"
+msgstr "Wekeza Afrika"
+
+#: templates/home.html:788
+msgid "Terms of Service"
+msgstr "Masharti ya Huduma"
+
+#: templates/home.html:789
+msgid "Privacy Policy"
+msgstr "Sera ya Faragha"
+
+#: templates/home.html:790
+msgid "Virtual Farming"
+msgstr "Kilimo cha Mtandao"
+
+#: templates/home.html:791
+msgid "Forests Preservation"
+msgstr "Uhifadhi wa Misitu"
+
+#: templates/home.html:800
+msgid "Platform"
+msgstr "Jukwaa"
+
+#: templates/home.html:803
+msgid "Farm management"
+msgstr "Usimamizi wa shamba"
+
+#: templates/home.html:805
+msgid "Farm Tech"
+msgstr "Teknolojia ya Kilimo"
+
+#: templates/home.html:806
+msgid "Consultations"
+msgstr "Mashauriano"
+
+#: templates/home.html:807
+msgid "Own the land & relax"
+msgstr "Miliki ardhi & pumzika"
+
+#: templates/home.html:811
+msgid "Logout"
+msgstr "Ondoka"
+
+#: templates/home.html:830
+msgid "Designed by"
+msgstr "Iliyoundwa na"
+
+#~ msgid "submit"
+#~ msgstr "Wasilisha"

@@ -2049,3 +2049,8 @@ OSError: LSAPI: Socket read/write error
 OSError: LSAPI: Socket read/write error
 OSError: LSAPI: Socket read/write error
 OSError: LSAPI: Socket read/write error
+Not Found: /robots.txt
+Not Found: /static/dependencies/swiper/js/swiper.min.js
+Not Found: /static/dependencies/swiper/js/swiper.min.js
+Not Found: /static/dependencies/swiper/js/swiper.min.js
+Not Found: /static/dependencies/swiper/js/swiper.min.js

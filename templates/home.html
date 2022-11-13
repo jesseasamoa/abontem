@@ -731,9 +731,9 @@
                             <ul>
                                 <li>
                                 {% get_current_language as LANGUAGE_CODE %}
-<!--                                    <form action="{% url 'set_language' %}" method="post">-->
+                                    <form action="{% url 'set_language' %}" method="post">
                                         {% csrf_token %}
-                                        <input type="hidden" name="n  ext" value="{{redirect_to}}">
+                                        <input type="hidden" name="text" value="{{redirect_to}}">
                                         <select name="language" id="" onchange="this.form.submit()">
                                             {% get_available_languages as LANGUAGES %}
                                             {% get_language_info_list for LANGUAGES as languages %}

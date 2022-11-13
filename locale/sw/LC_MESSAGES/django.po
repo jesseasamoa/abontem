@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 16:59+0000\n"
+"POT-Creation-Date: 2022-11-13 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,10 +49,6 @@ msgstr "Wekeza"
 #: templates/home.html:129 templates/home.html:549 templates/home.html:813
 msgid "Log In"
 msgstr "Ingia"
-
-#: templates/home.html:466
-msgid "Start a farm in 1 Minute"
-msgstr "Anzisha shamba baada ya Dakika 1"
 
 #: templates/home.html:470
 msgid "Signup to"
@@ -169,6 +165,28 @@ msgstr "Ondoka"
 #: templates/home.html:830
 msgid "Designed by"
 msgstr "Iliyoundwa na"
+
+#: templates/home.html:915
+#, fuzzy
+#| msgid "Start a farm in 1 Minute"
+msgid "Start a Farm in 1 Minute or Less"
+msgstr "Anzisha shamba baada ya Dakika 1"
+
+#: templates/home.html:915
+msgid "From Seeds to Farm Automation"
+msgstr "Kutoka kwa Mbegu hadi Uendeshaji wa Kilimo"
+
+#: templates/home.html:916
+msgid "Own the Land, Relax, and We will handle it all"
+msgstr "Miliki Ardhi, Tulia, na Tutashughulikia yote"
+
+#: templates/home.html:916
+msgid "Start your eFarming Journey with Us"
+msgstr "Anzisha Safari yako ya KieFarming Nasi"
+
+#: templates/home.html:917
+msgid "Earn Daily, view it all on your Dashboard"
+msgstr "Pata pesa kila siku, itazame yote kwenye Dashibodi yako"
 
 #~ msgid "submit"
 #~ msgstr "Wasilisha"

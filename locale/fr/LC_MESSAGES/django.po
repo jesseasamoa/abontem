@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 16:59+0000\n"
+"POT-Creation-Date: 2022-11-13 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,10 +49,6 @@ msgstr "Investir"
 #: templates/home.html:129 templates/home.html:549 templates/home.html:813
 msgid "Log In"
 msgstr "Connectez-vous"
-
-#: templates/home.html:466
-msgid "Start a farm in 1 Minute"
-msgstr "Démarrer une ferme en 1 minute"
 
 #: templates/home.html:470
 msgid "Signup to"
@@ -169,6 +165,28 @@ msgstr "Déconnexion"
 #: templates/home.html:830
 msgid "Designed by"
 msgstr "Conçu par"
+
+#: templates/home.html:915
+#, fuzzy
+#| msgid "Start a farm in 1 Minute"
+msgid "Start a Farm in 1 Minute or Less"
+msgstr "Démarrer une ferme en 1 minute"
+
+#: templates/home.html:915
+msgid "From Seeds to Farm Automation"
+msgstr "Des semences à l'automatisation des exploitations"
+
+#: templates/home.html:916
+msgid "Own the Land, Relax, and We will handle it all"
+msgstr "Soyez propriétaire du terrain, détendez-vous et nous nous occupons de tout."
+
+#: templates/home.html:916
+msgid "Start your eFarming Journey with Us"
+msgstr "Commencez votre voyage eFarming avec nous"
+
+#: templates/home.html:917
+msgid "Earn Daily, view it all on your Dashboard"
+msgstr "Gagnez chaque jour, visualisez tout sur votre tableau de bord."
 
 #~ msgid "submit"
 #~ msgstr "Soumettre"

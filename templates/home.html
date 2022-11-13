@@ -463,7 +463,7 @@
 
                     <div class="col-lg-5 pix-order-one">
                         <div class="download-wrapper-two">
-                            <h2 class="title wow pixFadeUp">{% trans "Start a farm in 1 Minute" %}</h2>
+                            <h2 class="title wow pixFadeUp"><span class="auto-input"></span></h2>
                             <p class="wow pixFadeUp" data-wow-delay="0.3s">
                             <div class="mt-5 mb-3">
                                 <a href="#get-started">
@@ -731,7 +731,7 @@
                             <ul>
                                 <li>
                                 {% get_current_language as LANGUAGE_CODE %}
-                                    <form action="{% url 'set_language' %}" method="post">
+<!--                                    <form action="{% url 'set_language' %}" method="post">-->
                                         {% csrf_token %}
                                         <input type="hidden" name="n  ext" value="{{redirect_to}}">
                                         <select name="language" id="" onchange="this.form.submit()">
@@ -908,6 +908,18 @@ s0.parentNode.insertBefore(s1,s0);
 
 </script>
 <!--End of Tawk.to Script-->
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".auto-input", {
+        strings: ["{% trans "Start a farm in 1 Minute or less" %}", "{% trans "From Seeds to Farm Automation" %}",
+        "{% trans "Own the land, relax and we will handle it all" %}", "{% trans "Start your eFarming journey with us" %}",
+        "{% trans "Earn Daily, view it all on your Dashboard" %}"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true
+        })
+</script>
 
 </body>
 

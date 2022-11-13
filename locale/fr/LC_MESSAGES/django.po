@@ -167,8 +167,6 @@ msgid "Designed by"
 msgstr "Conçu par"
 
 #: templates/home.html:915
-#, fuzzy
-#| msgid "Start a farm in 1 Minute"
 msgid "Start a Farm in 1 Minute or Less"
 msgstr "Démarrer une ferme en 1 minute"
 

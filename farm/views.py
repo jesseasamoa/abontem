@@ -25,15 +25,18 @@ import plotly.express as px
 from plotly.offline import plot
 from django.core.paginator import Paginator
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from decouple import config
 
 
 @method_decorator(csrf_exempt, name='dispatch')
 class Home(DetailView):
     template_name = 'home.html'
 
+
     @method_decorator(csrf_protect)
     def get(self, request):
-        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+        weatherapi = config('WEATHER_API')
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='+weatherapi
         cities = City.objects.filter(name='East Legon')
         weather_data = []
 
@@ -119,7 +122,8 @@ class DashboardHome(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         # DISPLAY WEATHER ON DASHBOARD HOMEPAGE
-        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=f96dd9d99cc3fda5a23cef143e17f54f'
+        weatherapi = config('WEATHER_API')
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='+weatherapi
         cities = City.objects.exclude(name='East Legon')
         weather_data = []
 
@@ -321,9 +325,10 @@ class Weather(LoginRequiredMixin, ListView):
 
     # @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
+        weatherapi = config('WEATHER_API')
         weather_data = []
         city_search = request.POST('city_search')
-        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=7fb276f6f47e92af3f066b383ddc9936'
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='+weatherapi
         for city in city_search:
             response = requests.get(url.format(city_search))
             if response.status_code == 404:

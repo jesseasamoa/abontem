@@ -123,7 +123,7 @@
                             <li><a href="#get-started" class="popup-with-form">{% trans 'AI & Data' %}</a></li>
                             <li><a href="#get-started" class="popup-with-form">{% trans 'Invest' %}</a></li>
                             {% if user.is_authenticated %}
-                            <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
+                            <li><a href="{% url 'dashboard' %}"><b style="color:green">{{user.username}}</b></a></li>
                             <li><a href="{% url 'logout' %}">Logout</a></li>
                             {% else %}
                             <li><a href="#login-form" class="popup-with-login">{% trans 'Log In' %}</a></li>
@@ -807,7 +807,7 @@
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Own the land & relax' %}</a></li>
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Invest' %}</a></li>
                                 {% if user.is_authenticated %}
-                                <li><a href="{% url 'dashboard' %}">{{user.username}}</a></li>
+                                <li><a href="{% url 'dashboard' %}"><b style="color:green">{{user.username}}</b></a></li>
                                 <li><a href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
                                 {% else %}
                                 <li><a href="#login-form" class="popup-with-login">{% trans 'Log In' %}</a></li>
@@ -914,7 +914,7 @@ s0.parentNode.insertBefore(s1,s0);
     var typed = new Typed(".auto-input", {
         strings: ["{% trans "Start a Farm in 1 Minute or Less" %}", "{% trans "From Seeds to Farm Automation" %}",
         "{% trans "Own the Land, Relax, and We will handle it all" %}", "{% trans "Start your eFarming Journey with Us" %}",
-        "{% trans "Earn Daily, view it all on your Dashboard" %}", "{% trans "Get Started <br>------->> <br>------->>" %}"],
+        "{% trans "Earn Daily, view it all on your Dashboard" %}"],
         typeSpeed: 100,
         backSpeed: 100,
         loop: true

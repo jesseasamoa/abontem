@@ -160,3 +160,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ['https://abontem.com', 'http://api.openweathermap.org']
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+CACHES = {
+'default': {
+'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+'LOCATION': 'my_cache_table',
+}
+}

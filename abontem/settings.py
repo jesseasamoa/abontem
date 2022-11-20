@@ -142,6 +142,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+<<<<<<< HEAD
 # STATIC_URL = '/static/'
 STATIC_URL = '/home/engavqti/abontemapp/static'
 # STATIC_ROOT = '/static/'
@@ -149,6 +150,15 @@ STATIC_ROOT = '/home/engavqti/abontemapp/static'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]
+=======
+#STATIC_URL = '/static/'
+STATIC_URL = '/home/engavqti/abontemapp/static'
+#STATIC_ROOT = '/static/'
+STATIC_ROOT = '/home/engavqti/abontemapp/static'
+#STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+>>>>>>> 6672fadb46e4583c1d770d842b3e8361e2f5f2a1
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

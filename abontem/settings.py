@@ -145,9 +145,9 @@ USE_TZ = True
 
 
 # STATIC_URL = '/static/'
-STATIC_URL = '/home/engavqti/abontemapp/static'
+STATIC_URL = '/home/engavqti/abontemapp/static/'
 # STATIC_ROOT = '/static/'
-STATIC_ROOT = '/home/engavqti/abontemapp/static'
+STATIC_ROOT = '/home/engavqti/abontemapp/static/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]

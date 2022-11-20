@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'farm'
-    # 'django_countries'
+    'farm',
+    # 'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -142,7 +142,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-<<<<<<< HEAD
+
 # STATIC_URL = '/static/'
 STATIC_URL = '/home/engavqti/abontemapp/static'
 # STATIC_ROOT = '/static/'
@@ -150,18 +150,32 @@ STATIC_ROOT = '/home/engavqti/abontemapp/static'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]
-=======
-#STATIC_URL = '/static/'
+
+# STATIC_URL = '/static/'
 STATIC_URL = '/home/engavqti/abontemapp/static'
-#STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/static/'
 STATIC_ROOT = '/home/engavqti/abontemapp/static'
 #STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
->>>>>>> 6672fadb46e4583c1d770d842b3e8361e2f5f2a1
+    # BASE_DIR / "static",
+# ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ['https://abontem.com', 'http://api.openweathermap.org']
+
+
+CACHES = {
+'default': {
+'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+'LOCATION': [
+'abontem.com',
+'https://abontem.com',
+'https://www.abontem.com',
+'www.abontem.com',
+'127.0.0.1:8000'
+]
+}
+}

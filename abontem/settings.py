@@ -172,6 +172,8 @@ CACHES = {
 'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
 'LOCATION': [
 'abontem.com',
+'abontem.com/dashboard',
+'https://abontem.com/dashboard',
 'https://abontem.com',
 'https://www.abontem.com',
 'www.abontem.com',

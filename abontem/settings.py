@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'farm',
+    "django.contrib.sessions.backends.cache",
     # 'django_countries',
 ]
 
@@ -151,14 +152,6 @@ STATIC_ROOT = '/home/engavqti/abontemapp/static'
 #     BASE_DIR / "static",
 # ]
 
-# STATIC_URL = '/static/'
-STATIC_URL = '/home/engavqti/abontemapp/static'
-# STATIC_ROOT = '/static/'
-STATIC_ROOT = '/home/engavqti/abontemapp/static'
-#STATICFILES_DIRS = [
-    # BASE_DIR / "static",
-# ]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -166,18 +159,4 @@ STATIC_ROOT = '/home/engavqti/abontemapp/static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ['https://abontem.com', 'http://api.openweathermap.org']
 
-
-CACHES = {
-'default': {
-'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-'LOCATION': [
-'abontem.com',
-'abontem.com/dashboard',
-'https://abontem.com/dashboard',
-'https://abontem.com',
-'https://www.abontem.com',
-'www.abontem.com',
-'127.0.0.1:8000'
-]
-}
-}
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

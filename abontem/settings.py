@@ -34,7 +34,7 @@ KEY = config('SECRET_KEY')
 SECRET_KEY = KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com', '127.0.0.1']
 
@@ -144,13 +144,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-# STATIC_URL = '/static/'
-STATIC_URL = '/home/engavqti/abontemapp/static/'
-# STATIC_ROOT = '/static/'
-STATIC_ROOT = '/home/engavqti/abontemapp/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATIC_URL = '/static/'
+# STATIC_URL = '/home/engavqti/abontemapp/static/'
+STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/home/engavqti/abontemapp/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 # Default primary key field type

@@ -25,6 +25,7 @@ EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
 KEY = config('SECRET_KEY')
+PASS = config('POSTGRES')
 
 
 # Quick-start development settings - unsuitable for production
@@ -91,8 +92,12 @@ WSGI_APPLICATION = 'abontem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'abontem',
+        'USER': 'postgres',
+        'PASSWORD': PASS,
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -144,13 +149,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-# STATIC_URL = '/static/'
-STATIC_URL = '/home/engavqti/abontemapp/static/'
-# STATIC_ROOT = '/static/'
-STATIC_ROOT = '/home/engavqti/abontemapp/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATIC_URL = '/static/'
+# STATIC_URL = '/home/engavqti/abontemapp/static/'
+STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/home/engavqti/abontemapp/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 # Default primary key field type

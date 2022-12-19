@@ -35,9 +35,9 @@ PASS = config('POSTGRES')
 SECRET_KEY = KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['abontem.com', 'www.abontem.com', 'https://abontem.com', 'https://www.abontem.com', '127.0.0.1']
+ALLOWED_HOSTS = ['69.57.161.138']
 
 # Application definition
 
@@ -150,9 +150,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATIC_URL = '/home/engavqti/abontemapp/static/'
 STATIC_ROOT = '/static/'
-# STATIC_ROOT = '/home/engavqti/abontemapp/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]

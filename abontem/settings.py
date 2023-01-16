@@ -35,9 +35,9 @@ PASS = config('POSTGRES')
 SECRET_KEY = KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['69.57.161.138']
+ALLOWED_HOSTS = ['69.57.161.138', 'abontem.com']
 
 # Application definition
 

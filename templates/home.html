@@ -463,7 +463,7 @@
 
                     <div class="col-lg-5 pix-order-one">
                         <div class="download-wrapper-two">
-                            <h2 class="title wow pixFadeUp"><span class="auto-input"></span></h2>
+                            <h2 class="title wow pixFadeUp">From seeds to <span class="auto-input"></span></h2>
                             <p class="wow pixFadeUp" data-wow-delay="0.3s">
                             <div class="mt-5 mb-3">
                                 <a href="#get-started">
@@ -722,8 +722,7 @@
                         <div class="widget footer-widget widget-about">
                             <!--<a href="#" class="footer-logo"><img src="assets/img/main-logo.png" alt="saaspik"></a>-->
                             <p>
-                                {% trans 'Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm Automation
-                                and more...' %}</p>
+                                {% trans 'Farm AI | Invest in Africa | Farmlands | Abontem Maize Seeds | Farm Automation and more...' %}</p>
 
                             <h4 class="footer-title">{% trans 'Social' %}</h4>
                             <ul class="social-share-link">
@@ -763,7 +762,7 @@
                             <h3 class="widget-title">{% trans 'Main Office' %}</h3>
 
                             <ul class="widget-contact-info">
-                                <li><i class="ei ei-icon_pin_alt"></i>176 Yasmine's Place - East-Legon, Accra - Ghana
+                                <li><i class="ei ei-icon_pin_alt"></i>176 Yasmine's Place <br>East-Legon - Accra<br>Ghana
                                 </li>
                                 {% for temp in weather_data %}
                                 <li><a href="#get-started" class="popup-with-form"><img
@@ -771,8 +770,7 @@
                                     {{temp.city}} {{temp.temperature}}°C</a></li>
                                 {% endfor %}
                                 <li>
-                                    <a href="https://wa.me/233553612697?text=I%27m%20interested%20in%20your%20web%20development%20services"
-                                       target="_blank"><i class="ei ei-icon_phone"></i>+(233) 0553 612 697</a></li>
+                                    <a href="tel:+233553612697"><i class="ei ei-icon_phone"></i>+(233) 0553 612 697</a></li>
                                 <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=farm@abontem.com"
                                        target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i>farm@abontem.com</a>
                                 </li>
@@ -797,8 +795,7 @@
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Privacy Policy' %}</a></li>
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Virtual Farming' %}</a>
                                 </li>
-                                <li><a href="#get-started" class="popup-with-form">{% trans 'Forests Preservation'
-                                    %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Forests Preservation' %}</a></li>
                             </ul>
                         </div>
                         <!-- /.widget footer-widget -->
@@ -815,8 +812,7 @@
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Farmlands' %}</a></li>
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Farm Tech' %}</a></li>
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Consultations' %}</a></li>
-                                <li><a href="#get-started" class="popup-with-form">{% trans 'Own the land & relax'
-                                    %}</a></li>
+                                <li><a href="#get-started" class="popup-with-form">{% trans 'Own the land & relax' %}</a></li>
                                 <li><a href="#get-started" class="popup-with-form">{% trans 'Invest' %}</a></li>
                                 {% if user.is_authenticated %}
                                 <li><a href="{% url 'dashboard' %}"><b style="color:green">{{user.username}}</b></a>
@@ -921,9 +917,9 @@ s0.parentNode.insertBefore(s1,s0);
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
     var typed = new Typed(".auto-input", {
-        strings: ["{% trans "earn 10x more" %}", "{% trans "own businesses" %}",
-        "{% trans "change your life" %}",
-        "{% trans "change the world" %}", "{% trans "earn daily" %}"],
+        strings: ["{% trans "earning 10x more" %}", "{% trans "owning businesses" %}",
+        "{% trans "changing your life" %}",
+        "{% trans "changing the world" %}", "{% trans "earning daily" %}"],
         typeSpeed: 100,
         backSpeed: 100,
         loop: true
